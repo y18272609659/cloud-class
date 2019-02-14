@@ -1,0 +1,125 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/*页面介绍模块CSS代码*/
+.brief {
+  margin: 50px 0 40px 200px;
+}
+.brief-content {
+  display: inline-block;
+  width: 590px;
+}
+.brief-title {
+  margin: 0 auto;
+  font-size: 36px;
+  font-weight: bolder;
+  color: #333333;
+  line-height: 36px;
+}
+.brief-text {
+  display: inline-block;
+  font-size: 16px;
+  color: #333333;
+  line-height: 2rem;
+  margin-bottom: -1rem;
+}
+.brief-img {
+  margin-left: 20px;
+  width: 380px;
+}
+
+/*活动预报与往期活动模块 CSS代码*/
+.activity-notice {
+  height: 400px;
+  background: #f0f0f0;
+}
+.activity-notice-position, .history {
+  margin-left: 200px;
+}
+.activity-notice-title, .history-title {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #333;
+}
+.notice-content-img, .history-content-img {
+  display: inline-block;
+  width: 444px;
+  height: 250px;
+  background: #3684c8;
+  border-radius: 4px;
+}
+.notice-content-detail, .history-content-detail {
+  position: absolute;
+  display: inline-block;
+  padding-left: 20px;
+}
+.detail-title, .history-content-title {
+  padding-top: 20px;
+  padding-bottom: 19px;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #333;
+  line-height: 24px;
+}
+.detail-guest, .history-content-guest {
+  font-size: 18px;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 18px;
+}
+.detail-time, .history-content-time {
+  font-size: 14px;
+  color: #666;
+  padding-bottom: 20px;
+  line-height: 14px;
+}
+.detail-message, .history-content-message {
+  width: 540px;
+  font-size: 14px;
+  color: #999;
+  padding-bottom: 20px;
+  line-height: 1.5rem;
+}
+.entry-btn {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background: linear-gradient(to right, #deb135, #51af36);
+  font-size: 14px;
+  color: white;
+}
+.live-btn {
+  width: 140px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  margin-left: 10px;
+  -webkit-background-clip:padding-box,border-box;
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  -webkit-background-origin:padding-box,border-box;
+  background-image:linear-gradient(135deg,#f0f0f0,#f0f0f0),linear-gradient(135deg, #deb135, #51af36);
+  border:1px transparent solid;
+  /*border: 1px solid;*/
+  /*border-image: linear-gradient(to right, #deb135, #51af36) 1;*/
+  /*background: transparent;*/
+}
+.live-btn-word {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image:linear-gradient(135deg, #deb135, #51af36);
+  color: transparent;
+}
+
+/*往期活动模块CSS代码*/
+.history-content {
+  margin-bottom: 20px;
+}
+

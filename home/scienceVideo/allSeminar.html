@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .layui-nav{
+            padding:0;
+        }
+        .layui-nav-white{
+            color:#333;
+            background: #fff;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+        }
+        .nav-f{
+            position: relative;
+        }
+        .nav-f .select{
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            right: 0;
+            top:0;
+        }
+        .nav-f .select .layui-form-item{
+            margin: 0;
+            padding: 11px 20px 0 0;
+        }
+
+        .head{
+
+        }
+        .head .title{
+            height: 50px;
+            line-height: 50px;
+        }
+        .head .title .float-left{
+            font-size: 16px;
+            font-weight: 700;
+            color:#333;
+        }
+        .head .title .float-right{
+            font-size: 14px;
+            color:#04B75E;
+            cursor: pointer;
+        }
+        .head .box{
+            background: #ccc;
+
+            height: 220px;
+            position: relative;
+        }
+        .head .box .title{
+            height: 50px;
+            line-height: 50px;
+            text-indent: 1em;
+            font-size: 16px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+        }
+        .head .pic-box{
+            width: 380px;
+            height: 220px;
+            background: #ccc;
+        }
+        .head .word-box{
+            padding: 20px 20px 20px 0;
+        }
+        .head .word-box .name{
+            font-size: 32px;
+            padding-bottom: 15px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .head .word-box .desc{
+            font-size: 12px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .bottom{
+            height: 50px;
+            line-height: 50px;
+            background: #fff;
+            text-align: center;
+            font-size: 14px;
+        }
+        .special-core{
+            margin-bottom: 10px;
+            background: #fff;
+        }
+
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use(['element', 'form'], function(){
+                var element = layui.element;
+                var form = layui.form;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            // var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            // b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 100;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="title layui-clear">
+            <h5 class="float-left">精选专题</h5>
+        </div>
+        <div class="layui-row special-core">
+            <div class="layui-col-md5">
+                <a href="seminarDetail.html">
+                <div class="pic-box"></div>
+                </a>
+            </div>
+            <div class="layui-col-md7">
+                <div class="word-box">
+                    <h3 class="name">XXXXXX专题</h3>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row special-core">
+            <div class="layui-col-md5">
+                <div class="pic-box"></div>
+            </div>
+            <div class="layui-col-md7">
+                <div class="word-box">
+                    <h3 class="name">XXXXXX专题</h3>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <a href="javascript:void(0)">加载更多</a>
+    </div>
+</div>
+</body>
+</html>

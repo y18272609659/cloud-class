@@ -1,0 +1,29 @@
+/*样式初始化*/
+a{
+  text-decoration: none;
+}
+
+/*样式*/
+.submit{
+  font-size:20px;
+  font-weight: 600;
+  color:#333;
+  margin-top:40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.duigou{
+  display: block;
+  margin:0 auto;
+}
+
+.notice{
+  text-align: center;
+  font-size:12px;
+}
+
+.shutdown{
+  font-size: 12px;
+  color:#36ae36;
+}

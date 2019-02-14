@@ -1,0 +1,120 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>示范基地网站系统管理后台</title>
+  <link rel="stylesheet" href="../../../../static/css/reset.css">
+  <style type="text/css">
+    body form {
+      margin: 0;
+    }
+    input {
+      padding-left: 10px;
+    }
+    textarea {
+      padding: 10px;
+    }
+
+    .content {
+      margin-left: 200px;
+      font-size: 14px;
+      color: #666666;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: bolder;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      color: #0C0C0C;
+    }
+    input, textarea {
+      height: 50px;
+      width: 320px;
+      background: #f5f5f5;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+    }
+    span {
+      display: inline-block;
+      width: 110px;
+    }
+    .interact {
+      margin: 35px 0;
+    }
+    .interact .radio-content {
+      color: #333333;
+      display: inline;
+    }
+    .interact-radio {
+      height: 14px;
+      width: 14px;
+    }
+    .radio-no {
+      margin-left: 30px;
+    }
+    .additional {
+      margin-top: 20px;
+    }
+    .add-text {
+      vertical-align: top;
+      margin-top: 15px;
+    }
+    .add-text-area {
+      height: 146px;
+      width: 774px;
+      margin-bottom: 20px;
+      resize: none;
+    }
+    .content-tel, .content-email {
+      margin-top: 20px;
+    }
+    .submit-btn {
+      width: 140px;
+      height: 40px;
+      margin: 50px 40px 100px 115px;
+      background: #33a333;
+      color: #ffffff;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+<div class="content">
+  <div class="title">提交预约信息</div>
+  <form action="" method="post" enctype="multipart/form-data">
+    <div class="people">
+      <span>参与人数</span>
+      <input required="required" type="text" oninput = "value=value.replace(/[^\d]/g,'')"/>
+    </div>
+    <div class="interact">
+      <span>是否愿意互动</span>
+      <input class="interact-radio" type="radio" name="interact" value="yes"/><span class="radio-content">是</span>
+      <input class="interact-radio radio-no" type="radio" name="interact" value="no"/><span class="radio-content">否</span>
+    </div>
+    <div class="interact-content">
+      <span>希望互动的内容</span>
+      <input required="required" type="text"/>
+    </div>
+    <div class="additional">
+      <span class="add-text">补充需求<br/>（选填）</span>
+      <textarea class="add-text-area"></textarea>
+    </div>
+    <div class="content-name">
+      <span>联系人</span>
+      <input required="required" type="text"/>
+    </div>
+    <div class="content-tel">
+      <span>联系电话</span>
+      <input required="required" type="text" oninput = "value=value.replace(/[^\d]/g,'')"/>
+    </div>
+    <div class="content-email">
+      <span>联系邮箱</span>
+      <input required="required" type="text"/>
+    </div>
+    <button class="submit-btn"><a href="submit_success.html">提交</a></button>
+  </form>
+
+</div>
+</body>
+</html>

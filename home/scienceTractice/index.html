@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        .head{
+            margin: 0 auto;
+            padding:0;
+            background: #fff;
+            line-height: 1.5;
+            width: 1000px;
+        }
+        .head .box{
+            padding: 40px 0;
+        }
+        .head .box .box-t{
+            overflow: hidden;
+        }
+        .head .box .box-t .left{
+            width: 662px;
+            padding-top: 36px;
+            background: url("../../../../../static/images/practice_decorate.png")no-repeat;
+        }
+        .head .box .box-t .title{
+            font-weight: 700;
+            font-size: 48px;
+            color: #333;
+            line-height: 1;
+            padding: 0 0 20px;
+        }
+        .head .box .box-t .desc{
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            line-height: 24px;
+            padding-top: 8px;
+        }
+        .head .box .box-t .desc.line-height-1{
+            padding-top: 0;
+            line-height: 14px;
+            padding-bottom: 16px;
+        }
+        .head .box .box-t .pic-group{
+            overflow: hidden;
+        }
+        .head .box .box-t .pic-group .pic{
+            width: 326px;
+            height: 210px;
+        }
+        .head .box .box-t .pic-group .pic img{
+            width: 100%;
+            height: 100%;
+        }
+        .head .box .box-t .right{
+            padding-top: 38px;
+            width: 326px;
+        }
+        .head .box .box-t .right .pic{
+            width: 100%;
+        }
+        .head .box .box-t .right img{
+            width: 100%;
+        }
+
+        .head .box.center .box-t{
+            overflow: hidden;
+        }
+        .head .box.center .box-t .left{
+            padding-top: 0;
+            background: none;
+        }
+        .head .box.center .box-t .left .pic{
+            width: 100%;
+            cursor: pointer;
+        }
+        .head .box.center .box-t .left img{
+            width: 100%;
+        }
+        .head .box.center .box-t .right{
+            padding-top: 36px;
+            background: url("../../../../../static/images/practice_decorate.png")no-repeat right top;
+        }
+        .head .box.center .box-t .right .title{
+            text-align: right;
+            padding: 0 0 6px;
+        }
+        .head .box.center .box-t .right .desc{
+            padding-top: 0;
+            text-align: right;
+        }
+
+        .head .box.bottom .box-t .left{
+            padding-top: 36px;
+            width: 326px;
+            background: url("../../../../../static/images/practice_decorate.png")no-repeat;
+        }
+        .head .box.bottom .box-t .title{
+            padding-bottom: 20px;
+        }
+        .head .box.bottom .box-t .desc{
+            padding: 0;
+        }
+        .head .box.bottom .box-t .right{
+            width: 662px;
+        }
+        .head .box.bottom .box-t .right .pic{
+            width: 100%;
+        }
+        .head .box.bottom .box-t .right img{
+            width: 100%;
+        }
+        
+
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+
+                window.parent.parent.layer.closeAll()
+                window.parent.parent.layer.open({
+                    type:1,
+                    shade:0,
+                    offset: ['0px', '0px'],
+                    move: false,
+                    content:'<div class="fixed-bottom" id="f"><div class="box"><div class="button">预约</div></div></div>',
+                    success: function(){
+                        window.parent.parent.$(".layui-layer-title, .layui-layer-setwin, .layui-layer-resize").hide()
+                        $("#f").show()
+                    }
+                })
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 100;
+        };
+
+    </script>
+</head>
+<body onload="setContentPageHeight()">
+<div id="content">
+    <div class="head">
+        <div class="box">
+            <div class="box-t">
+                <div class="float-left left">
+                    <h2 class="title">科学实践课</h2>
+                    <p class="desc line-height-1">科学实践课是基于6-15岁青少年的兴趣偏好与思维能力，由中科院科学家专门设计开发的科学课程。</p>
+                    <div class="pic-group">
+                        <div class="pic float-left">
+                            <img src="../../../../../static/images/static/04/1.png" alt="">
+                        </div>
+                        <div class="pic float-right">
+                            <img src="../../../../../static/images/static/04/2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="float-right right">
+                    <div class="pic">
+                        <img src="../../../../../static/images/static/04/3.png" alt="">
+                    </div>
+                    <div class="desc">
+                        科学实践课强调“跨学科”与“做中学”，培养学生发现问题和解决问题的能力。科学家将在学校课堂或研究院所，亲自为学生授课，引导学生运用多科学知识，找到解决问题的最佳答案，让孩子们对基础的科学知识有最扎实地掌握，同时又兼具创新思考的能力及灵活的动手能力。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box center">
+            <div class="box-t">
+                <div class="float-left left">
+                    <div class="pic">
+                        <img src="../../../../../static/images/static/04/4.png" alt="">
+                    </div>
+                </div>
+                <div class="float-right right">
+                    <h2 class="title">SELF&bull;Kids</h2>
+                    <p class="desc">
+                        SELF&bull;Kids是舞台的科学演讲活动，是中国科学教育版的TED演讲。基地学校可依据需求，每年申请1次“SELF•Kids”活动，SELF•Kids采用“演讲+表演+参与式互动”的呈现方式，邀请3-4位，科学、文化、教育、艺术等领域的精英人士，分享科学故事与科学思想，激发孩子们对科学的好奇心，促进青少年参与科学的积极性。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="box bottom">
+            <div class="box-t">
+                <div class="float-left left">
+                    <h2 class="title">科学家进校园</h2>
+                    <p class="desc">
+                        “科学家进校园”是依托中科院丰富的科学家资源，开展的科学家进校园活动。<br>基地学校可依据需求，每年申请1-2次“科普校园行”活动，每次将邀请院士、科学家走进基地学校，通过“科学家讲座+圆桌论坛”的方式，为学校师生带来一场精彩的科学活动。在“科学家讲座”环节，科学家将与学生分享人生阅历，解读科学知识，鼓励学生探索科学的热情；在“圆桌论坛”环节，科学家将为老师解答科学教育的困难，共同探讨策划特色科学课程，推动学校科学教育的发展。
+                    </p>
+                </div>
+                <div class="float-right right">
+                    <div class="pic">
+                        <img src="../../../../../static/images/static/04/5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+</body>
+</html>

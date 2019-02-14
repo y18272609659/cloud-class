@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .layui-nav{
+            padding:0;
+        }
+        .layui-nav-white{
+            color:#333;
+            background: #f0f0f0;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+        }
+        .nav-f{
+            position: relative;
+        }
+        .nav-f .select{
+            position: absolute;
+            height: 100%;
+            right: 0;
+            top:0;
+            line-height: 60px;
+            width: 88px;
+            color:#999;
+            cursor: pointer;
+        }
+        .nav-f .select .layui-form-item{
+            margin: 0;
+            padding: 11px 20px 0 0;
+        }
+        .nav-f .select .more-select{
+            width: 11px;
+            height: 7px;
+            vertical-align: 1px;
+            display: inline-block;
+            margin-left: 5px;
+            background: url("../../../../../static/images/more_select.png")no-repeat;
+        }
+
+        .head{
+            margin-bottom: 40px;
+            width: 1000px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .head .title .more-sign{
+            width: 8px;
+            height: 12px;
+            display: inline-block;
+            background: url("../../../../../static/images/more_sign.png")no-repeat;
+            vertical-align: -1px;
+        }
+        .head .title{
+            height: 60px;
+            line-height: 60px;
+            padding-top: 25px;
+        }
+        .head .title .float-left{
+            font-size: 18px;
+            font-weight: 700;
+            color:#333;
+        }
+        .head .title .float-right{
+            font-size: 14px;
+            color:#04B75E;
+            cursor: pointer;
+        }
+        .head .box{
+            background: #ccc;
+            height: 180px;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .head .box img{
+            width: 100%;
+            height: 100%;
+        }
+        .head .box .title{
+            height: 50px;
+            line-height: 50px;
+            text-indent: 1em;
+            font-size: 18px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+        }
+        .head .seminar-title{
+            line-height: 1;
+            padding-top: 18px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+        }
+        .head .box .class-desc{
+            width: 250px;
+            height: 25px;
+            left:10px;
+            bottom:10px;
+            position: absolute;
+        }
+        .head .box .class-desc span{
+            display: inline-block;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #fff;
+            margin-right: 8px;
+            padding: 0 12px;
+            background: #04B75E;
+            border-top-right-radius:4px;
+            border-bottom-left-radius:4px;
+        }
+        .head .box .class-desc span.yellow{
+            background: #f7b235;
+        }
+
+        .center-f{
+            background: #f0f0f0;
+        }
+        .center{
+            margin-bottom: 10px;
+            width: 1000px;
+            margin-left:auto;
+            margin-right:auto;
+            padding-top: 35px;
+        }
+        .center .title{
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            color:#333;
+        }
+        .center .core{
+
+        }
+        /*.center .core .video-zone .box{*/
+            /*cursor: pointer;*/
+        /*}*/
+        /*.center .core .video-zone{*/
+            /*padding: 30px 10px;*/
+            /*border-top:1px solid #e5e5e5;*/
+        /*}*/
+        /*.center .core .video-zone .video-box{*/
+            /*height: 180px;*/
+            /*border:1px solid #333;*/
+            /*background: #ccc;*/
+            /*position: relative;*/
+        /*}*/
+        /*.center .core .video-zone .video-box .title{*/
+            /*height: 30px;*/
+            /*line-height: 30px;*/
+            /*background: #fff;*/
+            /*width: 100%;*/
+            /*text-indent: 1em;*/
+            /*font-size: 12px;*/
+            /*font-style: italic;*/
+            /*position: absolute;*/
+            /*bottom: 0;*/
+            /*left: 0;*/
+            /*font-weight: 400;*/
+        /*}*/
+        /*.center .core .video-zone .video-box .type{*/
+            /*top: 5px;*/
+            /*left: 5px;*/
+            /*position: absolute;*/
+            /*border-radius: 6px;*/
+            /*width: 60px;*/
+            /*height: 20px;*/
+            /*background: rgb(22,155,213);*/
+            /*line-height: 20px;*/
+            /*text-align: center;*/
+            /*font-size: 12px;*/
+            /*color:#fff;*/
+        /*}*/
+        /*.center .core .video-zone .word-box{*/
+            /*line-height: 2;*/
+        /*}*/
+        /*.center .core .video-zone .word-box .name{*/
+            /*font-size: 16px;*/
+            /*font-weight: 700;*/
+        /*}*/
+        /*.center .core .video-zone .word-box .desc{*/
+            /*font-size: 14px;*/
+            /*color: #999;*/
+        /*}*/
+
+        .video-zone{
+            padding-top: 7px;
+        }
+        .center .title-more{
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: #04B75E;
+            cursor: pointer;
+            padding: 50px 0 0;
+        }
+        .center .title .more-sign{
+            width: 8px;
+            height: 12px;
+            display: inline-block;
+            background: url("../../../../../static/images/more_sign.png")no-repeat;
+            vertical-align: 1px;
+            margin-left: 5px;
+        }
+        .center .activity-box{
+            padding: 20px 0 30px;
+        }
+        .center .top-title{
+            line-height: 1;
+            font-weight: 700;
+            font-size: 18px;
+            color: #333;
+            padding: 50px 0 0;
+        }
+        .center .activity-pic-box{
+            height: 180px;
+            width: 320px;
+            position: relative;
+            background: #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .center .activity-pic-box img{
+            width: 100%;
+            height: 100%;
+        }
+        .center .activity-pic-box .title{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+            height: 55px;
+            line-height: 55px;
+            width: 100%;
+            text-indent: 1em;
+            font-size: 14px;
+            font-style: italic;
+            color: #999;
+        }
+        .center .activity-pic-box .class-desc{
+            width: 250px;
+            height: 25px;
+            left:10px;
+            bottom:10px;
+            position: absolute;
+        }
+        .center .activity-pic-box .class-desc span{
+            display: inline-block;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #fff;
+            margin-right: 8px;
+            padding: 0 12px;
+            background: #04B75E;
+            border-top-right-radius:4px;
+            border-bottom-left-radius:4px;
+        }
+        .center .activity-pic-box .class-desc span.yellow{
+            background: #f7b235;
+        }
+        .center .activity-pic-box .time-desc{
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #fff;
+            height: 25px;
+            right:10px;
+            bottom:10px;
+            position: absolute;
+        }
+        .center .activity-word-box{
+            line-height: 1;
+        }
+        .center .activity-word-box .name{
+            font-size: 16px;
+            font-weight: 400;
+            padding: 18px 0 8px;
+            cursor: pointer;
+        }
+        .center .activity-word-box .desc{
+            font-size: 12px;
+            color: #999;
+        }
+        .center .activity-word-box .desc span{
+            color: #36ae36;
+        }
+        .center .activity-word-box .desc span.live{
+            color: #f7b235;
+        }
+
+        .bottom{
+            height: 50px;
+            line-height: 50px;
+            background: #f0f0f0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .nav-f{
+            width: 102%;
+            left: -1%;
+            position: relative;
+            z-index: 2;
+        }
+        .nav-f-line{
+            position: absolute;
+            border-bottom: 1px solid #d9d9d9;
+            z-index: 1;
+            bottom: 12.6px;
+            left: 26px;
+            width: 96.5%;
+        }
+
+        .layui-nav-bar{
+            display: none;
+        }
+        .layui-nav .layui-this{
+            font-weight: 700;
+        }
+        .layui-nav .layui-this:after{
+            bottom: 11px;
+            width: 25px;
+            border-radius: 10px;
+            left: 27%;
+            z-index: 2;
+        }
+        .layui-nav .layui-nav-item a{
+            padding:0 12px;
+        }
+
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use(['element', 'form'], function(){
+                var element = layui.element;
+                var form = layui.form;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 60;
+        };
+
+        function jump(str) {
+            layui.sessionData('zkyykt_jump_page', {
+                key:'home_inner'
+                ,value:str
+            });
+            window.parent.parent.open("http://localhost:63342/lessonCloud/src/main/webapp/WEB-INF/pages/front/home_inner.html")
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="title layui-clear">
+            <h5 class="float-left">精选专题</h5>
+            <h5 class="float-right" >更多 <span class="more-sign"></span></h5><!-- onclick="jump('scienceVideo_allSeminar')" -->
+        </div>
+        <div class="layui-row layui-col-space20">
+            <div class="layui-col-md6 head-box">
+                <a href="javascript:void(0)" > <!-- onclick="jump('scienceVideo_seminarDetail')"-->
+                    <div class="box">
+                        <img src="../../../../../static/images/static/02/1.png" alt="">
+                        <!--<div class="title">专题标题</div>-->
+                    </div>
+                </a>
+                <div class="seminar-title">
+                    神奇干细胞 专辑
+                </div>
+            </div>
+            <div class="layui-col-md6">
+                <a href="javascript:void(0)" >
+                    <div class="box">
+                        <img src="../../../../../static/images/static/02/2.png" alt="">
+                        <!--<div class="title">专题标题</div>-->
+                        <div class="class-desc">
+                            <span>SELF · Kids</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="seminar-title">
+                    吹口气能让量子卫星跑5万公里？
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-f">
+        <div class="center">
+            <div class="title">科学视频</div>
+            <div class="core">
+                <div class="nav-f">
+                    <div class="nav-f-line"></div>
+                    <ul class="layui-nav layui-nav-white" lay-filter="">
+                        <li class="layui-nav-item layui-this"><a href="javascript:void(0)">全部</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">SELF·Kids</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">科学</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">技术</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">工程</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">艺术</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">数学</a></li>
+                        <li class="layui-nav-item"><a href="javascript:void(0)">其他</a></li>
+                    </ul>
+                    <div class="select">
+                        <!--<div class="layui-form">-->
+                        <!--<div class="layui-form-item">-->
+                        <!--<div class="layui-input-block">-->
+                        <!--<select name="interest" lay-filter="aihao">-->
+                        <!--<option value="0">写作</option>-->
+                        <!--<option value="1">阅读</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        播放最多
+                        <span class="more-select"></span>
+                    </div>
+                </div>
+                <div class="video-zone">
+                    <div class="layui-row layui-col-space20">
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/333.png" alt="">
+                                    <div class="class-desc">
+                                        <span>科学</span>
+                                    </div>
+                                    <div class="time-desc">2:00</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">量子反常霍尔效应</h6>
+                                    <p class="desc">你相信电子不受外界影响能够稳定运动吗？</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/444.png" alt="">
+                                    <div class="class-desc">
+                                        <span>技术</span>
+                                    </div>
+                                    <div class="time-desc">1:36</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">超导</h6>
+                                    <p class="desc">超导材料要在抄底温度下才能实现电阻为零。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/555.png" alt="">
+                                    <div class="class-desc">
+                                        <span>科学</span>
+                                    </div>
+                                    <div class="time-desc">5:32</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">植物的生存智慧</h6>
+                                    <p class="desc">在丰富多彩的大自然中，任何动植物都有自己的生存法则。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space20">
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/666.png" alt="">
+                                    <div class="class-desc">
+                                        <span>科学</span>
+                                    </div>
+                                    <div class="time-desc">1:26</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">揭秘幽灵粒子</h6>
+                                    <p class="desc">让手机一年只充一次电可能不再是梦！</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/777.png" alt="">
+                                    <div class="class-desc">
+                                        <span>科学</span>
+                                    </div>
+                                    <div class="time-desc">8:20</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">时间精灵</h6>
+                                    <p class="desc">我国的北京时间由谁来守护？</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/888.png" alt="">
+                                    <div class="class-desc">
+                                        <span>工程</span>
+                                    </div>
+                                    <div class="time-desc">1:51</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">上帝的剪刀</h6>
+                                    <p class="desc">基因中暗藏危机，一旦基因突变...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space20">
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/999.png" alt="">
+                                    <div class="class-desc">
+                                        <span>科学</span>
+                                    </div>
+                                    <div class="time-desc">20:12</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">神奇干细胞</h6>
+                                    <p class="desc">这是一个人类发掘自身潜力的故事</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/101010.png" alt="">
+                                    <div class="class-desc">
+                                        <span>工程</span>
+                                    </div>
+                                    <div class="time-desc">6:07</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">走向深海</h6>
+                                    <p class="desc">地球表面百分之七十一被海洋覆盖，但我们对它却知之甚少。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4 ">
+                            <div class="activity-box">
+                                <div class="activity-pic-box">
+                                    <img src="../../../../../static/images/static/02/111111.png" alt="">
+                                    <div class="class-desc">
+                                        <span>工程</span>
+                                    </div>
+                                    <div class="time-desc">6:24</div>
+                                </div>
+                                <div class="activity-word-box">
+                                    <h6 class="name">最后的萌芽</h6>
+                                    <p class="desc">一粒种子，也许会成为一株草，也许会成为一棵树。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <!--<a href="javascript:void(0)">加载更多</a>-->
+    </div>
+</div>
+</body>
+</html>

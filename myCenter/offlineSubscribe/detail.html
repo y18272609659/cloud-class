@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        /*.head{*/
+        /*height: 80px;*/
+        /*padding: 20px 50px;*/
+        /*background: #fff;*/
+        /*margin-bottom: 10px;*/
+        /*}*/
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        .layui-btn-primary,.layui-btn-primary:hover{
+            color: #04B75E;
+            border:1px solid #04B75E;
+        }
+
+        .head{
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .head .title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 16px;
+            text-indent: 1em;
+            border-bottom: 1px solid #e5e5e5;
+            font-weight: 700;
+        }
+        .head .core{
+            padding: 20px;
+        }
+        .head .core .word{
+            line-height: 2;
+        }
+        .head .core .word .name{
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .head .core .word .desc{
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .data-box{
+            padding: 20px;
+            background: #fff;
+            margin:0 0 10px;
+        }
+        .data-box .title{
+            font-size: 16px;
+            font-weight: 700;
+            border:0;
+            line-height: 1;
+            text-indent: 0;
+        }
+        .data-box .word-zone{
+            line-height: 2.5;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .data-box .self-zone{
+            margin:30px 0 10px;
+            padding: 10px 10px 10px 60px;
+            width: 300px;
+            background: #e5e5e5;
+            position: relative;
+            cursor: pointer;
+        }
+        .data-box .self-zone .logo{
+            position: absolute;
+            top:10px;
+            left:10px;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+        }
+        .data-box .self-zone .title{
+            font-size: 15px;
+            line-height: 1.2;
+            font-weight: 400;
+            padding: 5px 0 0;
+            height: auto;
+            text-indent: 0;
+        }
+        .data-box .self-zone .desc{
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+    </style>
+    <script>
+        var route_str = 'offlineSubscribe_detail'
+        layui.sessionData('zkyykt_jump_page', {
+            key:'my_center'
+            ,value:route_str
+        });
+
+        $(function(){
+            layui.use(['element', 'form'], function(){
+                var element = layui.element;
+                var form = layui.form;
+
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextRightIframe");
+            var height = document.getElementById("content").offsetHeight;
+            var h = window.parent.document.getElementById("content").offsetHeight;
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+
+            if (h >= height) {
+                b_iframe.height = h + 30;
+                a_iframe.height = h + 100;
+            } else {
+                b_iframe.height = height + 30;
+                a_iframe.height = height + 100;
+            }
+
+            // b_iframe.height = height + 30;
+
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="title">
+            <a href="./index.html" target="contextRightIframe">
+                <img src="../../../../../static/images/back.png" alt="">
+            </a>
+            预约详情
+        </div>
+        <!--<div class="core">-->
+            <!--<div class="word">-->
+                <!--<h6 class="name">等待通过中...</h6>-->
+                <!--<p class="desc">已提交申请，正在等待举办方接受申请。</p>-->
+            <!--</div>-->
+            <!--<div class="layui-form">-->
+                <!--<div class="layui-form-item" style="margin-bottom: 0;padding-top: 11px">-->
+                    <!--<a href="./cancel.html" target="contextRightIframe">-->
+                        <!--<button class="layui-btn layui-btn-primary" lay-submit lay-filter="search">取消申请（点击弹窗确定）</button>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="data-box db-1">
+            <h6 class="title">提交信息</h6>
+            <div class="word-zone">
+                <div class="layui-row">
+                    <div class="layui-col-sm2">申请时间</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-sm2">名称</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-sm2">举办时间</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-sm2">需求描述</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-sm2">提供保证</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-sm2">名称</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-sm2">联系电话</div>
+                    <div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>
+                </div>
+            </div>
+            <div class="self-zone">
+                <div class="logo"></div>
+                <p class="title">SELF名称XXXXXXX</p>
+                <p class="desc">点击查看详情</p>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="data-box db-2">-->
+        <!--<h6 class="title">申请人信息</h6>-->
+        <!--<div class="word-zone">-->
+            <!--<div class="layui-row">-->
+                <!--<div class="layui-col-sm2">名称</div>-->
+                <!--<div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>-->
+            <!--</div>-->
+            <!--<div class="layui-row">-->
+                <!--<div class="layui-col-sm2">联系电话</div>-->
+                <!--<div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>-->
+            <!--</div>-->
+            <!--<div class="layui-row">-->
+                <!--<div class="layui-col-sm2">所在学校</div>-->
+                <!--<div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="data-box db-3">-->
+        <!--<h6 class="title">其他信息</h6>-->
+        <!--<div class="word-zone">-->
+            <!--<div class="layui-row">-->
+                <!--<div class="layui-col-sm2">申请单号</div>-->
+                <!--<div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>-->
+            <!--</div>-->
+            <!--<div class="layui-row">-->
+                <!--<div class="layui-col-sm2">其他信息</div>-->
+                <!--<div class="layui-col-sm10">XXXXXXXXXXXXXXXXXX</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+</body>
+</html>

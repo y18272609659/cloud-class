@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        /*.head{*/
+        /*height: 80px;*/
+        /*padding: 20px 50px;*/
+        /*background: #fff;*/
+        /*margin-bottom: 10px;*/
+        /*}*/
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        .layui-btn-primary,.layui-btn-primary:hover{
+            color: #04B75E;
+            border:1px solid #04B75E;
+        }
+
+        .head{
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 0 20px 20px;
+        }
+        .head .title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use(['element', 'form'], function(){
+                var element = layui.element;
+                var form = layui.form;
+
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextRightIframe");
+            var height = document.getElementById("content").offsetHeight;
+            var h = window.parent.document.getElementById("content").offsetHeight;
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+
+            if (h >= height) {
+                b_iframe.height = h + 30;
+                a_iframe.height = h + 100;
+            } else {
+                b_iframe.height = height + 30;
+                a_iframe.height = height + 100;
+            }
+
+            // b_iframe.height = height + 30;
+
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <a href="./cancelSubmit.html" target="contextRightIframe">
+        <div class="title">
+            提交取消原因
+        </div>
+        </a>
+        <div class="core">
+            <div class="layui-form">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">原因描述</label>
+                    <div class="layui-input-block">
+                        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系人</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">电话邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="reason">立即提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

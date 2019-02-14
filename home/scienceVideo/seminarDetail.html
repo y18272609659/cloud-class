@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .layui-nav{
+            padding:0;
+        }
+        .layui-nav-white{
+            color:#333;
+            background: #fff;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+        }
+        .nav-f{
+            position: relative;
+        }
+        .nav-f .select{
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            right: 0;
+            top:0;
+        }
+        .nav-f .select .layui-form-item{
+            margin: 0;
+            padding: 11px 20px 0 0;
+        }
+
+        .head{
+            background: #fff;
+        }
+        .head .banner{
+            background: #ccc;
+            height: 400px;
+        }
+        .head .core{
+            padding: 30px 20px 30px;
+        }
+        .head .core .word-zone{
+            padding-bottom: 60px;
+        }
+        .head .core .word-zone .name{
+            font-size: 32px;
+            padding-bottom: 15px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .head .core .word-zone .desc{
+            font-size: 12px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        .head .core .video-zone .video-box{
+            height: 180px;
+            border:1px solid #333;
+            background: #ccc;
+            position: relative;
+        }
+        .head .core .video-zone .video-box .title{
+            height: 30px;
+            line-height: 30px;
+            background: #fff;
+            width: 100%;
+            text-indent: 1em;
+            font-size: 12px;
+            font-style: italic;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-weight: 400;
+        }
+        .head .core .video-zone .video-box .type{
+            top: 5px;
+            left: 5px;
+            position: absolute;
+            border-radius: 6px;
+            width: 60px;
+            height: 20px;
+            background: rgb(22,155,213);
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+            color:#fff;
+        }
+        .head .core .video-zone .word-box{
+            line-height: 2;
+        }
+        .head .core .video-zone .word-box .name{
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .head .core .video-zone .word-box .desc{
+            font-size: 14px;
+            color: #999;
+        }
+
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use(['element', 'form'], function(){
+                var element = layui.element;
+                var form = layui.form;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            // var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            // b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 100;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="banner"></div>
+        <div class="core">
+            <div class="word-zone">
+                <h3 class="name">XXXXXX专题</h3>
+                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+            </div>
+            <div class="video-zone">
+                <div class="layui-row layui-col-space10">
+                    <div class="layui-col-md4">
+                        <div class="box">
+                            <div class="video-box">
+                                <div class="title">6:05</div>
+                                <div class="type">物理</div>
+                            </div>
+                            <div class="word-box">
+                                <h6 class="name">XXXX科学视频</h6>
+                                <p class="desc">一句话简介，不超过十二个字</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="box">
+                            <div class="video-box">
+                                <div class="title">6:05</div>
+                                <div class="type">物理</div>
+                            </div>
+                            <div class="word-box">
+                                <h6 class="name">XXXX科学视频</h6>
+                                <p class="desc">一句话简介，不超过十二个字</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="box">
+                            <div class="video-box">
+                                <div class="title">6:05</div>
+                                <div class="type">物理</div>
+                            </div>
+                            <div class="word-box">
+                                <h6 class="name">XXXX科学视频</h6>
+                                <p class="desc">一句话简介，不超过十二个字</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

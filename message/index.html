@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+    <script src="../../../../static/layui/layui.js"></script>
+    <script src="../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .head .core{
+            background: #fff;
+            padding: 20px;
+            margin:0 0 10px;
+        }
+        .head .title{
+            font-size: 16px;
+            font-weight: 700;
+            padding-bottom: 10px;
+        }
+        .head .word{
+            line-height: 1.5;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+    </style>
+    <script>
+
+        $(function(){
+            // layui.use(['element'], function(){
+            //     var element = layui.element;
+            // });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="core">
+            <h6 class="title">系统消息</h6>
+            <p class="word">消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</p>
+        </div>
+        <div class="core">
+            <h6 class="title">系统消息</h6>
+            <p class="word">消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

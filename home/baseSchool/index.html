@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        .head{
+            margin: 0 0 10px;
+            padding:45px 40px 25px;
+            background: #fff;
+            line-height: 1.5;
+        }
+        .head h2{
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .head p{
+            font-size: 12px;
+        }
+        .head .button-zone{
+            padding-top: 30px;
+            text-align: left;
+        }
+        .head .button-zone .button{
+            display: inline-block;
+            line-height: 40px;
+            text-align: center;
+            font-size: 14px;
+            height: 40px;
+            width: 120px;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            background: #04B75E;
+        }
+        .head .layui-col-md4{
+
+        }
+        .head .layui-col-md4 img{
+            width: 100%;
+            height: 100%;
+            background: blue;
+        }
+        .activity{
+            padding: 0 10px 10px;
+            background: #fff;
+            margin:0 0 10px;
+        }
+        .activity .top-title{
+            height: 50px;
+            line-height: 50px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .activity .activity-pic-box{
+            width: 185px;
+            height: 185px;
+            border:1px solid #333;
+            position: relative;
+            background: #ccc;
+        }
+        .activity .activity-pic-box .title{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+            height: 55px;
+            line-height: 55px;
+            width: 100%;
+            text-indent: 1em;
+            font-size: 14px;
+            font-style: italic;
+            color: #999;
+        }
+        .activity .activity-word-box{
+            line-height: 2;
+        }
+        .activity .activity-word-box .name{
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .activity .activity-word-box .desc{
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+    <script>
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 100;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="layui-row">
+            <div class="layui-col-md8">
+                <h2>什么是基地学校？</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.<br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+                </p>
+                <div class="button-zone">
+                    <span class="button">申请基地学校</span>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="activity">
+        <div class="top-title">所有学校</div>
+        <div class="layui-row layui-col-space10">
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space10">
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+            <div class="layui-col-md2">
+                <div class="activity-pic-box">
+
+                </div>
+                <div class="activity-word-box">
+                    <h6 class="name">XXXXXXXXXXX学校</h6>
+                    <p class="desc">XXXXXXXXXXX学校</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

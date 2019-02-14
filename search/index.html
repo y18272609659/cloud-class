@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+    <script src="../../../../static/layui/layui.js"></script>
+    <script src="../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        .head{
+            height: 80px;
+            padding: 20px 50px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .layui-nav{
+            padding:0;
+        }
+        .layui-nav-white{
+            color:#333;
+            background: #fff;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+        }
+        .nav-f{
+            position: relative;
+        }
+
+        .activity{
+            padding: 0;
+            background: #fff;
+            margin:0 0 10px;
+        }
+        .activity .core{
+            padding: 10px;
+            border:1px solid #e5e5e5;
+        }
+        .activity .top-title{
+            height: 50px;
+            line-height: 50px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .activity .activity-pic-box{
+
+            height: 87px;
+            border:1px solid #333;
+            position: relative;
+            background: #ccc;
+        }
+        .activity .activity-pic-box .title{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+            height: 30px;
+            line-height: 30px;
+            width: 100%;
+            text-indent: 1em;
+            font-size: 14px;
+            font-style: italic;
+            color: #999;
+        }
+        .activity .activity-word-box{
+            line-height: 2;
+        }
+        .activity .activity-word-box .name{
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .activity .activity-word-box .desc{
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+    <script>
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="activity">
+        <div class="nav-f">
+            <ul class="layui-nav layui-nav-white" lay-filter="">
+                <li class="layui-nav-item layui-this"><a href="">直播</a></li>
+                <li class="layui-nav-item"><a href="">活动</a></li>
+                <li class="layui-nav-item"><a href="">科学家</a></li>
+                <li class="layui-nav-item"><a href="">证书</a></li>
+            </ul>
+        </div>
+        <div class="core">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md2">
+                    <div class="activity-pic-box">
+                        <div class="title">科学家进校园</div>
+                    </div>
+                    <div class="activity-word-box">
+                        <h6 class="name">标题XXXXXXXXXXX</h6>
+                        <p class="desc">科学家进校园</p>
+                    </div>
+                </div>
+                <div class="layui-col-md2">
+                    <div class="activity-pic-box">
+                        <div class="title">科学家进校园</div>
+                    </div>
+                    <div class="activity-word-box">
+                        <h6 class="name">标题XXXXXXXXXXX</h6>
+                        <p class="desc">科学家进校园</p>
+                    </div>
+                </div>
+                <div class="layui-col-md2">
+                    <div class="activity-pic-box">
+                        <div class="title">科学家进校园</div>
+                    </div>
+                    <div class="activity-word-box">
+                        <h6 class="name">标题XXXXXXXXXXX</h6>
+                        <p class="desc">科学家进校园</p>
+                    </div>
+                </div>
+                <div class="layui-col-md2">
+                    <div class="activity-pic-box">
+                        <div class="title">科学家进校园</div>
+                    </div>
+                    <div class="activity-word-box">
+                        <h6 class="name">标题XXXXXXXXXXX</h6>
+                        <p class="desc">科学家进校园</p>
+                    </div>
+                </div>
+                <div class="layui-col-md2">
+                    <div class="activity-pic-box">
+                        <div class="title">科学家进校园</div>
+                    </div>
+                    <div class="activity-word-box">
+                        <h6 class="name">标题XXXXXXXXXXX</h6>
+                        <p class="desc">科学家进校园</p>
+                    </div>
+                </div>
+                <div class="layui-col-md2">
+                    <div class="activity-pic-box">
+                        <div class="title">科学家进校园</div>
+                    </div>
+                    <div class="activity-word-box">
+                        <h6 class="name">标题XXXXXXXXXXX</h6>
+                        <p class="desc">科学家进校园</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

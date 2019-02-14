@@ -1,0 +1,128 @@
+<html>
+<head>
+    <title>登录</title>
+    <link rel="stylesheet" href="../../../static/layui/css/layui.css">
+    <script src="../../../static/layui/layui.js"></script>
+    <script src="../../../static/js/front/Browser.js"></script>
+    <script src="../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+        .login_form {
+            /*width: 595px;*/
+            padding: 20px 80px;
+        }
+
+        .login_btn_group {
+            position: relative;
+            text-align: right;
+        }
+
+        .login_btn_group a {
+            color: #04B75E;
+            text-align: right;
+            display: block;
+            height: 30px;
+        }
+
+        .login_btn {
+            position: absolute;
+            left: 0px;
+            border-width: 0px;
+            width: 205px;
+            height: 40px;
+            background-color: rgba(4, 183, 94, 1);
+            border-radius: 5px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            color: white;
+            box-shadow: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .sign_in_btn {
+            position: absolute;
+            right: 0px;
+            width: 205px;
+            height: 40px;
+            border-radius: 5px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            font-size: 14px;
+        }
+
+        #code{
+            width: 76%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        #code_img{
+            width: 92px;
+            height:38px;
+            vertical-align: top;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+        var answer = ""
+
+        $(function(){
+            get()
+        })
+
+        function get(){
+
+        }
+
+        layui.use(['form'], function () {
+            var form = layui.form;
+
+            form.on('submit(login)', function (data) {
+                var index = window.parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                parent.layer.close(index);
+                window.top.loginComplete();
+            })
+        });
+
+        function retrieve_password() {
+            var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+            parent.layer.close(index);
+        }
+
+        function signUser() {
+            window.parent.document.getElementById("a_school_sign_in").click();
+
+            var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+            parent.layer.close(index);
+        }
+
+        // new
+        function changeImg(){
+            get()
+        }
+
+    </script>
+</head>
+<body>
+<div class="login_form">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <input type="text" name="email"  placeholder="请输入邮箱" autocomplete="off"
+                   class="layui-input" value="">
+        </div>
+        <div class="layui-form-item">
+            <input type="password" name="password"  placeholder="请输入密码" autocomplete="off"
+                   class="layui-input" value="">
+        </div>
+        <div class="login_btn_group">
+            <button class="login_btn" style="" lay-submit lay-filter="login">登录
+            </button>
+            <button class="layui-btn layui-btn-primary sign_in_btn" onclick="">注册</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

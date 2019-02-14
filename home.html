@@ -1,0 +1,323 @@
+
+<html>
+<head>
+    <title>示范基地网站系统管理后台</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../static/layui/css/layui.css">
+    <script src="../../../static/layui/layui.js"></script>
+    <script src="../../../static/js/front/Browser.js"></script>
+    <script src="../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            layui.use(['element', 'layer'], function(){
+                var element = layui.element;
+                window.layer = layui.layer;
+            });
+
+            // setContentPageHeight()
+        })
+
+        // function setContentPageHeight() {
+        //     var b_iframe = window.parent.document.getElementById("contextIframe");
+        //     var height = document.getElementById("content").offsetHeight;
+        //     b_iframe.height = height + 30;
+        // };
+
+        function jumpMyCenter () {
+            layui.sessionData('zkyykt_jump_page', {
+                key: 'my_center'
+                ,remove: true
+            })
+
+            document.getElementById('jump_my_center').click()
+        }
+
+        function loadFrame(obj){
+            var url = obj.contentWindow.location.href;
+
+            if(url.indexOf("home/index") === -1) {
+                window.parent.$("#f").hide()
+            }
+        }
+
+        function frontLogin() {
+            layer.open({
+                type: 2,
+                title: '登录',
+                offset: '200px',
+                area: ['603px', '330px'],
+                content: './frontLogin.html'
+            });
+        }
+
+        function loginComplete(){
+            window.location.href = "./home_logged.html"
+        }
+    </script>
+    <style type="text/css">
+        body {
+            /*background-color: rgba(228, 228, 228, 1);*/
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .content {
+
+        }
+
+        #nav {
+            margin: 0px auto;
+            width: 1000px;
+            min-width: 1000px;
+            line-height: 80px;
+        }
+
+        #iframe_div {
+            margin: 0px auto;
+            width: 100%;
+            /*min-width: 1200px;*/
+            min-height: 100vh;
+        }
+
+        #nav div span {
+            color: rgb(51, 51, 51);
+            /*margin-left: 10px;*/
+            font-weight: 700;
+            font-style: normal;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #contextIframe {
+            /*min-height: 450px;*/
+        }
+
+        h1{
+            font-size: 20px;
+            padding-left: 50px;
+            font-weight: 700;
+        }
+        #nav .logo{
+            position: absolute;
+            top:10px;
+            left:0;
+            width: 175px;
+            height: 58px;
+            display: block;
+        }
+        #nav .logo img{
+            width: 100%;
+            height: 100%;
+        }
+        #nav h1{
+            width: 175px;
+            height: 58px;
+        }
+        #nav .search-zone{
+            text-align: right;
+        }
+        #nav .layui-input{
+            color: #e6e6e6;
+            height: 32px;
+            background: #4ab64a;
+            font-size: 12px;
+            border-width: 0;
+        }
+        #nav input::-ms-input-placeholder{
+            color: #e6e6e6;
+        }
+        #nav input::-webkit-input-placeholder{
+            color: #e6e6e6;
+        }
+        #nav button{
+            height: 32px;
+            line-height: 32px;
+            padding: 0 20px;
+            position: relative;
+            background: #73c673 url('../../../static/images/search.png')no-repeat center center;
+            left: -4px;
+        }
+
+        .layui-nav-white{
+            color:#333;
+            background: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 18px;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+        }
+        .nav-f{
+            background: #36ae36;
+            height:80px;
+        }
+
+        #nav .right-nav{
+            text-align: right;
+            height: 80px;
+        }
+        #nav .right-nav .button{
+            display: inline-block;
+            margin-left: 10px;
+            width: 60px;
+            height: 30px;
+            background: #ffda2d;
+            color: #333;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 25px;
+        }
+        #nav .right-nav .button.white{
+            line-height: 28px;
+            height: 28px;
+            border:1px solid #fff;
+            background: transparent;
+            color: #fff;
+        }
+
+        .bottom-border{
+            height: 5px;
+            background: linear-gradient(to right, #f7b235 , #36ae36);
+        }
+        #bottom{
+            height: 120px;
+            background: #4a4a4f;
+        }
+        .bottom-core-word{
+            padding-top: 30px;
+            line-height: 2;
+            color:#f0f0f0;
+            font-size:12px;
+            font-weight:400;
+            text-align: center;
+        }
+
+        /**/
+        .fixed-bottom{
+            width:100%;
+            position: fixed;
+            height: 80px;
+            background: #fff;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0px -3px 7px #ddd;
+        }
+        .fixed-bottom .box{
+            width: 1000px;
+            margin:0 auto;
+            height: 80px;
+        }
+        .fixed-bottom .box:after{
+            display: inline-block;
+            font-size: 0;
+            content: " ";
+            height: 100%;
+            vertical-align: middle;
+        }
+        .fixed-bottom .box .button{
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            border-radius: 6px;
+            background: linear-gradient(to right, #f7b235 , #36ae36);
+            text-align: center;
+            vertical-align: middle;
+            line-height: 40px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="nav-f">
+        <div id="nav">
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    <h1 class="logo-block"></h1>
+                    <span class="logo">
+                        <img src="../../../static/images/logo.png" alt="">
+                    </span>
+                </div>
+                <div class="layui-col-md3 search-zone">
+                    <div class="layui-form">
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" required lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">
+                        </div>
+                        <button class="layui-btn" lay-submit lay-filter="search"></button>
+                        <!--<div class="layui-input-inline">-->
+                        <!--<input type="text" name="title" required  lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">-->
+                        <!--</div>-->
+                        <!--<button class="layui-btn" lay-submit lay-filter="search">搜索</button>-->
+                    </div>
+                </div>
+                <!--<div class="layui-col-md5 right-nav" style="text-align: right;font-weight: 700">                    -->
+                <!--<a href="javascript:void(0)" onclick="jumpMyCenter()">控制中心</a><a id="jump_my_center" href="home_center.html" target="_blank" style="display: none"></a>-->
+                <!--<a href="home_my_live.html" target="_blank">123456789@163.com</a>-->
+                <!--<a href="home_message.html" target="_blank" >通知</a>-->
+                <!--<a href="javascript:void(0)" style="padding-right: 10px">退出</a>                    -->
+                <!--</div>-->
+                <!--<div class="layui-col-md5 right-nav layui-breadcrumb" style="" lay-separator="|">-->
+                    <!--<a href="javascript:void(0)"><i class="con"></i>控制中心</a>-->
+                    <!--<a href="javascript:void(0right-nav)"><i class="msg"></i>通知</a>-->
+                    <!--<a href="javascript:void(0)"><i class="person"></i>北京朝阳一小</a>-->
+                    <!--<a href="javascript:void(0)" class="last">退出</a>-->
+                <!--</div>-->
+                <div class="layui-col-md5 right-nav">
+                    <span class="button" onclick="frontLogin()" id="login_button">登录</span>
+                    <span class="button white">注册</span>
+                </div>
+
+            </div>
+
+        </div>
+        <!--<div class="layui-row">-->
+        <!--<div class="layui-col-md12">-->
+        <!--<ul class="layui-nav layui-nav-white" lay-filter="">-->
+        <!--<li class="layui-nav-item layui-this"><a href="">首页</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">基地学校</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">科学视频</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">SELF · Kids</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">科学实践课</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">科学家进校园</a></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<div id="iframe_div">
+    <iframe id="contextIframe" name="contextIframe" width="100%" scrolling="no" frameborder="0" src="./home/index_tourist.html" onload="loadFrame(this)"
+    >
+    </iframe>
+</div>
+<div class="bottom-border"></div>
+<div id="bottom">
+    <div class="bottom-core-word">
+        版权所有：中国科普博览&emsp;E-mail:webmaster@kepu.net.cn&emsp;广播电视节目制作经营许可证（京）字第02550号
+        <br>
+        京ICP备09112257号&emsp;京公网安备11010808217084
+    </div>
+</div>
+</div>
+
+
+
+</body>
+</html>

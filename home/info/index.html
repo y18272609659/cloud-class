@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .head{
+            height: 100px;
+            background: #fff;
+            /*margin-top: 10px;*/
+            background: url('../../../../../static/images/front-home-info-head-bg.png')no-repeat;
+            color: #fff;
+            font-size: 14px;
+            overflow: hidden;
+            width: 1000px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .head .head-core{
+            padding: 20px;
+        }
+        .head .logo{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border:1px solid #333;
+            overflow: hidden;
+        }
+        .head .logo img{
+            width: 100%;
+            height: 100%;
+        }
+        .head .title{
+            line-height: 1.4;
+            padding: 9px 56px 0 0;
+        }
+        .head .title.number-1{
+            padding: 9px 52px 0 0;
+        }
+        .head .title.number-2{
+            padding: 9px 36px 0 0;
+        }
+        .head .title.number-3{
+            padding: 9px 0 0 0;
+        }
+        .head .title .name{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .head .title .school{
+
+        }
+        .head .title .more{
+            font-size: 14px;
+            color: #04B75E;
+        }
+        .head .look-1{
+            padding: 15px 40px 15px;
+        }
+        .head .look-1 .look-logo{
+            margin-right: 5px;
+            border:1px solid #333;
+            width: 50px;
+            height: 50px;
+        }
+        .head .look-1 h6{
+            font-size: 16px;
+            vertical-align: bottom;
+            line-height: 1;
+        }
+        .head .look-1 h6 span{
+            font-size: 28px;
+        }
+        .head .look-1 p {
+            font-size: 14px;
+            color: #999;
+            padding-top: 5px;
+        }
+        .head .layui-col-md1{
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 80px;
+            text-align: right;
+        }
+        .head .layui-col-md1 span{
+            padding-left: 5px;
+            color: #04B75E;
+        }
+
+        .center{
+
+            width: 1000px;
+            margin-left:auto;
+            margin-right:auto;
+            padding: 40px 0 40px;
+        }
+        .center .core .title{
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+
+        }
+        .center .core .title-more{
+            font-size: 14px;
+            line-height: 2;
+            font-weight: 400;
+            color: #04B75E;
+            cursor: pointer;
+        }
+        .center .core .title-more .more-sign{
+            width: 8px;
+            height: 12px;
+            display: inline-block;
+            background: url("../../../../../static/images/more_sign.png")no-repeat;
+            vertical-align: -1px;
+        }
+
+        .center .core .class-box{
+            padding: 0 0 20px;
+            border-bottom: 1px dotted #ccc;
+        }
+        .center .core .class-box .name{
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 400;
+            padding: 20px 0 12px ;
+            color: #333;
+        }
+        .center .core .class-box .name span{
+            color: #36ae36;
+        }
+        .center .core .class-box .name span.yellow{
+            color: #f7b235;
+        }
+        .center .core .class-box .time{
+            font-size: 12px;
+            line-height: 1;
+            font-weight: 400;
+            color: #999;
+        }
+        .center .core .class-box .float-right{
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 400;
+            padding:20px 0 0;
+        }
+        .center .core .class-box .float-right.live{
+            color: #ff6c00;
+        }
+
+        .act-f{
+            background: #f0f0f0;
+        }
+        .act-f.white{
+            background: #fff;
+        }
+        .activity{
+            width: 1000px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .activity .title-more{
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: #04B75E;
+            cursor: pointer;
+            padding: 50px 0 0;
+        }
+        .activity .title-more .more-sign{
+            width: 8px;
+            height: 12px;
+            display: inline-block;
+            background: url("../../../../../static/images/more_sign.png")no-repeat;
+            vertical-align: -1px;
+        }
+        .activity .activity-box{
+            padding: 20px 0 30px;
+        }
+        .activity .top-title{
+            line-height: 1;
+            font-weight: 700;
+            font-size: 18px;
+            color: #333;
+            padding: 50px 0 0;
+        }
+        .activity .activity-pic-box{
+            height: 180px;
+            width: 320px;
+            position: relative;
+            background: #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .activity .activity-pic-box img{
+            width: 100%;
+            height: 100%;
+        }
+        .activity .activity-pic-box .title{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+            height: 55px;
+            line-height: 55px;
+            width: 100%;
+            text-indent: 1em;
+            font-size: 14px;
+            font-style: italic;
+            color: #999;
+        }
+        .activity .activity-pic-box .class-desc{
+            width: 250px;
+            height: 25px;
+            left:10px;
+            bottom:10px;
+            position: absolute;
+        }
+        .activity .activity-pic-box .class-desc span{
+            display: inline-block;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #fff;
+            margin-right: 8px;
+            padding: 0 12px;
+            background: #04B75E;
+            border-top-right-radius:4px;
+            border-bottom-left-radius:4px;
+        }
+        .activity .activity-pic-box .class-desc span.yellow{
+            background: #f7b235;
+        }
+        .activity .activity-pic-box .time-desc{
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #fff;
+            height: 25px;
+            right:10px;
+            bottom:10px;
+            position: absolute;
+        }
+        .activity .activity-word-box{
+            line-height: 1;
+        }
+        .activity .activity-word-box .name{
+            font-size: 16px;
+            font-weight: 400;
+            padding: 18px 0 8px;
+            cursor: pointer;
+        }
+        .activity .activity-word-box .desc{
+            font-size: 12px;
+            color: #999;
+        }
+        .activity .activity-word-box .desc span{
+            color: #36ae36;
+        }
+        .activity .activity-word-box .desc span.live{
+            color: #f7b235;
+        }
+
+        .bottom{
+            width: 1000px;
+            margin-left:auto;
+            margin-right:auto;
+            padding: 50px 40px;
+        }
+        .bottom .core .title{
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+            padding: 0 0 30px;
+        }
+        .bottom .core .title-more{
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 400;
+            color: #04B75E;
+            cursor: pointer;
+        }
+        .bottom .core .title-more .more-sign{
+            width: 8px;
+            height: 12px;
+            display: inline-block;
+            background: url("../../../../../static/images/more_sign.png")no-repeat;
+            vertical-align: -1px;
+        }
+        .bottom .core .jump .box{
+            border-radius: 4px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .bottom .core .jump .box.left{
+            background: url('../../../../../static/images/front-home-bottom-1.png')no-repeat;
+        }
+        .bottom .core .jump .box.right{
+            background: url('../../../../../static/images/front-home-bottom-2.png')no-repeat;
+        }
+
+        .right-nav{
+            text-align: right;
+            height: 80px;
+        }
+        .right-nav a,.right-nav a:hover {
+            line-height:4;
+            color:#fff;
+            font-size:15px;
+            position: relative;
+        }
+        .right-nav a .con,.right-nav a .msg,.right-nav a .person{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            padding: 0 10px 0 0;
+            /*position: absolute;*/
+            /*left: -30px;*/
+            /*top:0;*/
+            background: url('../../../../../static/images/cont.png')no-repeat 0 center;
+            vertical-align: -5px;
+        }
+        .right-nav a .msg{
+            background: url('../../../../../static/images/msg.png')no-repeat 0 center;
+        }
+        .right-nav a .person{
+            background: url('../../../../../static/images/person.png')no-repeat 0 center;
+        }
+        #nav .right-nav span{
+            font-size: 13px;
+            font-weight: 400;
+            color: #5ebe5e;
+            position: relative;
+            top:-1px;
+        }
+    </style>
+    <script>
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 0;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 61.35;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div style="padding: 20px 0 0;">
+        <div class="head">
+            <div class="layui-row head-core">
+                <div class="layui-col-md10 layui-clear">
+                    <div class="float-left title">
+                        <h6 class="name">北京朝阳一小</h6>
+                        <p class="school">chaoyang@163.com</p>
+                    </div>
+                    <div class="float-left title number-1">
+                        <h6 class="name">152</h6>
+                        <p class="school">观看视频数</p>
+                    </div>
+                    <div class="float-left title number-2">
+                        <h6 class="name">12</h6>
+                        <p class="school">预约直播课数</p>
+                    </div>
+                    <div class="float-left title number-3">
+                        <h6 class="name">2</h6>
+                        <p class="school">预约实践课数</p>
+                    </div>
+                </div>
+                <div class="layui-col-md2 right-nav">
+                    <a href="javascript:void(0)"><i class="con"></i>控制中心</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div class="core layui-clear">
+            <div class="title-more float-right">更多 <span class="more-sign"></span></div>
+            <div class="title">本校近期活动</div>
+            <div class="class-box layui-clear">
+                <p class="float-right">审核中</p>
+                <h6 class="name"><span>直播课</span> · 张某某院士关于机器人的直播课</h6>
+                <p class="time">2018-10-05 14:50 预约</p>
+            </div>
+            <div class="class-box layui-clear">
+                <p class="float-right">已通过</p>
+                <h6 class="name"><span class="yellow">实践课</span> · 科学家进校园</h6>
+                <p class="time">2018-10-05 14:50 预约</p>
+            </div>
+            <div class="class-box layui-clear">
+                <p class="float-right live">已通过</p>
+                <h6 class="name"><span>直播课</span> · 张某某院士关于机器人的直播课</h6>
+                <p class="time">2018-10-05 14:50 预约</p>
+            </div>
+            <div class="class-box layui-clear">
+                <p class="float-right">已通过</p>
+                <h6 class="name"><span class="yellow">实践课</span> · 科学家进校园</h6>
+                <p class="time">2018-10-05 14:50 预约</p>
+            </div>
+            <div class="class-box layui-clear">
+                <p class="float-right">已通过</p>
+                <h6 class="name"><span class="yellow">实践课</span> · 科学家进校园</h6>
+                <p class="time">2018-10-05 14:50 预约</p>
+            </div>
+        </div>
+    </div>
+    <div class="act-f">
+        <div class="activity">
+            <div class="title-more float-right">更多 <span class="more-sign"></span></div>
+            <div class="top-title">精选直播课</div>
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/001.png" alt="">
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">SELF×kids系列之自然物语</h6>
+                            <p class="desc"><span class="live">直播中</span>&nbsp;&nbsp;#科学家进校园#</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/002.png" alt="">
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">科学家爷爷讲数学——微积分魔术</h6>
+                            <p class="desc"><span>预约中</span>&nbsp;&nbsp;#SELF · Kids#</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/003.png" alt="">
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">走进光世界</h6>
+                            <p class="desc"><span>预约中</span>&nbsp;&nbsp;#线下科学课#</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="act-f white">
+        <div class="activity">
+            <div class="title-more float-right">更多 <span class="more-sign"></span></div>
+            <div class="top-title">推荐视频</div>
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/004.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">神奇的小蛋</h6>
+                            <p class="desc">只要三分钟，手绘大神带你了解蛋白质！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/005.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">植物的生存智慧</h6>
+                            <p class="desc">在丰富多彩的大自然中,任何动植物都有自己的生存法则。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/006.png" alt="">
+                            <div class="class-desc">
+                                <span>SELF · Kids</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">曹则贤：什么是物理？</h6>
+                            <p class="desc">物理学更深层次的含义。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/007.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">揭秘空间天气</h6>
+                            <p class="desc">一起来探秘，发生在地球以外的空间灾害性事件。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/008.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">时间精灵</h6>
+                            <p class="desc">我国的“北京时间”由谁来守护？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/009.png" alt="">
+                            <div class="class-desc">
+                                <span>SELF · Kids</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">黑洞</h6>
+                            <p class="desc">天文学家是怎么观测到黑洞的？</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height:10px"></div>
+        </div>
+    </div>
+    <!--<div class="act-f white" style="height:10px">-->
+
+    <!--</div>-->
+    <div class="act-f">
+        <div class="bottom">
+            <div class="core layui-clear">
+                <!--<div class="title-more float-right">更多 <span class="more-sign"></span></div>-->
+                <div class="title">更多推荐</div>
+                <div>
+                <div class="layui-row layui-col-space20">
+                    <div class="layui-col-md6 jump">
+                        <div class="box left">求真科学营</div>
+                    </div>
+                    <div class="layui-col-md6 jump">
+                        <div class="box right">校长论坛</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

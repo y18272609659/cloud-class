@@ -1,0 +1,149 @@
+
+<html>
+<head>
+    <title>示范基地网站系统管理后台</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+    <script src="../../../../static/layui/layui.js"></script>
+    <script src="../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+
+            console.log(layui.sessionData('zkyykt_jump_page'))
+            if (!layui.sessionData('zkyykt_jump_page').my_center) {
+                return
+            }
+            // setContentPageHeight()
+            var page = layui.sessionData('zkyykt_jump_page').my_center.split('_')
+            $("#contextRightIframe").attr("src","./" + page[0] + "/" + page[1] + ".html")
+            $("#info").removeClass("layui-this")
+            $("#" + page[0]).addClass("layui-this")
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+        };
+    </script>
+    <style type="text/css">
+        body {
+            background-color: rgba(228, 228, 228, 1);
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .content {
+
+        }
+        .layui-nav-tree{
+            width: 100%;
+        }
+        .left_menu{
+            width: 100%;
+        }
+
+
+        .split_li {
+            height: 10px;
+            background-color: rgba(228, 228, 228, 1);
+        }
+
+        .layui-nav-tree .layui-nav-item a {
+            position: relative;
+            height: 60px;
+            line-height: 60px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            color: #666666;
+            text-align: left;
+            background-color: white;
+        }
+
+        .layui-nav-tree .layui-nav-item a:hover {
+            background-color: white;
+            color: rgba(4, 183, 94, 1);
+            text-decoration: none;
+        }
+
+        .layui-nav-tree .layui-nav-bar {
+            background-color: rgba(4, 183, 94, 1);
+        }
+
+        .layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+            color: rgba(4, 183, 94, 1);
+            background-color: white;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;;
+        }
+
+        .left_menu {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div class="layui-row">
+        <div class="layui-col-md2">
+            <div class="left_menu">
+                <ul class="layui-nav layui-nav-tree" lay-filter="">
+                    <li class="layui-nav-item layui-this" id="info">
+                        <a href="info/index.html" target="contextRightIframe">个人信息</a>
+                    </li>
+                    <li class="split_li"></li>
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="liveSubscribe/index.html" target="contextRightIframe">直播预约</a>-->
+                    <!--</li>-->
+                    <li class="layui-nav-item" id="offlineSubscribe">
+                        <a href="offlineSubscribe/index.html" target="contextRightIframe">已预约</a>
+                    </li>
+                    <li class="layui-nav-item" id="collection">
+                        <a href="collection/index.html" target="contextRightIframe">已收藏视频</a>
+                    </li>
+                    <li class="split_li"></li>
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="rank/index.html" target="contextRightIframe">排行榜</a>-->
+                    <!--</li>-->
+                    <li class="layui-nav-item" id="studentAccount">
+                        <a href="studentAccount/index.html" target="contextRightIframe">学生账户管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-col-md10">
+            <div id="iframe_div" style="padding-left: 20px;">
+                <iframe id="contextRightIframe" name="contextRightIframe" width="100%" scrolling="no" frameborder="0"
+                        src="info/index.html"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

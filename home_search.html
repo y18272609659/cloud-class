@@ -1,0 +1,168 @@
+
+<html>
+<head>
+    <title>示范基地网站系统管理后台</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../static/layui/css/layui.css">
+    <script src="../../../static/layui/layui.js"></script>
+    <script src="../../../static/js/front/Browser.js"></script>
+    <script src="../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+
+            // setContentPageHeight()
+        })
+
+        // function setContentPageHeight() {
+        //     var b_iframe = window.parent.document.getElementById("contextIframe");
+        //     var height = document.getElementById("content").offsetHeight;
+        //     b_iframe.height = height + 30;
+        // };
+
+        function jumpMyCenter () {
+            layui.sessionData('zkyykt_jump_page', {
+                key: 'my_center'
+                ,remove: true
+            })
+
+            document.getElementById('jump_my_center').click()
+        }
+    </script>
+    <style type="text/css">
+        body {
+            background-color: rgba(228, 228, 228, 1);
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .content {
+
+        }
+
+        #nav {
+            margin: 0px auto;
+            width: 1000px;
+            min-width: 1000px;
+
+            line-height: 60px;
+        }
+
+        #iframe_div {
+            margin: 10px auto 0;
+            width: 1000px;
+            /*min-width: 1200px;*/
+        }
+
+        #nav div span {
+            color: rgb(51, 51, 51);
+            /*margin-left: 10px;*/
+            font-weight: 700;
+            font-style: normal;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #contextIframe {
+            /*min-height: 450px;*/
+        }
+
+        h1{
+            font-size: 20px;
+            padding-left: 50px;
+            font-weight: 700;
+        }
+        #nav .logo{
+            position: absolute;
+            top:20px;
+            left:0;
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            display: block;
+        }
+        .layui-nav-white{
+            color:#333;
+            background: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 18px;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+        }
+        .nav-f{
+            background: #fff;
+        }
+
+        .right-nav a {
+            padding: 0 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="nav-f">
+        <div id="nav">
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    <h1>云课堂</h1>
+                    <span class="logo"></span>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form">
+                        <div class="layui-form-item" style="margin-bottom: 0;padding-top: 11px">
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">
+                            </div>
+                            <button class="layui-btn" lay-submit lay-filter="search">搜索</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 right-nav" style="text-align: right;font-weight: 700">
+                    <!--<span class="layui-breadcrumb" lay-separator="&nbsp;">-->
+                    <a href="javascript:void(0)" onclick="jumpMyCenter()">控制中心</a><a id="jump_my_center" href="home_center.html" target="_blank" style="display: none"></a>
+                    <a href="home_my_live.html" target="_blank">123456789@163.com</a>
+                    <a href="home_message.html" target="_blank" >通知</a>
+                    <a href="javascript:void(0)" style="padding-right: 10px">退出</a>
+                    <!--</span>-->
+                </div>
+            </div>
+            <!--<div class="layui-row">-->
+            <!--<div class="layui-col-md12">-->
+            <!--<ul class="layui-nav layui-nav-white" lay-filter="">-->
+            <!--<li class="layui-nav-item layui-this"><a href="">首页</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">基地学校</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">科学视频</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">SELF · Kids</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">科学实践课</a></li>-->
+            <!--<li class="layui-nav-item"><a href="">科学家进校园</a></li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div id="iframe_div">
+        <iframe id="contextIframe" name="contextIframe" width="100%" scrolling="no" frameborder="0" src="./search/index.html"
+        >
+        </iframe>
+    </div>
+</div>
+
+
+
+</body>
+</html>

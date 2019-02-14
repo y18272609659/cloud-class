@@ -1,0 +1,211 @@
+
+<html>
+<head>
+    <title>示范基地网站系统管理后台</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+    <script src="../../../../static/layui/layui.js"></script>
+    <script src="../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+
+                var a = layui.sessionData('zkyykt_jump_page')
+                // console.log(JSON.stringify(a))
+                // console.log(JSON.stringify({}))
+                // console.log((JSON.stringify(a) === JSON.stringify({})))
+                console.log(a)
+                if (!(JSON.stringify(a) === JSON.stringify({})) && a.nav) {
+                    console.log($("#" + a.nav).prev()[0].getElementsByTagName("a")[0])
+                    $("#" + a.nav).prev()[0].getElementsByTagName("a")[0].click()
+                    // navJump(a.page)
+                }
+            });
+
+            // setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 0;
+        };
+
+        function navJump(id){
+            layui.sessionData('zkyykt_jump_page', {
+                key:'nav'
+                ,value:id
+            });
+            // console.log($("#" + id))
+            $("#" + id)[0].click()
+        }
+
+        function loadFrame(obj){
+            var url = obj.contentWindow.location.href;
+            console.log(url);
+            console.log(url.indexOf("scienceTractice/index"))
+            if(url.indexOf("scienceTractice/index") === -1) {
+                console.log(window.parent.$("#f"))
+                window.parent.$("#f").hide()
+                $("#f").hide()
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            /*background-color: rgba(228, 228, 228, 1);*/
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .content {
+
+        }
+
+        #nav {
+            margin: 0px auto;
+            width: 1024px;
+            min-width: 1000px;
+
+            line-height: 60px;
+        }
+
+        #iframe_div {
+            margin: 0px auto;
+            /*width: 1000px;*/
+            min-width: 1000px;
+        }
+
+        #nav div span {
+            color: rgb(51, 51, 51);
+            /*margin-left: 10px;*/
+            font-weight: 700;
+            font-style: normal;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #contextIframe {
+            /*min-height: 450px;*/
+        }
+
+        h1{
+            font-size: 20px;
+            padding-left: 50px;
+            font-weight: 700;
+        }
+        #nav .logo{
+            position: absolute;
+            top:20px;
+            left:0;
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            display: block;
+        }
+        .layui-nav{
+            padding:0;
+        }
+        .layui-nav-white{
+            color:#333;
+            background: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .layui-nav .layui-nav-item a,.layui-nav .layui-nav-item a:hover{
+            color: #333;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a,.layui-nav .layui-nav-item.layui-this a:hover{
+            color:#36ae36;
+            font-weight: 700;
+        }
+        .nav-f{
+            background: #fff;
+            /*border-bottom:1px solid transparent;*/
+            /*border-image: linear-gradient(to right, red , blue);*/
+            position: relative;
+        }
+        .nav-f .nav-border{
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #f7b235 , #36ae36);
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .null{
+            display: none;
+        }
+
+        .layui-nav-bar{
+            display: none;
+        }
+        .layui-nav .layui-this:after{
+            bottom: 11px;
+            width: 10px;
+            border-radius: 10px;
+            left: 43%;
+        }
+        .layui-nav .layui-nav-item a{
+            padding:0 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="nav-f">
+        <div class="nav-border"></div>
+        <div id="nav">
+            <div class="layui-row">
+                <div class="layui-col-md12">
+                    <ul class="layui-nav layui-nav-white" lay-filter="">
+                        <li class="layui-nav-item layui-this"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_a')">首页</a></li>
+                        <a href="info/index.html" target="contextHomeIframe" class="null" id="jump_a"></a>
+
+                        <li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_b')">科学视频</a></li>
+                        <a href="./scienceVideo/index.html" target="contextHomeIframe" class="null" id="jump_b"></a>
+
+                        <li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_c')">科学直播课</a></li>
+                        <a href="./selfKids/index.html" target="contextHomeIframe" class="null" id="jump_c"></a>
+
+                        <li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_d')">科学实践课</a></li>
+                        <a href="./scienceTractice/index.html" target="contextHomeIframe" class="null" id="jump_d"></a>
+
+                        <!--<li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_e')">科学家进校园</a></li>-->
+                        <!--<a href="./scientistIntoSchool/index.html" target="contextHomeIframe" class="null" id="jump_e"></a>-->
+
+                        <!--<li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_f')">求真科学营</a></li>-->
+                        <!--<a href="./scienceCamp/index.html" target="contextHomeIframe" class="null" id="jump_f"></a>-->
+
+                        <!--<li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_g')">校长论坛</a></li>-->
+                        <!--<a href="./principalBBS/index.html" target="contextHomeIframe" class="null" id="jump_g"></a>-->
+
+                        <li class="layui-nav-item" style="float: right"><a href="http://159.226.3.103/base/home" target="_blank">中国科普博览示范基地</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="iframe_div">
+        <iframe id="contextHomeIframe" name="contextHomeIframe" width="100%" scrolling="no" frameborder="0" src="info/index.html" onload="loadFrame(this)"
+                >
+        </iframe>
+    </div>
+
+</div>
+</body>
+</html>

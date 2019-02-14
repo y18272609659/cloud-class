@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        #content{
+            width: 1000px;
+            margin:0 auto;
+            padding: 20px 0 0;
+        }
+
+        .top{
+            width: 1000px;
+            height: 100px;
+            border-radius: 4px;
+            background: url('../../../../../static/images/static/tourist/top_img_2.png')no-repeat;
+            padding-bottom: 30px;
+        }
+        .top .button-zone{
+            padding-top: 30px;
+            text-align: right;
+        }
+        .top .button-zone .button{
+            display: inline-block;
+            width: 80px;
+            height: 36px;
+            background: #ffda2d;
+            color: #333;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0px -10px 20px -5px #d9d9d9,-10px 0px 20px -5px #d9d9d9,10px 0px 20px -5px #d9d9d9,0px 10px 20px -5px #d9d9d9;
+        }
+        .top .button-zone .button.green{
+            margin-left: 10px;
+            margin-right: 25px;
+            color: #fff;
+            background: #04B75E;
+        }
+
+        .carousel{
+            width: 1000px;
+            height: 380px;
+            border-radius: 4px;
+            box-shadow: 0px -10px 20px -5px #d9d9d9,-10px 0px 20px -5px #d9d9d9,10px 0px 20px -5px #d9d9d9,0px 10px 20px -5px #d9d9d9;
+            margin-bottom: 64px;
+            overflow:hidden;
+        }
+        .carousel img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .module{
+            padding-bottom: 64px;
+        }
+        .module .word{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #666;
+            padding-bottom: 15px;
+        }
+        .module .float-zone .box{
+            width: 495px;
+            cursor: pointer;
+        }
+        .module .float-zone img{
+            width: 100%;
+        }
+        .head{
+            padding-top: 104px;
+            background: url('../../../../../static/images/static/tourist/class-1.png')no-repeat;
+        }
+        .center{
+            padding-top: 113px;
+            background: url('../../../../../static/images/static/tourist/class-2.png')no-repeat right top;
+            text-align: right;
+        }
+        .center .box{
+            width: 100%;
+        }
+        .center .box img{
+            width: 100%;
+        }
+        .bottom{
+            padding-top: 104px;
+            background: url('../../../../../static/images/static/tourist/class-3.png')no-repeat ;
+        }
+        .end{
+            padding-top: 123px;
+            background: url('../../../../../static/images/static/tourist/class-4.png')no-repeat right top;
+        }
+        .end .box{
+            border-radius: 4px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .end .box.left{
+            background: url('../../../../../static/images/front-home-bottom-1.png')no-repeat;
+        }
+        .end .box.right{
+            background: url('../../../../../static/images/front-home-bottom-2.png')no-repeat;
+        }
+
+
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use(['element', 'carousel'], function(){
+                var element = layui.element;
+                var carousel = layui.carousel;
+
+                carousel.render({
+                    elem: '#test1'
+                    ,width: '100%' //设置容器宽度
+                    ,arrow: 'always' //始终显示箭头
+                    ,height:'380px'
+                });
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 0;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 61.35;
+        };
+
+        function toLogin(){
+            window.top.document.getElementById('login_button').click()
+        }
+
+        function lookVideo(id){
+            window.parent.parent.layer.open({
+                type: 2,
+                title: '看视频',
+                offset: '200px',
+                area: ['800px', '493px'],
+                content: './videoView.html?id=' + id
+            })
+        }
+
+    </script>
+</head>
+<body onload="setContentPageHeight()">
+<div id="content">
+    <div class="top">
+        <div class="button-zone">
+            <span class="button" onclick="toLogin()">登录</span>
+            <span class="button green">注册</span>
+        </div>
+    </div>
+    <div class="carousel">
+        <div class="layui-carousel" id="test1">
+            <div carousel-item>
+                <div><img src="../../../../../static/images/static/tourist/1-1.png" alt=""></div>
+                <div><img src="../../../../../static/images/static/tourist/1-2.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="head module">
+        <div class="word">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展 ，开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。1000+视频资源库，为同学们带来生物、化学、物理、艺术、人文、教育、信息技术、数学、天文等领域中好玩有趣的科学奥秘。</div>
+        <div class="float-zone layui-clear">
+            <div class="float-left box" onclick="lookVideo(1)">
+                <img src="../../../../../static/images/static/tourist/2-1.png" alt="">
+            </div>
+            <div class="float-right box" onclick="lookVideo(2)">
+                <img src="../../../../../static/images/static/tourist/2-2.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="center module">
+        <div class="word">依托线下精彩的科学教育活动，推出直播课堂，包括SELF•Kids、实践课、科学家进校园等，为不能够亲临现场的同学们提供一个参与互动的机会，采用网络直播方式，为学生们带来一场场精彩纷呈的科学课堂。</div>
+        <div class="box" style="margin-bottom: 10px">
+            <img src="../../../../../static/images/static/tourist/3-1.png" alt="">
+        </div>
+        <div class="box">
+            <img src="../../../../../static/images/static/tourist/3-2.png" alt="">
+        </div>
+    </div>
+    <div class="bottom module">
+        <div class="word">科学实践课是基于6-15岁青少年的兴趣偏好与思维能力，由中科院科学家亲自设计与授课的科学活动与科学课程。包括舞台式科学演讲活动、“跨学科”科学实践课以及互动式科学课堂，以丰富的课堂形式与内容培养学生发现问题和解决问题的能力。科学家将走进学校，亲自授课，引导学生运用多科学知识，找到解决问题的最佳答案，让孩子们对基础的科学知识有最扎实地掌握，同时又兼具创新思考的能力及灵活的动手能力。</div>
+        <div class="float-zone layui-clear">
+            <div class="float-left box">
+                <img src="../../../../../static/images/static/tourist/4-1.png" alt="">
+            </div>
+            <div class="float-right box">
+                <img src="../../../../../static/images/static/tourist/4-2.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="end module">
+        <div class="layui-row layui-col-space20">
+            <div class="layui-col-md6 jump">
+                <div class="box left">求真科学营</div>
+            </div>
+            <div class="layui-col-md6 jump">
+                <div class="box right">校长论坛</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

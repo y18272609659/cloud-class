@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        /*.head{*/
+            /*height: 80px;*/
+            /*padding: 20px 50px;*/
+            /*background: #fff;*/
+            /*margin-bottom: 10px;*/
+        /*}*/
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .head{
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .head .title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 16px;
+            text-indent: 1em;
+            border-bottom: 1px solid #e5e5e5;
+            font-weight: 700;
+        }
+        .head .core{
+            padding: 30px 20px 20px;
+        }
+        .head .core .core-title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 18px;
+            font-weight: 700;
+            border-width: 0;
+            text-indent: 0;
+        }
+        .head .core .word-zone{
+            line-height: 2;
+            font-size: 14px;
+        }
+        .head .core .word-zone .word-button{
+            padding-top: 10px;
+            color:#04B75E;
+        }
+        .head .core .word-zone .word-button div span{
+            cursor: pointer;
+        }
+
+        .center{
+            background: #fff;
+
+        }
+        .center .title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+        .center .core {
+            line-height: 2;
+            font-size: 14px;
+
+        }
+        .center .core .word-button{
+            color:#04B75E;
+            cursor: pointer;
+        }
+        .center .core .word-button a {
+            color:#04B75E;
+        }
+        .center .core .number{
+            font-size: 36px;
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        var route_str = 'info_index'
+        layui.sessionData('zkyykt_jump_page', {
+            key:'my_center'
+            ,value:route_str
+        });
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextRightIframe");
+            var height = document.getElementById("content").offsetHeight;
+            var h = window.parent.document.getElementById("content").offsetHeight;
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+
+            if (h >= height) {
+                b_iframe.height = h + 30;
+                a_iframe.height = h + 100;
+            } else {
+                b_iframe.height = height + 30;
+                a_iframe.height = height + 100;
+            }
+
+            // b_iframe.height = height + 30;
+
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head center">
+        <div class="title">个人信息（学校账户）</div>
+        <div class="core">
+            <!--<div class="core-title">基本信息</div>-->
+            <!--<div class="word-zone">-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-col-sm2">基地名称</div>-->
+                    <!--<div class="layui-col-sm10">XXX初级中学</div>-->
+                <!--</div>-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-col-sm2">组织结构代码</div>-->
+                    <!--<div class="layui-col-sm10">XXX初级中学</div>-->
+                <!--</div>-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-col-sm2">基地地址</div>-->
+                    <!--<div class="layui-col-sm10">河北省石家庄市开发区  XXXXXXXXXXXXXXX</div>-->
+                <!--</div>-->
+                <!--<div class="layui-row word-button">-->
+                    <!--<div class="layui-col-sm2"><span>修改资料</span></div>-->
+                    <!--<div class="layui-col-sm10"><span>查看更多</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    <p><span class="number">12015</span>/分钟</p>
+                    <p>观看直播时长</p>
+                    <p><span class="word-button"><a href="detail.html" target="contextRightIframe">查看详情</a></span></p>
+                </div>
+                <div class="layui-col-xs3">
+                    <p><span class="number">12015</span>/分钟</p>
+                    <p>观看视频数量</p>
+                    <p><span class="word-button"><a href="detail.html" target="contextRightIframe">查看详情</a></span></p>
+                </div>
+                <div class="layui-col-xs3">
+                    <p><span class="number">12015</span>/分钟</p>
+                    <p>所有人数</p>
+                    <p><span class="word-button">查看详情</span></p>
+                </div>
+                <div class="layui-col-xs3">
+                    <p><span class="number">12015</span>/分钟</p>
+                    <p>积分余额</p>
+                    <p><span class="word-button"><a href="score.html" target="contextRightIframe">查看详情</a></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

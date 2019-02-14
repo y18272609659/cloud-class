@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        /*.head{*/
+        /*height: 80px;*/
+        /*padding: 20px 50px;*/
+        /*background: #fff;*/
+        /*margin-bottom: 10px;*/
+        /*}*/
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+
+        .head{
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .head .title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 16px;
+            text-indent: 1em;
+            border-bottom: 1px solid #e5e5e5;
+            font-weight: 700;
+        }
+        .head .core{
+            padding: 20px 20px 0;
+        }
+        .head .core .data{
+            line-height: 2;
+            font-size: 14px;
+        }
+        .head .core .data .name span{
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .head .core .table{
+            padding: 40px 0;
+        }
+        .table{
+            padding: 0 0 20px 20px;
+        }
+    </style>
+    <script>
+        var route_str = 'info_score'
+        layui.sessionData('zkyykt_jump_page', {
+            key:'my_center'
+            ,value:route_str
+        });
+
+        $(function(){
+            layui.use(['element', 'table', 'form'], function(){
+                var element = layui.element;
+                var table = layui.table;
+                var form = layui.form;
+
+                // var theTable = table.render({
+                //     elem: '#demo',
+                //     url: '',
+                //     width:750,
+                //     page: true,
+                //     cols: [[
+                //         {
+                //             field: 'name',
+                //             title: '名次',
+                //             unresize: false,
+                //             width: 200,
+                //             sort: false,
+                //             align: 'center'
+                //         },
+                //         {
+                //             field: 'ctime',
+                //             title: '学生名称',
+                //             unresize: false,
+                //             width: 700,
+                //             sort: false,
+                //             align: 'center'
+                //         }
+                //     ]]
+                // });
+                var theTable2 = table.render({
+                    elem: '#demo2',
+                    url: '',
+                    width:750,
+                    data:[{
+                        'rank':'1',
+                        'name':'小米',
+                        'time':1000,
+                        'num':100
+                    }],
+                    page: true,
+                    cols: [[
+                        {
+                            field: 'rank',
+                            title: '日期',
+                            unresize: false,
+                            width: 180,
+                            sort: false,
+                            align: 'center'
+                        },
+                        {
+                            field: 'name',
+                            title: '积分增加/减少',
+                            unresize: false,
+                            width: 180,
+                            sort: false,
+                            align: 'center'
+                        }
+                    ]]
+                });
+                table.on('tool(test2)', function (obj){
+                    $("#jump")[0].click()
+                })
+
+                setContentPageHeight()
+            });
+
+            // setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextRightIframe");
+            var height = document.getElementById("content").offsetHeight;
+            var h = window.parent.document.getElementById("content").offsetHeight;
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+
+            if (h >= height) {
+                b_iframe.height = h + 30;
+                a_iframe.height = h + 100;
+            } else {
+                b_iframe.height = height + 30;
+                a_iframe.height = height + 100;
+            }
+
+            console.log(a_iframe.height, b_iframe.height)
+
+            // b_iframe.height = height + 30;
+
+
+        };
+
+    </script>
+    <script type="text/html" id="btn">
+        <a class="layui-btn layui-btn-xs" lay-event="show">查看详情</a>
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="title">
+            <a href="./index.html" target="contextRightIframe">
+                <img src="../../../../../static/images/back.png" alt="">
+            </a>
+            积分余额
+        </div>
+        <div class="core">
+            <a href="person.html" style="display: none" id="jump"></a>
+            <div class="data">
+                <p class="name"><span>12015</span></p>
+                <p class="desc">积分余额</p>
+            </div>
+
+        </div>
+        <div class="table">
+            <!--<div id="demo" lay-filter="test"></div>-->
+            <div id="demo2" lay-filter="test2"></div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

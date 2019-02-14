@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .layui-nav{
+            padding:0;
+        }
+        .layui-nav-gray{
+            color:#333;
+            background: #e5e5e5;
+            font-size: 14px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #333;
+            font-size: 14px;
+            padding: 19px 19px 0;
+            display: block;
+            text-align: center;
+            line-height: 40px;
+        }
+        .layui-nav .layui-nav-item a .photo{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color:#666;
+        }
+        .layui-nav .layui-nav-item.layui-this a{
+            color:#04B75E;
+            background: #fff;
+        }
+        .nav-f{
+            position: relative;
+        }
+        .nav-f .select{
+            position: absolute;
+            width: 70px;
+            height: 100%;
+            right: 0;
+            top:0;
+            background: #04B75E;
+            cursor: pointer;
+        }
+        .nav-f .select .word{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top:54px;
+            left: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .head{
+            margin: 0 0 10px;
+            padding:45px 40px 25px;
+            background: #fff;
+            line-height: 1.5;
+        }
+        .head h2{
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .head p{
+            font-size: 12px;
+        }
+        .head .button-zone{
+            padding-top: 30px;
+            text-align: left;
+        }
+        .head .button-zone .button{
+            display: inline-block;
+            line-height: 40px;
+            text-align: center;
+            font-size: 14px;
+            height: 40px;
+            width: 120px;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            background: #04B75E;
+        }
+        .head .layui-col-md4{
+
+        }
+        .head .layui-col-md4 img{
+            width: 100%;
+            height: 100%;
+            background: blue;
+        }
+
+        .center{
+            margin-bottom: 10px;
+        }
+        .center .core{
+            background: #fff;
+        }
+        .center .core .person-c{
+            padding: 100px 80px 90px 110px;
+        }
+        .center .core .person-c .name{
+            font-size: 32px;
+            font-weight: 700;
+            padding-bottom: 15px;
+        }
+        .center .core .person-c .motto{
+            font-size: 18px;
+            padding-bottom: 20px;
+        }
+        .center .core .person-c .desc{
+            font-size: 13px;
+            padding-bottom: 25px;
+        }
+        .center .core .person-c .button{
+            display: inline-block;
+            border-radius: 6px;
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border:1px solid #333;
+        }
+
+        .old-activity{
+            padding: 60px 110px 0;
+            background: #fff;
+        }
+        .old-activity .title{
+            font-size: 28px;
+            line-height: 1;
+            font-weight: 700;
+            padding: 0 0 40px;
+        }
+        .old-activity .box{
+            padding-bottom: 80px;
+        }
+        .old-activity .box .name{
+            font-size: 18px;
+            font-weight: 700;
+            padding-bottom: 12px;
+        }
+        .old-activity .box .date{
+            font-size: 14px;
+            padding-bottom: 12px;
+        }
+        .old-activity .box .desc{
+            font-size: 12px;
+        }
+
+    </style>
+    <script>
+
+        $(function(){
+            layui.use(['element'], function(){
+                var element = layui.element;
+                var $ = layui.$;
+
+
+                setContentPageHeight()
+            });
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 100;
+        };
+
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="layui-row">
+            <div class="layui-col-md8">
+                <h2>科学家进校园是什么？</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.<br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+                </p>
+                <div class="button-zone">
+                    <span class="button">极速预约</span>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <!--<div class="center">-->
+        <!--<div class="core">-->
+            <!--<div class="person">-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-col-md6 person-c">-->
+                        <!--<h3 class="name">张某某</h3>-->
+                        <!--<p class="motto">张某某的一句话，类似于签名</p>-->
+                        <!--<p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>-->
+                        <!--<div class="button-zone">-->
+                            <!--<span class="button">查看详情</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="layui-col-md6"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav-f">-->
+                <!--<ul class="layui-nav layui-nav-gray lay-filter="">-->
+                    <!--<li class="layui-nav-item layui-this">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="layui-nav-item">-->
+                        <!--<a href="">-->
+                            <!--<div class="photo"></div>-->
+                            <!--全部-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<div class="select">-->
+                    <!--<p class="word">查看全部</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="old-activity">
+        <div class="title">往期活动</div>
+        <div class="box">
+            <div class="layui-row">
+                <div class="layui-col-md7">
+                    <h6 class="name">活动标题活动标题活动标题</h6>
+                    <p class="date">#张某某# #2018年XX月XX日#</p>
+                    <p class="desc">Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+                </div>
+                <div class="layui-col-md5"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="layui-row">
+                <div class="layui-col-md7">
+                    <h6 class="name">活动标题活动标题活动标题</h6>
+                    <p class="date">#张某某# #2018年XX月XX日#</p>
+                    <p class="desc">Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+                </div>
+                <div class="layui-col-md5"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

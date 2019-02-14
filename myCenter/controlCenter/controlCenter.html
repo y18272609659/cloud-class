@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>控制中心</title>
+  <link rel="stylesheet" type="text/css" href="css/control_center.css">
+  <link rel="stylesheet" href="../../../../../static/css/reset.css">
+</head>
+<body>
+<div class="container">
+  <!-- 左侧 -->
+  <div class="left">
+    <div class="list">
+      <ul>
+        <li class="active"><a href="javascript:void(0);">概况</a></li>
+        <li><a href="javascript:void(0);">本校近期活动</a></li>
+        <li><a href="javascript:void(0);">已收藏视频</a></li>
+        <li><a href="javascript:void(0);">已推荐视频</a></li>
+        <li><a href="javascript:void(0);">学生账号管理</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 右侧 -->
+  <div class="right">
+
+    <!-- 概况 -->
+    <div class="card survey">
+      <div class="title">概况</div>
+      <ul class="num">
+        <li>152</li>
+        <li>观看视频数</li>
+        <li>查看详情</li>
+      </ul>
+      <ul class="watch">
+        <li>152</li>
+        <li>观看视频数</li>
+        <li>查看详情</li>
+      </ul>
+      <ul class="detail">
+        <li>152</li>
+        <li>观看视频数</li>
+        <li>查看详情</li>
+      </ul>
+    </div>
+
+    <!-- 本校近期活动 -->
+    <div class="card activity">
+      <h2>本校近期活动</h2>
+      <table style="margin-left: 3px" border="0px" cellspacing="0">
+        <tr>
+          <td>预约活动</td>
+          <td>活动类型</td>
+          <td>状态</td>
+          <td>时间</td>
+          <td>操作</td>
+        </tr>
+        <tr>
+          <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+          <td>xxxxxxxxxxxxxx</td>
+          <td>xxxxxxxxxx</td>
+          <td>xxxxxxxxxxxxx</td>
+          <td><a href="javascript:void(0);" class="delete">删除</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 已收藏视频 -->
+    <div class="card like">
+      <div class="title">已收藏视频</div>
+      <div class="video1">
+        <div class="pic">
+          <img alt="科学" src="img/1.jpg">
+          <div class="label">科学</div>
+        </div>
+        <div class="explain">
+          <dl>
+            <dt>自然物语</dt>
+            <dd>一句话简介一句话简介一句话简介一句话简介</dd>
+          </dl>
+          <div class="delete">删除</div>
+        </div>
+      </div>
+      <div class="video2">
+        <div class="pic">
+          <img alt="科学" src="img/1.jpg">
+          <div class="label">科学</div>
+        </div>
+        <div class="explain">
+          <dl>
+            <dt>自然物语</dt>
+            <dd>一句话简介一句话简介一句话简介一句话简介</dd>
+          </dl>
+          <div class="delete">删除</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 已推荐视频 -->
+    <div class="card recommend">
+      <div class="title">
+        <img src="img/return.png" alt="返回" title="返回"><span>看视频时长</span>
+      </div>
+      <div class="box"></div>
+      <hr>
+      <table border="0px" cellspacing="0">
+        <tr class="first">
+          <td>名称</td>
+          <td>观看时长/分钟</td>
+          <td>观看视频数量</td>
+        </tr>
+        <tr>
+          <td>张三</td>
+          <td>521</td>
+          <td>112</td>
+        </tr>
+        <tr>
+          <td>李四</td>
+          <td>548</td>
+          <td>54</td>
+        </tr>
+        <tr>
+          <td>王五</td>
+          <td>51</td>
+          <td>54</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 学生账号管理 -->
+    <div class="card administration">
+      <div class="title">学生账户管理</div>
+      <div class="body">
+        <div class="add">添加</div>
+        <div class="bulk">批量导入</div>
+        <span><a href="javascript:void(0);">下载批量导入模版</a></span>
+        <div class="search_box">
+          <form onsubmit="" method="get" name="search-form" class="forms">
+            <div class="input-groups">
+              <input class="sinput" name="search" placeholder="搜索学生名称及账号" onfocus="this.placeholder = ''"
+                     onblur="if(this.placeholder == '')this.placeholder='搜索学生名称及账号'">
+              <div class="icon"><img src="img/mirror.png" alt="搜索">
+                            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <table cellspacing="0">
+        <tr>
+          <td>学生名称</td>
+          <td>入学年份</td>
+          <td>账号</td>
+          <td>事件</td>
+          <td>操作</td>
+        </tr>
+        <tr>
+          <td>XXX</td>
+          <td>XXXXXX</td>
+          <td>XXXXXXXXXXXXX</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td>
+            <div class="delete">删除</div>
+            <div class="edit"><span>编辑</span></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+    var list = document.getElementsByClassName('list')[0];
+    var ul = list.getElementsByTagName('ul')[0];
+    var li = ul.getElementsByTagName('li');
+    //console.log(li);
+    var card = document.getElementsByClassName('card');
+    for (var i = 0; i < li.length; i++) {
+        li[i].index = i;
+        li[i].onclick = function () {
+            /* 先把所有的class全部去掉，把所有的卡片全隐藏*/
+            for (var i = 0; i < li.length; i++) {
+                li[i].className = '';
+                card[i].style.display = "none";
+            }
+            /* 给特定的标签加上active，把特定的卡片显示出来*/
+            this.className = 'active';
+            card[this.index].style.display = "block";
+        };
+        for (var m = 1; m < li.length; m++) {
+            li[m].className = '';
+            card[m].style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

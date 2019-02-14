@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <style>
+        /*.head{*/
+        /*height: 80px;*/
+        /*padding: 20px 50px;*/
+        /*background: #fff;*/
+        /*margin-bottom: 10px;*/
+        /*}*/
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        .layui-btn-primary,.layui-btn-primary:hover{
+            color:#04B75E;
+            border:1px solid #04B75E;
+        }
+        .layui-btn-primary-red,.layui-btn-primary-red:hover{
+            color:#ff0000;
+            border:1px solid #ff0000;
+        }
+
+        .tools-zone{
+            position: relative;
+            padding: 0 20px;
+        }
+        .tools-zone .left-button button{
+            width: 110px;
+            padding: 0;
+        }
+        .tools-zone .select{
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            right: 0;
+            top:0;
+        }
+        .tools-zone .select .layui-form-item{
+            margin: 0;
+            padding: 11px 20px 0 0;
+        }
+
+        .head{
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .head .title{
+            height: 60px;
+            line-height: 60px;
+            font-size: 16px;
+            text-indent: 1em;
+            font-weight: 700;
+        }
+        .head .core{
+            padding: 20px 20px;
+        }
+        .head .core .live-box{
+            width: 225px;
+            height: 165px;
+            border:1px solid #333;
+            background: #ccc;
+            position: relative;
+        }
+        .head .core .live-box .title{
+            position: absolute;
+            height: 50px;
+            line-height: 50px;
+            text-indent: 1em;
+            font-size: 14px;
+            font-style: italic;
+            color: #999;
+            background: #fff;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            font-weight: 400;
+        }
+        .head .core .live-box .title .del{
+            position: absolute;
+            bottom: 8px;
+            right: 5px;
+            height: 32px;
+            width: 68px;
+            line-height: 32px;
+            font-weight: 700;
+            color: #ff0000;
+            border:1px solid #ff0000;
+            text-align: center;
+            text-indent: 0;
+            font-style: normal;
+            cursor: pointer;
+        }
+        .head .core .live-box .my{
+            padding: 0 15px;
+            height: 25px;
+            line-height: 25px;
+            font-size: 13px;
+            color: #fff;
+            background: rgba(22, 155, 213, 1);
+            position: absolute;
+            top:5px;
+            left: 5px;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .head .core .word-box{
+            line-height: 2;
+        }
+        .head .core .word-box .name{
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .head .core .word-box .desc{
+            font-size: 14px;
+            color: #999;
+        }
+
+
+
+    </style>
+    <script>
+        var route_str = 'studentAccount_index'
+        layui.sessionData('zkyykt_jump_page', {
+            key:'my_center'
+            ,value:route_str
+        });
+
+        $(function(){
+            layui.use(['element', 'form', 'table'], function(){
+                var element = layui.element;
+                var form = layui.form;
+                var table = layui.table;
+
+                var rankTable = table.render({
+                    elem: '#demo',
+                    url: '',
+                    page: true,
+                    width:750,
+                    data:[{
+                        name:'张三'
+                    }],
+                    cols: [[
+                        {
+                            field: 'name',
+                            title: '学生名称',
+                            unresize: false,
+                            // width: 181,
+                            sort: false,
+                            align: 'center'
+                        },
+                        {
+                            field: 'ctime',
+                            title: '学生班级',
+                            unresize: false,
+                            // width: 181,
+                            sort: false,
+                            align: 'center'
+                        },
+                        {
+                            field: 'ctime',
+                            title: '账号',
+                            // width: 171,
+                            unresize: false,
+                            sort: false,
+                            align: 'center',
+                        },
+                        {
+                            field: 'status',
+                            title: '添加时间',
+                            // width: 132,
+                            sort: false,
+                            unresize: false,
+                            align: 'center',
+                        },
+                        {
+                            field: 'status',
+                            title: '操作',
+                            width: 185,
+                            sort: false,
+                            toolbar: '#btn',
+                            align: 'center',
+                        }
+                    ]]
+                });
+            });
+
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextRightIframe");
+            var height = document.getElementById("content").offsetHeight;
+            var h = window.parent.document.getElementById("content").offsetHeight;
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+
+            if (h >= height) {
+                b_iframe.height = h + 30;
+                a_iframe.height = h + 100;
+            } else {
+                b_iframe.height = height + 30;
+                a_iframe.height = height + 100;
+            }
+
+            // b_iframe.height = height + 30;
+
+
+        };
+
+    </script>
+    <script type="text/html" id="btn">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-xs layui-btn-primary layui-btn-primary-red" lay-event="edit">编辑</a>
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="head">
+        <div class="title">学生账户管理</div>
+        <div class="tools-zone">
+            <div class="layui-form left-button">
+                <div class="layui-form-item" style="margin-bottom: 0;padding-top: 11px">
+                    <button class="layui-btn" lay-submit lay-filter="add">添加</button>
+                    <button class="layui-btn layui-btn-primary" lay-submit lay-filter="import">批量导入</button>
+                    <button class="layui-btn layui-btn-primary" lay-submit lay-filter="import">下载导入模板</button>
+                </div>
+            </div>
+            <div class="select">
+                <div class="layui-form">
+                    <div class="layui-form-item" style="margin-bottom: 0;padding-top: 11px">
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" required  lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">
+                        </div>
+                        <button class="layui-btn" lay-submit lay-filter="search">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="core">
+            <table id="demo" lay-filter="test"></table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

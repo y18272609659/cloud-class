@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>恭喜您提交表单成功</title>
+  <link rel="stylesheet" type="text/css" href="submit_success.css">
+</head>
+<body>
+  <div class="box">
+    <img class="duigou" src="success.png" alt="提交成功">
+    <p class="submit">提交成功</p>
+    <p class="notice"><span>3个工作日内，通过电话或邮件的形式确定反馈，此页面</span>
+      <b id="timer">10</b>
+        <b>s</b>后自动关闭，<a href="else.html" class="shutdown">关闭 >></a>
+    </p>
+  </div>
+<script type="text/javascript">
+    // 计时器
+    var int = setInterval("clock()",1000);
+    var num = 9;
+
+    function clock(){
+      var timer = document.getElementById('timer').innerHTML = num;
+      timer.innerHTML = num;
+      console.log(timer);
+      // num > 0 ? num-- : clearInterval(int);
+      if(num > 0){
+        num --;
+      }else{
+        clearInterval(int);
+        location.href="else.html"
+      }
+    }
+  </script>
+</body>
+</html>
