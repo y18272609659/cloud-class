@@ -3,7 +3,13 @@
   <meta charset="UTF-8"/>
   <title>示范基地网站系统管理后台</title>
   <link rel="stylesheet" media="screen" href="principal_forum.css" />
-  <script src="principal_forum.js"></script>
+  <script>
+    function scrollTop () {
+      window.scrollTo(0, 0)
+      console.log("页面跳转至顶部")
+    }
+    window.onload = scrollTop()
+  </script>
 </head>
 <body>
   <!--校长论坛页面介绍模块-->

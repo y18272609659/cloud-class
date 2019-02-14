@@ -1,0 +1,72 @@
+body,h1,h2,h3,h4,h5,h6,p{
+  margin:0;
+}
+
+#nav {
+  margin: 0 auto;
+  width: 1024px;
+  min-width: 1000px;
+}
+
+.content {
+  width: 1000px;
+  margin: 0 180px;
+}
+
+#iframe_div {
+  margin: 0 auto;
+  min-width: 1000px;
+  margin-top: 40px;
+}
+
+#nav div span {
+  color: rgb(51, 51, 51);
+  /*margin-left: 10px;*/
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  text-align: left;
+}
+
+.layui-nav{
+  width: 1000px;
+  padding:0;
+  border-bottom: 1px solid #cccccc;
+}
+.layui-nav-white{
+  margin-top: 20px;
+  height: 49px;
+  color:#333;
+  background: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+.layui-nav .layui-nav-item a,.layui-nav .layui-nav-item a:hover{
+  padding: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+.layui-nav .layui-nav-item {
+  margin-right: 25px;
+}
+.layui-nav .layui-nav-item a:hover{
+  color:#666;
+}
+.layui-nav .layui-nav-item.layui-this a,.layui-nav .layui-nav-item.layui-this a:hover{
+  color:#36ae36;
+  font-weight: 700;
+}
+
+.null{
+  display: none;
+}
+.layui-nav-bar{
+  display: none;
+}
+.layui-nav .layui-this:after{
+  bottom: 11px;
+  /*width: 60%;*/
+  border-radius: 10px;
+  /*left: 20%;*/
+}

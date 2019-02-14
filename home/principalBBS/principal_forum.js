@@ -1,3 +1,5 @@
+
+
 function loadInfomation () {
   loadAjax()
 }
@@ -19,4 +21,4 @@ function loadAjax () {
   xmlhttp.send();
 }
 
-window.onload = loadInfomation()
+

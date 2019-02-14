@@ -1,0 +1,184 @@
+<html>
+<head>
+  <title>示范基地网站系统管理后台</title>
+  <meta charset="UTF-8">
+  <style>
+    /*视频图片*/
+    .video-image {
+      display: inline-block;
+      height: 250px;
+      width: 444px;
+      border: none;
+      border-radius: 4px;
+      background: #cccccc;
+    }
+    .video-image img {
+      margin: 0;
+      padding: 0;
+      border: none;
+      vertical-align: text-top;
+    }
+    /*视频介绍*/
+    .content {
+      display: inline-block;
+      width: 540px;
+      margin-left: 20px;
+      vertical-align: top;
+    }
+    span, p {
+      display: block;
+    }
+
+    /*视频介绍——题目*/
+    .content-title {
+      margin-top: 20px;
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      line-height: 24px;
+    }
+    /*视频介绍——标签*/
+    .content-label {
+      width: 85px;
+      height: 25px;
+      line-height: 25px;
+      background: #36ae36;
+      color: white;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      font-size: 13px;
+      text-align: center;
+    }
+    /*视频介绍——主讲老师&时间*/
+    .teacher, .time {
+      display: inline-block;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #666;
+      line-height: 14px;
+    }
+    .teacher {
+      padding-right: 12px;
+    }
+    /*视频介绍——详情*/
+    .content-detail {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.5rem;
+      padding-bottom: 18px;
+    }
+    /*视频——预约按钮*/
+    .order-btn {
+      width: 140px;
+      height: 40px;
+      font-size: 14px;
+      color: #fff;
+      background: #36ae36;
+      border-radius: 4px;
+      border: none;
+    }
+
+    /*讲师详情弹窗*/
+    #teacher-info {
+      position: absolute;
+      z-index: 10;
+      display: none;
+      margin-top: -12px;
+      margin-left: 75px;
+      background: white;
+    }
+    .teacher-brief {
+      height: 260px;
+      width: 275px;
+      float: right;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 0 15px #a8a8a8;
+    }
+    .teacher-brief-content {
+      padding: 35px 15px 40px 19px;
+    }
+    .teacher-picture {
+      float: right;
+      width: 57px;
+      height: 57px;
+      border-radius: 4px;
+      background: #ccc;
+    }
+    .teacher-name {
+      display: inline-block;
+      min-width: 110px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      line-height: 24px;
+    }
+    .teacher-title {
+      display: inline-block;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+    .teacher-word {
+      margin: 0;
+      font-size: 14px;
+      color: #999;
+      text-align: justify;
+    }
+  </style>
+
+  <script>
+    // 显示悬浮层
+    function showInfo() {
+      document.getElementById('teacher-info').style.display = "block";
+    }
+    // 隐藏悬浮层
+    function hiddenInfo(event) {
+      let inform = document.getElementById('teacher-info');
+      let x = event.clientX;
+      let y = event.clientY;
+      let divx1 = inform.offsetLeft;
+      let divy1 = inform.offsetTop;
+      let divx2 = inform.offsetLeft + inform.offsetWidth;
+      let divy2 = inform.offsetTop + inform.offsetHeight;
+      if( x < divx1 || x > divx2 || y < divy1 || y > divy2){
+        document.getElementById('teacher-info').style.display='none';
+      }
+    }
+  </script>
+</head>
+  <body>
+    <div class="video-template">
+      <div class="video-image">
+        <img/>
+      </div>
+      <div class="content">
+        <span class="content-title">标题部分标题部分标题部分</span>
+        <span class="content-label">SELF·Kids</span>
+        <a class="teacher" id="teacher" onMouseOver="showInfo()" onMouseOut="hiddenInfo(event)">#主讲老师：杨和平 李察#</a>
+        <!--讲师详情弹出窗口-->
+          <div id="teacher-info" onMouseOver="showInfo()" onMouseOut="hiddenInfo(event)">
+            <div class="teacher-brief">
+              <div class="teacher-brief-content">
+                <img class="teacher-picture"/>
+                <span class="teacher-name">张洪</span>
+                <span class="teacher-title">中国科学院计算机网络中...</span>
+                <p class="teacher-word">简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容
+                  简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容
+                </p>
+              </div>
+            </div>
+          </div>
+        <span class="time">#120分钟#</span>
+        <span class="content-detail">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，
+            以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课堂等多样化的形式讲述科学故事，透视前......</span>
+        <button class="order-btn">
+          <span>预约</span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
