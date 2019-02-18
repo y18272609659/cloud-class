@@ -4,14 +4,41 @@
   <title>示范基地网站系统管理后台</title>
   <link rel="stylesheet" media="screen" href="principal_forum.css" />
   <script>
-    function scrollTop () {
-      window.scrollTo(0, 0)
-      console.log("页面跳转至顶部")
-    }
-    window.onload = scrollTop()
+
+    $(function(){
+      layui.use('element', function(){
+        var element = layui.element;
+
+        window.parent.parent.layer.closeAll()
+        window.parent.parent.layer.open({
+          type:1,
+          shade:0,
+          offset: ['0px', '0px'],
+          move: false,
+          content:'<div class="fixed-bottom" id="f"><div class="box"><div class="button">预约</div></div></div>',
+          success: function(){
+            window.parent.parent.$(".layui-layer-title, .layui-layer-setwin, .layui-layer-resize").hide()
+            $("#f").show()
+          }
+        })
+      });
+
+      setContentPageHeight()
+    })
+
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
+
   </script>
 </head>
-<body>
+<body  onload="setContentPageHeight()">
+<div id="content">
   <!--校长论坛页面介绍模块-->
   <div class="brief">
     <div class="brief-content">
@@ -92,7 +119,7 @@
         </div>
       </div>
     </div>
-
   </div>
+</div>
 </body>
 </html>

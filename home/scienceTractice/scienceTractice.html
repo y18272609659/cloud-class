@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>示范基地网站系统管理后台</title>
@@ -6,48 +7,31 @@
   <script src="../../../../../static/layui/layui.js"></script>
   <script src="../../../../../static/js/front/Browser.js"></script>
   <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
-    <script>
-      $(function(){
-        layui.use('element', function(){
-          var element = layui.element;
+  <script>
 
-          var a = layui.sessionData('zkyykt_jump_page')
-          // console.log(JSON.stringify(a))
-          // console.log(JSON.stringify({}))
-          // console.log((JSON.stringify(a) === JSON.stringify({})))
-          console.log(a)
-          if (!(JSON.stringify(a) === JSON.stringify({})) && a.nav) {
-            console.log($("#" + a.nav).prev()[0].getElementsByTagName("a")[0])
-            $("#" + a.nav).prev()[0].getElementsByTagName("a")[0].click()
-            // navJump(a.page)
-          }
-        });
-      })
+    $(function(){
+      layui.use(['element', 'form'], function(){
+        var element = layui.element;
+        var form = layui.form;
+      });
 
-      function navJump(id){
-        layui.sessionData('zkyykt_jump_page', {
-          key:'nav'
-          ,value:id
-        });
-        // console.log($("#" + id))
-        $("#" + id)[0].click()
-      }
+      setContentPageHeight()
+    })
 
-      function loadFrame(obj){
-        var url = obj.contentWindow.location.href;
-        console.log(url);
-        console.log(url.indexOf("scienceTractice/index"))
-        if(url.indexOf("scienceTractice/index") === -1) {
-          console.log(window.parent.$("#f"))
-          window.parent.$("#f").hide()
-          $("#f").hide()
-        }
-      }
-    </script>
-    <link rel="stylesheet" media="screen" href="科学实践课.css"/>
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
+
+  </script>
+  <link rel="stylesheet" media="screen" href="科学实践课.css"/>
 
 </head>
-  <body>
+  <body  onload="setContentPageHeight()">
     <div class="content">
       <div class="nav-f">
         <div id="nav">
