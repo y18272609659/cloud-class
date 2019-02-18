@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>示范基地网站系统管理后台</title>
+  <link rel="stylesheet" media="screen" href="science_video_details.css">
+  <link rel="stylesheet" href="../../../../../../static/layui/css/layui.css">
+  <script src="../../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <script>
+
+    // 挂载星级评分组件
+    $(function () {
+      layui.use(['rate'],function () {
+        var element = layui.element;
+        var rate = layui.rate;
+
+        var ins1 = rate.render({
+          elem: '#star-score', // 挂载元素id=star-score
+          value: 0, //初始值为0
+          length: 5, // 最高为5星
+          half: true, // 开启半星
+          choose: function (value) {
+            console.log('分数为：' + value);
+            alert('您对此视频的评分为 ' + value + '分，感谢您的参与！')
+
+            // 设置点击后评星组件为只读元素:
+            // 解决方法来自Fly社区贴子：https://fly.layui.com/jie/30572/
+            // 查找所有ul元素，标记为readonly，同时设置对象readonly属性为true
+            // 然后再查找所有的Li元素，移除click事件和mousemove事件
+            // 我看了下rate的源码，是利用这2个事件做的监听，销毁即可
+            // 设置对象属性为readonly是为了去掉手型鼠标指针效果
+            $(this.elem).find('ul').each(function () {
+              $(this).attr('readonly', true)
+            }).find('li').each(function () {
+              $(this).off('click').off('mousemove')
+            })
+
+          }
+
+        })
+      })
+    });
+
+    // 设置页面高度为该页面的内容高度
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 70;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 140;
+      console.log('设置内容页面高度函数执行了')
+    }
+
+    // // 获取星级评分组件中的分数
+    // function starMark () {
+    //   var score = document.getElementById('star-score');
+    //   var star = score.getElementsByClassName('layui-rate')[0].getElementsByClassName('layui-icon');
+    //   var markNum = 0;
+    //   for (let i = 0; i < star.length; i++) {
+    //     if (star[i].className = 'layui-icon-rate-solid') {
+    //       markNum += 1
+    //     } else if (star[i].className = 'layui-icon-rate-half') {
+    //       markNum += 0.5
+    //     }
+    //   }
+    //   console.log(markNum)
+    // }
+
+  </script>
+</head>
+  <body onload="setContentPageHeight()">
+    <div id="content">
+      <div class="content">
+        <div class="content-video" onclick="">
+          <img src=""/>
+        </div>
+
+        <div class="teacher-brief">
+          <div class="teacher-brief-content">
+            <img class="teacher-picture"/>
+            <span class="teacher-name">张洪</span>
+            <span class="teacher-title">中国科学院计算机网络中...</span>
+            <p class="teacher-word">简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容
+              简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容
+            </p>
+          </div>
+        </div>
+
+        <div class="content-title">神奇干细胞</div>
+        <div class="label-score">
+          <span class="label">科学</span>
+          <div id="star-score"></div>
+        </div>
+        <div class="share-collect">
+          <div class="share">
+            <img src="推荐给学生.png"/>
+            <span>推荐给学生</span>
+          </div>
+          <div class="collect">
+            <img src="收藏.png"/>
+            <span>收藏</span>
+          </div>
+        </div>
+        <div class="content-article">
+          <p>基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，
+            主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展 ，
+            开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。
+          </p>
+          <div class="article-image">
+            <img/>
+          </div>
+          <p>基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，
+            主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展 ，
+            开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。
+          </p>
+          <div class="article-image">
+            <img/>
+          </div>
+          <p>基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，
+            主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展 ，
+            开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

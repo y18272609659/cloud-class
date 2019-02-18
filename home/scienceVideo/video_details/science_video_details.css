@@ -1,0 +1,136 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  margin: 20px 170px 60px 180px;
+}
+.content-video {
+  height: 562px;
+  width: 1000px;
+  border-radius: 4px;
+  background: #cccccc;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+/*讲师简介*/
+.teacher-brief {
+  height: 260px;
+  width: 275px;
+  float: right;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #a8a8a8;
+}
+.teacher-brief-content {
+  padding: 35px 15px 40px 19px;
+}
+.teacher-picture {
+  float: right;
+  width: 57px;
+  height: 57px;
+  border-radius: 4px;
+  background: #ccc;
+}
+.teacher-name {
+  display: inline-block;
+  min-width: 110px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  line-height: 24px;
+}
+.teacher-title {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  color: #999;
+}
+.teacher-word {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+  text-align: justify;
+}
+
+/*文章*/
+.content-title {
+  padding-bottom: 13px;
+  font-size: 36px;
+  font-weight: bolder;
+  line-height: 36px;
+  color: #333;
+}
+.label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: #36ae36;
+  font-size: 14px;
+  color: white;
+  line-height: 25px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: center;
+  vertical-align: top;
+}
+.score {
+  display: inline-block;
+  margin: 0;
+  padding-left: 15px;
+  list-style: none;
+}
+.score-list {
+  display: inline-block;
+  padding-right: 10px;
+}
+.share, .collect {
+  display: inline-block;
+}
+.share-collect {
+  margin-top: 20px;
+  margin-bottom: 26px;
+}
+.share-collect span {
+  padding-left: 5px;
+  font-size: 14px;
+  color: #666;
+  vertical-align: top;
+}
+.collect {
+  margin-left: 20px;
+}
+.content-article {
+  width: 700px;
+}
+.content-article p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5rem;
+}
+.article-image {
+  height: 380px;
+  width: 698px;
+  background: #cccccc;
+}
+
+/*星级评分*/
+#star-score {
+  margin-left: 15px;
+}
+.label-score #star-score .layui-rate {
+  padding: 0;
+}
+#star-score .layui-rate li i.layui-icon {
+  font-size: 24px;
+  color: grey;
+}
+#star-score .layui-rate li i.layui-icon-rate-solid {
+  color: #FFB800;
+}
+
+#star-score .layui-rate li i.layui-icon-rate-half {
+  color: #FFB800;
+}
