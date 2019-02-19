@@ -12,9 +12,10 @@
 
     // 挂载星级评分组件
     $(function () {
-      layui.use(['rate'],function () {
+      layui.use(['rate', 'layer'],function () {
         var element = layui.element;
         var rate = layui.rate;
+        var layer = layui.layer;
 
         var ins1 = rate.render({
           elem: '#star-score', // 挂载元素id=star-score
@@ -23,7 +24,7 @@
           half: true, // 开启半星
           choose: function (value) {
             console.log('分数为：' + value);
-            alert('您对此视频的评分为 ' + value + '分，感谢您的参与！')
+            // alert('您对此视频的评分为 ' + value + '分，感谢您的参与！')
 
             // 设置点击后评星组件为只读元素:
             // 解决方法来自Fly社区贴子：https://fly.layui.com/jie/30572/
@@ -31,15 +32,24 @@
             // 然后再查找所有的Li元素，移除click事件和mousemove事件
             // 我看了下rate的源码，是利用这2个事件做的监听，销毁即可
             // 设置对象属性为readonly是为了去掉手型鼠标指针效果
-            $(this.elem).find('ul').each(function () {
-              $(this).attr('readonly', true)
-            }).find('li').each(function () {
-              $(this).off('click').off('mousemove')
-            })
+            // $(this.elem).find('ul').each(function () {
+            //   $(this).attr('readonly', true)
+            // }).find('li').each(function () {
+            //   $(this).off('click').off('mousemove')
+            // })
 
+            // 设置点击后评星组件隐藏（display：none）
+            $(this.elem).find('ul').each(function () {
+              $(this).attr('style', "display:none")
+            })
           }
 
         })
+
+        // 设置点击评分后弹出半透明提示弹窗
+        $('#star-score').on('click', function(){
+          layer.msg('感谢您的参与');
+        });
       })
     });
 
@@ -53,21 +63,6 @@
       a_iframe.height = height + 140;
       console.log('设置内容页面高度函数执行了')
     }
-
-    // // 获取星级评分组件中的分数
-    // function starMark () {
-    //   var score = document.getElementById('star-score');
-    //   var star = score.getElementsByClassName('layui-rate')[0].getElementsByClassName('layui-icon');
-    //   var markNum = 0;
-    //   for (let i = 0; i < star.length; i++) {
-    //     if (star[i].className = 'layui-icon-rate-solid') {
-    //       markNum += 1
-    //     } else if (star[i].className = 'layui-icon-rate-half') {
-    //       markNum += 0.5
-    //     }
-    //   }
-    //   console.log(markNum)
-    // }
 
   </script>
 </head>

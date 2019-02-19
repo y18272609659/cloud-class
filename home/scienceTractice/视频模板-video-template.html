@@ -21,7 +21,6 @@
     /*视频介绍*/
     .content {
       display: inline-block;
-      width: 540px;
       margin-left: 20px;
       vertical-align: top;
     }
@@ -64,10 +63,19 @@
     }
     /*视频介绍——详情*/
     .content-detail {
+      /*max-width: 515px;*/
+      /*max-height: 40px;*/
+      padding-bottom: 18px;
+    }
+    .content-detail-span {
+      width: 515px;
+      height: 45px;
       font-size: 14px;
       color: #999;
       line-height: 1.5rem;
-      padding-bottom: 18px;
+      white-space: pre-line;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     /*视频——预约按钮*/
     .order-btn {
@@ -78,6 +86,7 @@
       background: #36ae36;
       border-radius: 4px;
       border: none;
+      outline: none;
     }
 
     /*讲师详情弹窗*/
@@ -93,7 +102,6 @@
       height: 260px;
       width: 275px;
       float: right;
-      overflow: hidden;
       border-radius: 5px;
       box-shadow: 0 0 15px #a8a8a8;
     }
@@ -131,6 +139,15 @@
   </style>
 
   <script>
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextPageIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 150;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextHomeIframe");
+      a_iframe.height = height + 220;
+    }
+
     // 显示悬浮层
     function showInfo() {
       document.getElementById('teacher-info').style.display = "block";
@@ -148,10 +165,18 @@
         document.getElementById('teacher-info').style.display='none';
       }
     }
+    // $(".content-detail").each(function () {
+    //   console.log(" ‘。。。’执行了")
+    //   var word = $(this).text().length;
+    //   if (word > 15) {
+    //     $(this).text($(this).text().slice(0, 15) + "...")
+    //     console.log(" ‘。。。’执行了")
+    //   }
+    // })
   </script>
 </head>
-  <body>
-    <div class="video-template">
+  <body onload="setContentPageHeight()">
+    <div id="content" class="video-template">
       <div class="video-image">
         <img/>
       </div>
@@ -173,8 +198,9 @@
             </div>
           </div>
         <span class="time">#120分钟#</span>
-        <span class="content-detail">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，
-            以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课堂等多样化的形式讲述科学故事，透视前......</span>
+        <div class="content-detail">
+          <span class="content-detail-span">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课堂等多样化的形式讲述科学故事，透视前......</span>
+        </div>
         <button class="order-btn">
           <span>预约</span>
         </button>

@@ -16,7 +16,7 @@
       });
 
       setContentPageHeight()
-    })
+    });
 
     function setContentPageHeight() {
       var b_iframe = window.parent.document.getElementById("contextHomeIframe");
@@ -25,13 +25,18 @@
 
       var a_iframe = window.parent.parent.document.getElementById("contextIframe");
       a_iframe.height = height + 100;
-    };
+    }
+
+    function navJump(id) {
+      $('#' + id)[0].click()
+    }
 
   </script>
   <link rel="stylesheet" media="screen" href="科学实践课.css"/>
 
 </head>
   <body  onload="setContentPageHeight()">
+  <div id="content">
     <div class="content">
       <div class="nav-f">
         <div id="nav">
@@ -40,25 +45,25 @@
 
               <ul class="layui-nav layui-nav-white" lay-filter="">
 
-                  <li class="layui-nav-item layui-this">
-                    <a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_a')">全部</a>
-                  </li>
-                  <a href="info/index.html" target="contextHomeIframe" class="null" id="jump_a"></a>
+                <li class="layui-nav-item layui-this">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_a')">全部</a>
+                </li>
+                <a href="./视频模板-video-template.html" target="contextPageIframe" class="null" id="jump_a"></a>
 
-                  <li class="layui-nav-item">
-                    <a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_b')">SELF·Kids</a>
-                  </li>
-                  <a href="./scienceVideo/index.html" target="contextHomeIframe" class="null" id="jump_b"></a>
+                <li class="layui-nav-item">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_b')">SELF·Kids</a>
+                </li>
+                <a href="./scienceVideo/index.html" target="contextPageIframe" class="null" id="jump_b"></a>
 
-                  <li class="layui-nav-item">
-                    <a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_c')">科学家进校园</a>
-                  </li>
-                  <a href="./selfKids/index.html" target="contextHomeIframe" class="null" id="jump_c"></a>
+                <li class="layui-nav-item">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_c')">科学家进校园</a>
+                </li>
+                <a href="./selfKids/index.html" target="contextPageIframe" class="null" id="jump_c"></a>
 
-                  <li class="layui-nav-item">
-                    <a href="javascript:void(0)" target="contextHomeIframe" onclick="navJump('jump_d')">线下科学课</a>
-                  </li>
-                  <a href="./scienceTractice/index.html" target="contextHomeIframe" class="null" id="jump_d"></a>
+                <li class="layui-nav-item">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_d')">线下科学课</a>
+                </li>
+                <a href="./scienceTractice/index.html" target="contextPageIframe" class="null" id="jump_d"></a>
 
               </ul>
             </div>
@@ -67,10 +72,11 @@
       </div>
 
       <div id="iframe_div">
-        <iframe id="contextHomeIframe" name="contextHomeIframe" width="100%" scrolling="no" frameborder="0"
-                src="视频模板-video-template.html" onload="loadFrame(this)"></iframe>
+        <iframe id="contextPageIframe" name="contextPageIframe" width="100%" scrolling="no" frameborder="0"
+                src="视频模板-video-template.html"></iframe>
       </div>
 
     </div>
+  </div>
   </body>
 </html>
