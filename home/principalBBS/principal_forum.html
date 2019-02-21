@@ -2,29 +2,12 @@
 <head>
   <meta charset="UTF-8"/>
   <title>示范基地网站系统管理后台</title>
+  <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+  <script src="../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" media="screen" href="principal_forum.css" />
   <script>
-
-    $(function(){
-      layui.use('element', function(){
-        var element = layui.element;
-
-        window.parent.parent.layer.closeAll()
-        window.parent.parent.layer.open({
-          type:1,
-          shade:0,
-          offset: ['0px', '0px'],
-          move: false,
-          content:'<div class="fixed-bottom" id="f"><div class="box"><div class="button">预约</div></div></div>',
-          success: function(){
-            window.parent.parent.$(".layui-layer-title, .layui-layer-setwin, .layui-layer-resize").hide()
-            $("#f").show()
-          }
-        })
-      });
-
-      setContentPageHeight()
-    })
 
     function setContentPageHeight() {
       var b_iframe = window.parent.document.getElementById("contextHomeIframe");
@@ -64,7 +47,7 @@
             以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课堂等多样化的形式讲述科学故事，透视前......
           </div>
           <div class="detail-button">
-            <button class="entry-btn">报名</button>
+            <button class="entry-btn"><a class="entry-a" href="./principal-orderform.html">报名</a></button>
             <button class="live-btn"><span class="live-btn-word">预约直播</span></button>
           </div>
         </div>

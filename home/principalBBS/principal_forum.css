@@ -94,6 +94,11 @@ html, body {
   font-size: 14px;
   color: white;
 }
+.entry-btn .entry-a {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+}
 .live-btn {
   width: 140px;
   height: 40px;

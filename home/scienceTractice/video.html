@@ -136,6 +136,11 @@
       color: #999;
       text-align: justify;
     }
+    .order-link {
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+    }
   </style>
 
   <script>
@@ -158,9 +163,10 @@
       let x = event.clientX;
       let y = event.clientY;
       let divx1 = inform.offsetLeft;
-      let divy1 = inform.offsetTop;
+      let divy1 = inform.offsetTop - 20;
       let divx2 = inform.offsetLeft + inform.offsetWidth;
       let divy2 = inform.offsetTop + inform.offsetHeight;
+      // console.log(divy1 + ',' + divy2)
       if( x < divx1 || x > divx2 || y < divy1 || y > divy2){
         document.getElementById('teacher-info').style.display='none';
       }
@@ -202,7 +208,7 @@
           <span class="content-detail-span">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课堂等多样化的形式讲述科学故事，透视前......</span>
         </div>
         <button class="order-btn">
-          <span>预约</span>
+          <a class="order-link" href="./science-tractice-orderform.html">预约</a>
         </button>
       </div>
     </div>

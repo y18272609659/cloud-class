@@ -1,0 +1,276 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>示范基地网站系统管理后台</title>
+  <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+  <script src="../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <style type="text/css">
+    body form {
+      margin: 0;
+    }
+    .content {
+      margin-left: 200px;
+      font-size: 14px;
+      color: #666666;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: bolder;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      color: #0C0C0C;
+    }
+    .submit-btn {
+      width: 140px;
+      height: 40px;
+      margin: 20px 0;
+      background: #33a333;
+      color: #ffffff;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    span {
+      display: block;
+    }
+    .people .people-form .people-input {
+      display: inline-block;
+      max-width: 190px;
+      margin-right: 10px;
+    }
+    .layui-input-block, .layui-input-inline {
+      margin-left: 0;
+    }
+    .layui-form-item .layui-inline {
+      margin: 0;
+    }
+    .link .interact-link {
+      max-width: 600px;
+    }
+    .guest-title {
+      margin-top: 15px;
+    }
+    .layui-form-checkbox span {
+      max-height: 30px;
+    }
+  </style>
+  <script>
+    $(function () {
+      layui.use(['element', 'form'], function () {
+        var element = layui.element;
+        var form = layui.form;
+      })
+    })
+  </script>
+</head>
+<body>
+<div class="content">
+  <div class="title">提交预约信息</div>
+  <form class="layui-form" action="" method="post" enctype="multipart/form-data">
+
+    <!--参会人员部分-->
+    <div class="people">
+      <span class="people-title">参会人员(必填)</span> <br/>
+      <!--必填参会人员，限一人-->
+      <div class="layui-form-item people-form people-form-must">
+        <!--姓名-->
+        <div class="layui-input-inline">
+          <input type="text" name="username" required="required" placeholder="姓名" autocomplete="on" class="layui-input people-input">
+        </div>
+        <!--性别-->
+        <div class="layui-input-block layui-input-inline people-input">
+          <select name="sex-must" required lay-filter="aihao">
+            <option value="">点击选择性别</option>
+            <option value="0">男</option>
+            <option value="1">女</option>
+          </select>
+        </div>
+        <!--职称-->
+        <div class="layui-input-inline">
+          <input type="text" name="titles" required="required" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
+        </div>
+        <!--电话-->
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <input type="tel" name="phone" required="required" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
+          </div>
+        </div>
+        <!--邮箱-->
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <input type="text" name="email" required="required" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
+          </div>
+        </div>
+      </div>
+
+      <span class="people-title">参会人员（选填）</span> <br/>
+      <!--选填参会人员，可不填，最多填四人-->
+        <!--选填人（一）-->
+        <div class="layui-form-item people-form people-form-other1">
+          <!--姓名-->
+          <div class="layui-input-inline">
+            <input type="text" name="username-other1" placeholder="姓名" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--性别-->
+          <div class="layui-input-block layui-input-inline people-input">
+            <select name="sex-other1"  lay-filter="aihao">
+              <option value="">点击选择性别</option>
+              <option value="0">男</option>
+              <option value="1">女</option>
+            </select>
+          </div>
+          <!--职称-->
+          <div class="layui-input-inline">
+            <input type="text" name="titles-other1" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--电话-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="tel" name="phone-other1" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+          <!--邮箱-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="text" name="email-other1" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+        </div>
+
+        <!--选填人（二）-->
+        <div class="layui-form-item people-form people-form-other2">
+          <!--姓名-->
+          <div class="layui-input-inline">
+            <input type="text" name="username-other2" placeholder="姓名" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--性别-->
+          <div class="layui-input-block layui-input-inline people-input">
+            <select name="sex-other2"  lay-filter="aihao">
+              <option value="">点击选择性别</option>
+              <option value="0">男</option>
+              <option value="1">女</option>
+            </select>
+          </div>
+          <!--职称-->
+          <div class="layui-input-inline">
+            <input type="text" name="titles-other2" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--电话-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="tel" name="phone-other2" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+          <!--邮箱-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="text" name="email-other2" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+        </div>
+
+        <!--选填人（三）-->
+        <div class="layui-form-item people-form people-form-other3">
+          <!--姓名-->
+          <div class="layui-input-inline">
+            <input type="text" name="username-other3" placeholder="姓名" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--性别-->
+          <div class="layui-input-block layui-input-inline people-input">
+            <select name="sex-other3"  lay-filter="aihao">
+              <option value="">点击选择性别</option>
+              <option value="0">男</option>
+              <option value="1">女</option>
+            </select>
+          </div>
+          <!--职称-->
+          <div class="layui-input-inline">
+            <input type="text" name="titles-other3" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--电话-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="tel" name="phone-other3" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+          <!--邮箱-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="text" name="email-other3" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+        </div>
+
+        <!--选填人（四）-->
+        <div class="layui-form-item people-form people-form-other4">
+          <!--姓名-->
+          <div class="layui-input-inline">
+            <input type="text" name="username-other4" placeholder="姓名" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--性别-->
+          <div class="layui-input-block layui-input-inline people-input">
+            <select name="sex-other4"  lay-filter="aihao">
+              <option value="">点击选择性别</option>
+              <option value="0">男</option>
+              <option value="1">女</option>
+            </select>
+          </div>
+          <!--职称-->
+          <div class="layui-input-inline">
+            <input type="text" name="titles-other4" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
+          </div>
+          <!--电话-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="tel" name="phone-other4" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+          <!--邮箱-->
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="text" name="email-other4" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--参与环节部分-->
+    <div class="link">
+      <span class="link-title">希望参与此次校长论坛中的哪些环节？（选填）</span> <br/>
+      <div class="layui-input-block">
+        <input type="text" name="interact-link" autocomplete="off" class="layui-input interact-link">
+      </div>
+    </div>
+
+    <!--选择交流嘉宾-->
+    <div class="guest">
+      <span class="guest-title">希望与哪位参会嘉宾进行交流？</span> <br/>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="checkbox" name="guest-one" lay-skin="primary" title="张阳">
+          <input type="checkbox" name="guest-two" lay-skin="primary" title="王小波">
+          <input type="checkbox" name="guest-three" lay-skin="primary" title="刘涛">
+          <input type="checkbox" name="guest-four" lay-skin="primary" title="周明阳">
+        </div>
+      </div>
+    </div>
+
+    <!--其他需求-->
+    <div class="link">
+      <div  class="layui-form-item layui-form-text">
+        <span class="link-title">其他需求（选填）</span> <br/>
+        <div class="layui-input-block">
+          <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <input type="submit" value="提交" class="submit-btn">
+  </form>
+
+</div>
+</body>
+</html>
