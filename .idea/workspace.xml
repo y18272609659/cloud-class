@@ -3,19 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f1cba5a-6e00-4c2d-b5bc-bbfcf4f9eebc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/index_tourist.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/index_tourist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/principalBBS/principal_forum.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/principalBBS/principal_forum.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/principalBBS/principal_forum.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/principalBBS/principal_forum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceTractice/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/scienceTractice/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceTractice/scienceTractice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceTractice/科学实践课-详情页.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceTractice/科学实践课.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceTractice/视频模板-video-template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceVideo/video_details/推荐给学生.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceVideo/video_details/收藏.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/scienceVideo/video_details/评分3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/scienceTractice/science-tractice-orderform.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/scienceTractice/science-tractice-orderform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/scienceTractice/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/scienceTractice/video.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,71 +19,98 @@
     <session id="-1388852935">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="9" />
-          <entry key="html" value="53" />
-          <entry key="js" value="3" />
-          <entry key="txt" value="1" />
+          <entry key="html" value="66" />
+          <entry key="js" value="7" />
+          <entry key="json" value="4" />
+          <entry key="md" value="1" />
+          <entry key="txt" value="2" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="9" />
-          <entry key="HTML" value="53" />
-          <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="HTML" value="66" />
+          <entry key="JSON" value="4" />
+          <entry key="JavaScript" value="7" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="295" />
-          <entry key="html" value="4088" />
-          <entry key="js" value="1" />
+          <entry key="html" value="7083" />
+          <entry key="js" value="3" />
+          <entry key="json" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="295" />
-          <entry key="HTML" value="4088" />
-          <entry key="JavaScript" value="1" />
+          <entry key="HTML" value="7083" />
+          <entry key="JSON" value="43" />
+          <entry key="JavaScript" value="3" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/home/principalBBS/principal_forum.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/scienceTractice/video.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+            <state relative-caret-position="266">
+              <caret line="151" column="84" selection-start-line="151" selection-start-column="67" selection-end-line="151" selection-end-column="84" />
+              <folding>
+                <element signature="e#3306#3384#0" />
+                <element signature="e#3429#3929#0" />
+                <element signature="e#3934#3976#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home/scienceTractice/science-tractice-orderform.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1740">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <folding>
+                <element signature="n#script#5;n#head#0;n#html#0;n#!!top" />
+                <element signature="e#2596#3564#0" />
+                <element signature="e#3620#4416#0" />
+                <element signature="e#4474#4878#0" />
+                <element signature="n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home/scienceVideo/index.html">
+        <entry file="file://D:/code-file/息通科技/云课堂 备份/未合并文件/submit_order_message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="408" column="20" selection-start-line="408" selection-start-column="20" selection-end-line="408" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="e#413#449#0" />
-              </folding>
+            <state relative-caret-position="175">
+              <caret line="86" column="45" lean-forward="true" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -115,6 +131,15 @@
       <find>id=</find>
       <find>other</find>
       <find>entry</find>
+      <find>Ajax</find>
+      <find>setH</find>
+      <find>console</find>
+      <find>layui.f</find>
+      <find>layui.form</find>
+      <find>json</find>
+      <find>city</find>
+      <find>\</find>
+      <find>submit-btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,11 +160,16 @@
         <option value="$PROJECT_DIR$/home/scienceTractice/视频模板-video-template.html" />
         <option value="$PROJECT_DIR$/home/scienceTractice/表单.html" />
         <option value="$PROJECT_DIR$/home/scienceTractice/scienceTractice.html" />
-        <option value="$PROJECT_DIR$/home/scienceTractice/video.html" />
         <option value="$PROJECT_DIR$/home/scienceTractice/science-tractice.html" />
         <option value="$PROJECT_DIR$/home/index_tourist.html" />
         <option value="$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.html" />
         <option value="$PROJECT_DIR$/home/principalBBS/principal_forum.html" />
+        <option value="$PROJECT_DIR$/home/scienceTractice/city.json" />
+        <option value="D:/code-file/息通科技/云课堂 备份/area.js" />
+        <option value="$PROJECT_DIR$/home/scienceTractice/area.js" />
+        <option value="D:/code-file/息通科技/云课堂 备份/index.html" />
+        <option value="$PROJECT_DIR$/home/scienceTractice/video.html" />
+        <option value="$PROJECT_DIR$/home/scienceTractice/science-tractice-orderform.html" />
       </list>
     </option>
   </component>
@@ -149,7 +179,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="533" />
     <option name="y" value="4" />
     <option name="width" value="847" />
@@ -176,7 +206,20 @@
               <item name="front" type="b2602c69:ProjectViewProjectNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="principalBBS" type="462c0819:PsiDirectoryNode" />
+              <item name="scienceTractice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="scienceVideo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="scienceVideo" type="462c0819:PsiDirectoryNode" />
+              <item name="video_details" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -188,9 +231,10 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="workspace&#9;FILE&#9;file://C:/myphp_www/PHPTutorial/WWW/main/webapp/WEB-INF/pages/front/.idea/workspace.xml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/一些备份/test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RunDashboard">
@@ -222,17 +266,19 @@
       <workItem from="1550566106794" duration="6481000" />
       <workItem from="1550642411794" duration="10646000" />
       <workItem from="1550715597394" duration="1160000" />
+      <workItem from="1550732479567" duration="13027000" />
+      <workItem from="1550806253254" duration="19634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55337000" />
+    <option name="totallyTimeSpent" value="87998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23511904" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -244,7 +290,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -291,9 +337,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceTractice/科学实践课.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/科学实践课.css" />
     <entry file="file://$USER_HOME$/Desktop/云课堂接口文档.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -323,13 +367,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/principalBBS/表单.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home/principalBBS/表单.html" />
     <entry file="file://$PROJECT_DIR$/home/principalBBS/principal_forum.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -337,30 +375,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceTractice/视频模板-video-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
-          <caret line="141" column="27" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
-          <folding>
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceTractice/表单.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/视频模板-video-template.html" />
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/表单.html" />
     <entry file="file://$PROJECT_DIR$/home/info/index_tourist.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1900">
           <caret line="220" column="18" lean-forward="true" selection-start-line="220" selection-start-column="18" selection-end-line="220" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -368,28 +388,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="312" column="16" selection-start-line="312" selection-start-column="16" selection-end-line="312" selection-end-column="16" />
-          <folding>
-            <element signature="e#9841#9847#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceTractice/scienceTractice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/scienceTractice.html" />
     <entry file="file://$PROJECT_DIR$/home/scienceTractice/science-tractice.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceTractice/science-tractice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../../lessonCloud/src/main/webapp/WEB-INF/pages/front/home/scienceTractice/science-tractice.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -407,13 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceTractice/video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="210" column="71" selection-start-line="210" selection-start-column="71" selection-end-line="210" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -421,19 +418,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.html">
+    <entry file="file://$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.js" />
+    <entry file="file://$PROJECT_DIR$/home/principalBBS/principal_forum.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1940">
-          <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
+        <state relative-caret-position="166">
+          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home/scienceVideo/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="-3343">
           <caret line="408" column="20" selection-start-line="408" selection-start-column="20" selection-end-line="408" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -442,10 +437,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/principalBBS/principal_forum.html">
+    <entry file="file://$PROJECT_DIR$/home/scienceVideo/video_details/science_video_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        <state relative-caret-position="1564">
+          <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/principalBBS/principal-orderform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2320">
+          <caret line="116" column="43" lean-forward="true" selection-start-line="116" selection-start-column="43" selection-end-line="116" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/code-file/vuexm/Travel/static/mock/city.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/code-file/息通科技/SVN/runoob01/云课堂接口文档.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c6f9d1311f5833/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/code-file/息通科技/云课堂 备份/area.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/code-file/息通科技/云课堂 备份/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="64" column="39" lean-forward="true" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/area.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/city.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="151" column="84" selection-start-line="151" selection-start-column="67" selection-end-line="151" selection-end-column="84" />
+          <folding>
+            <element signature="e#3306#3384#0" />
+            <element signature="e#3429#3929#0" />
+            <element signature="e#3934#3976#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/science-tractice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/code-file/息通科技/云课堂 备份/未合并文件/submit_order_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="86" column="45" lean-forward="true" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/code-file/息通科技/区块链/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/scienceTractice/science-tractice-orderform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1740">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="n#script#5;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#2596#3564#0" />
+            <element signature="e#3620#4416#0" />
+            <element signature="e#4474#4878#0" />
+            <element signature="n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

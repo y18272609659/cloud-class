@@ -11,6 +11,7 @@
       margin: 0;
     }
     .content {
+      margin-left: 180px;
       font-size: 14px;
       color: #666666;
     }
@@ -18,13 +19,13 @@
       font-size: 16px;
       font-weight: bolder;
       margin-top: 50px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       color: #0C0C0C;
     }
     .submit-btn {
       width: 140px;
       height: 40px;
-      margin: 20px 0;
+      margin: 40px 0 60px 0;
       background: #33a333;
       color: #ffffff;
       border-radius: 5px;
@@ -33,243 +34,264 @@
     }
     span {
       display: block;
+      margin: 10px 0;
     }
-    .people .people-form .people-input {
+    .class-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #4a4a4f;
+    }
+    .class-time .layui-input {
       display: inline-block;
-      max-width: 190px;
+      width: auto;
       margin-right: 10px;
     }
-    .layui-input-block, .layui-input-inline {
-      margin-left: 0;
+    .class-place {
+      width: 380px;
     }
-    .layui-form-item .layui-inline {
-      margin: 0;
+    .school-place .detail-dress {
+      display: inline-block;
+      width: 400px;
     }
-    .link .interact-link {
-      max-width: 600px;
+    .contact-people input, textarea {
+      width: 750px;
     }
-    .guest-title {
-      margin-top: 15px;
+    .contact-people textarea {
+      resize: none;
+      width: 900px;
+      height: 100px;
     }
-    .layui-form-checkbox span {
-      max-height: 30px;
-    }
+
   </style>
+
+  <!--城市列表文件-->
+  <script src="area.js"></script>
+
   <script>
+    //【城市选择】初始数据
+    var areaData = Area;
+    var $form;
+    var form;
+    var $;
+
     $(function () {
-      layui.use(['element', 'form'], function () {
+      layui.use(['element', 'form', 'laydate', 'jquery'], function () {
         var element = layui.element;
         var form = layui.form;
-      })
-    })
-  </script>
-</head>
-<body>
-<div class="content">
-  <div class="title">提交预约信息</div>
-  <form class="layui-form" action="" method="post" enctype="multipart/form-data">
+        var laydate = layui.laydate;
 
-    <!--参会人员部分-->
-    <div class="people">
-      <span class="people-title">参会人员(必填)</span> <br/>
-      <!--必填参会人员，限一人-->
-      <div class="layui-form-item people-form people-form-must">
-        <!--姓名-->
-        <div class="layui-input-inline">
-          <input type="text" name="username" required="required" placeholder="姓名" autocomplete="on" class="layui-input people-input">
+        //日期时间范围
+        lay('.class-time')
+          // 日期选择
+          .each(function () {
+            laydate.render({
+              elem: '#class-date',
+              type: 'date',
+              range: '~',
+              format: 'M月d日',
+              min: 3,
+              max: 180,
+              theme: '#33a333',
+              done: function () {
+                var hour = document.getElementById('class-hour')
+                hour.focus()
+              }
+            });
+          })
+          // 时间选择
+          .each(function () {
+            laydate.render({
+              elem: '#class-hour',
+              type: 'time',
+              range: '~',
+              format: 'HH点mm分',
+              // value: '08点30分~11点30分',
+              // min: 3,
+              // max: 180,
+              theme: '#33a333',
+            });
+          })
+
+        // 设置当上课地点选框的值选为“学校”时，学校地点选框显示（display：block）
+        form.on('select(class-place)', function(data){
+          // console.log(typeof(data.value))
+          if (data.value === '1') {
+            var school = document.getElementsByClassName('school-place')[0]
+            school.style.display = 'block'
+          }
+        })
+
+          //【城市选择】初始数据
+          $ = layui.jquery;
+          form = layui.form;
+          $form = $('form');
+          loadProvince();
+          //【城市选择】加载省数据
+          function loadProvince() {
+            var proHtml = '';
+            for (var i = 0; i < areaData.length; i++) {
+              proHtml += '<option value="' + areaData[i].provinceCode + '_' + areaData[i].mallCityList.length + '_' + i + '">' + areaData[i].provinceName + '</option>';
+              // console.log(proHtml)
+            }
+            //【城市选择】初始化省数据
+            $form.find('select[name=province]').append(proHtml);
+            form.render('select');
+            form.on('select(province)', function(data) {
+              // $form.find('select[name=area]').html('<option value="">请选择县/区</option>').parent().hide();
+              var value = data.value;
+              var d = value.split('_');
+              var code = d[0];
+              var count = d[1];
+              var index = d[2];
+              if (count > 0) {
+                loadCity(areaData[index].mallCityList);
+              }
+              // else {
+              //   $form.find('select[name=city]').parent().hide();
+              // }
+            });
+          }
+          //【城市选择】加载市数据
+          function loadCity(citys) {
+            var cityHtml = '';
+            for (var i = 0; i < citys.length; i++) {
+              cityHtml += '<option value="' + citys[i].cityCode + '_' + citys[i].mallAreaList.length + '_' + i + '">' + citys[i].cityName + '</option>';
+              // console.log(cityHtml)
+            }
+            $form.find('select[name=city]').html(cityHtml).parent().show();
+            form.render();
+            form.on('select(city)', function(data) {
+              var value = data.value;
+              var d = value.split('_');
+              var code = d[0];
+              var count = d[1];
+              var index = d[2];
+              if (count > 0) {
+                loadArea(citys[index].mallAreaList);
+              } else {
+                $form.find('select[name=area]').parent().hide();
+              }
+            });
+          }
+          //【城市选择】加载县/区数据
+          function loadArea(areas) {
+            var areaHtml = '';
+            for (var i = 0; i < areas.length; i++) {
+              areaHtml += '<option value="' + areas[i].areaCode + '">' + areas[i].areaName + '</option>';
+            }
+            $form.find('select[name=area]').html(areaHtml).parent().show();
+            form.render();
+            form.on('select(area)', function(data) {
+              //console.log(data);
+            });
+          }
+        })
+
+      })
+
+
+
+    // 获取页面长度，使浏览器适应该页面长度，页面内容过多则出现进度条。
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    }
+
+  </script>
+
+</head>
+<body onload="setContentPageHeight()">
+  <div id="content">
+    <div class="content">
+      <div class="title">提交预约信息</div>
+      <form class="layui-form" action="" method="post" enctype="multipart/form-data">
+
+        <!--课程名称-->
+       <div class="class-info">
+         <span class="class-title">课程</span>
+         <span class="class-name">网络攻防战</span>
+       </div>
+
+        <!--上课时间-->
+        <div class="class-time">
+          <span class="class-time-title">上课时间</span>
+          <div class="layui-inline">
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" required id="class-date" placeholder=" - ">
+              <input type="text" class="layui-input" required id="class-hour" placeholder=" - ">
+            </div>
+          </div>
         </div>
-        <!--性别-->
-        <div class="layui-input-block layui-input-inline people-input">
-          <select name="sex-must" required lay-filter="aihao">
-            <option value="">点击选择性别</option>
-            <option value="0">男</option>
-            <option value="1">女</option>
+
+        <!--上课地点-->
+        <div class="class-place">
+          <span class="class-time-title">上课地点</span>
+          <select required class="class-place-choose" name="class-place" lay-filter="class-place">
+            <option value="">请选择上课地点</option>
+            <option value="0">中国科学院计算机网络信息中心</option>
+            <option value="1">学校</option>
           </select>
         </div>
-        <!--职称-->
-        <div class="layui-input-inline">
-          <input type="text" name="titles" required="required" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
-        </div>
-        <!--电话-->
-        <div class="layui-inline">
-          <div class="layui-input-inline">
-            <input type="tel" name="phone" required="required" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
-          </div>
-        </div>
-        <!--邮箱-->
-        <div class="layui-inline">
-          <div class="layui-input-inline">
-            <input type="text" name="email" required="required" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
-          </div>
-        </div>
-      </div>
 
-      <span class="people-title">参会人员（选填）</span> <br/>
-      <!--选填参会人员，可不填，最多填四人-->
-        <!--选填人（一）-->
-        <div class="layui-form-item people-form people-form-other1">
-          <!--姓名-->
+        <!--学校地点-->
+        <div class="school-place" style="display: none">
+          <span class="class-time-title">学校地点</span>
+          <!--省-->
           <div class="layui-input-inline">
-            <input type="text" name="username-other1" placeholder="姓名" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--性别-->
-          <div class="layui-input-block layui-input-inline people-input">
-            <select name="sex-other1"  lay-filter="aihao">
-              <option value="">点击选择性别</option>
-              <option value="0">男</option>
-              <option value="1">女</option>
+            <select name="province" lay-filter="province">
+              <option value="">请选择省</option>
             </select>
           </div>
-          <!--职称-->
+          <!--城市-->
           <div class="layui-input-inline">
-            <input type="text" name="titles-other1" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--电话-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="tel" name="phone-other1" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
-            </div>
-          </div>
-          <!--邮箱-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="text" name="email-other1" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
-            </div>
-          </div>
-        </div>
-
-        <!--选填人（二）-->
-        <div class="layui-form-item people-form people-form-other2">
-          <!--姓名-->
-          <div class="layui-input-inline">
-            <input type="text" name="username-other2" placeholder="姓名" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--性别-->
-          <div class="layui-input-block layui-input-inline people-input">
-            <select name="sex-other2"  lay-filter="aihao">
-              <option value="">点击选择性别</option>
-              <option value="0">男</option>
-              <option value="1">女</option>
+            <select name="city" lay-filter="city">
+              <option value="">请选择市</option>
             </select>
           </div>
-          <!--职称-->
+          <!--县/区-->
           <div class="layui-input-inline">
-            <input type="text" name="titles-other2" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--电话-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="tel" name="phone-other2" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
-            </div>
-          </div>
-          <!--邮箱-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="text" name="email-other2" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
-            </div>
-          </div>
-        </div>
-
-        <!--选填人（三）-->
-        <div class="layui-form-item people-form people-form-other3">
-          <!--姓名-->
-          <div class="layui-input-inline">
-            <input type="text" name="username-other3" placeholder="姓名" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--性别-->
-          <div class="layui-input-block layui-input-inline people-input">
-            <select name="sex-other3"  lay-filter="aihao">
-              <option value="">点击选择性别</option>
-              <option value="0">男</option>
-              <option value="1">女</option>
+            <select name="area" lay-filter="area">
+              <option value="">请选择县/区</option>
             </select>
           </div>
-          <!--职称-->
-          <div class="layui-input-inline">
-            <input type="text" name="titles-other3" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
+          <!--学校详细地址-->
+          <input type="text" name="title" required placeholder="请输入具体地址" class="layui-input detail-dress">
+        </div>
+
+        <!--联系人-->
+        <div class="contact-people">
+          <!--联系人姓名-->
+          <div class="contact-name">
+            <span class="class-name-title">联系人</span>
+            <input type="text" name="title" maxlength="24" required class="layui-input name">
           </div>
-          <!--电话-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="tel" name="phone-other3" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
-            </div>
+          <!--联系电话-->
+          <div class="contact-tel">
+            <span class="class-tel-title">联系电话</span>
+            <input type="tel" name="phone" lay-verify="required|phone" class="layui-input telephone"
+                   required oninput = "value=value.replace(/[^\d]/g,'')" maxlength="50">
           </div>
-          <!--邮箱-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="text" name="email-other3" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
-            </div>
+          <!--联系邮箱-->
+          <div class="contact-email">
+            <span class="class-email-title">联系邮箱</span>
+            <input type="text" name="email" class="layui-input email" maxlength="50" required>
+          </div>
+          <!--补充需求（选填）-->
+          <div class="other-need">
+            <span class="other-need-title">补充需求（选填）</span>
+            <textarea class="layui-textarea other"></textarea>
           </div>
         </div>
 
-        <!--选填人（四）-->
-        <div class="layui-form-item people-form people-form-other4">
-          <!--姓名-->
-          <div class="layui-input-inline">
-            <input type="text" name="username-other4" placeholder="姓名" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--性别-->
-          <div class="layui-input-block layui-input-inline people-input">
-            <select name="sex-other4"  lay-filter="aihao">
-              <option value="">点击选择性别</option>
-              <option value="0">男</option>
-              <option value="1">女</option>
-            </select>
-          </div>
-          <!--职称-->
-          <div class="layui-input-inline">
-            <input type="text" name="titles-other4" lay-verify="required" placeholder="职称" autocomplete="on" class="layui-input people-input">
-          </div>
-          <!--电话-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="tel" name="phone-other4" lay-verify="required|phone" placeholder="电话" autocomplete="on" class="layui-input people-input">
-            </div>
-          </div>
-          <!--邮箱-->
-          <div class="layui-inline">
-            <div class="layui-input-inline">
-              <input type="text" name="email-other4" lay-verify="email" placeholder="邮箱" autocomplete="on" class="layui-input people-input">
-            </div>
-          </div>
-        </div>
-    </div>
 
-    <!--参与环节部分-->
-    <div class="link">
-      <span class="link-title">希望参与此次校长论坛中的哪些环节？（选填）</span> <br/>
-      <div class="layui-input-block">
-        <input type="text" name="interact-link" autocomplete="off" class="layui-input interact-link">
-      </div>
-    </div>
-
-    <!--选择交流嘉宾-->
-    <div class="guest">
-      <span class="guest-title">希望与哪位参会嘉宾进行交流？</span> <br/>
-      <div class="layui-form-item">
-        <div class="layui-input-block">
-          <input type="checkbox" name="guest-one" lay-skin="primary" title="张阳">
-          <input type="checkbox" name="guest-two" lay-skin="primary" title="王小波">
-          <input type="checkbox" name="guest-three" lay-skin="primary" title="刘涛">
-          <input type="checkbox" name="guest-four" lay-skin="primary" title="周明阳">
-        </div>
-      </div>
-    </div>
-
-    <!--其他需求-->
-    <div class="link">
-      <div  class="layui-form-item layui-form-text">
-        <span class="link-title">其他需求（选填）</span> <br/>
-        <div class="layui-input-block">
-          <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-      </div>
+        <input type="submit" value="提交" class="submit-btn">
+      </form>
 
     </div>
-
-    <input type="submit" value="提交" class="submit-btn">
-  </form>
-
-</div>
+  </div>
 </body>
 </html>
