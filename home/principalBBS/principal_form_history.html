@@ -1,0 +1,83 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>示范基地网站系统管理后台</title>
+  <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+  <script src="../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <style>
+    #content {
+      margin: 2vw 13vw 6vw 13vw;
+    }
+    span, p {
+      display: block;
+    }
+    /*下方文章样式*/
+    .article-title {
+      font-size: 36px;
+      font-weight: bolder;
+      color: #333333;
+    }
+    .article-time {
+      margin: 10px 0 40px;
+      font-size: 14px;
+      color: #666666;
+    }
+    .brief, .subtitle {
+      font-size: 18px;
+      font-weight: bolder;
+      color: #333333;
+    }
+    .brief-content {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5rem;
+      margin-bottom: 0.16vw;
+    }
+    .brief-img {
+      display: block;
+      margin: 20px auto;
+      height: 300px;
+      width: 740px;
+      background: palegoldenrod;
+    }
+  </style>
+  <script>
+
+    // 设置页面高度为该页面的内容高度
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 70;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 140;
+      console.log('设置内容页面高度函数执行了')
+    }
+
+  </script>
+</head>
+<body onload="setContentPageHeight()">
+  <div id="content">
+    <div class="article-content">
+      <span class="article-title">主题内容主题内容主题内容主题内容</span>
+      <span class="article-time">日期：2018年9月30日</span>
+      <span class="brief">简介</span>
+      <p class="brief-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+        justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis
+        parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate,
+        felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+      <img class="brief-img"/>
+      <span class="subtitle">子标题子标题子标题子标题子标题子标题子标题子标题子标题</span>
+      <p class="sub-content brief-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+      justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis
+      parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate,
+      felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+    </div>
+  </div>
+</body>
+</html>

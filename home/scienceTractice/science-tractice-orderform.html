@@ -119,6 +119,7 @@
             var school = document.getElementsByClassName('school-place')[0]
             school.style.display = 'block'
           }
+          setContentPageHeight()
         })
 
           //【城市选择】初始数据
@@ -199,6 +200,7 @@
 
       var a_iframe = window.parent.parent.document.getElementById("contextIframe");
       a_iframe.height = height + 100;
+      console.log('调整页面高度函数执行了')
     }
 
   </script>

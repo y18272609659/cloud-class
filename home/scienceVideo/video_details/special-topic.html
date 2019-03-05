@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>示范基地网站系统管理后台</title>
+  <link rel="stylesheet" media="screen" href="science_video_details.css">
+  <link rel="stylesheet" href="../../../../../../static/layui/css/layui.css">
+  <script src="../../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <style>
+    #content {
+      margin: 1vw 9vw 3vw 9vw;
+    }
+    .title {
+      color: #333;
+      font-weight: bold;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .special-topic-info {
+      display: inline-block;
+      margin: 0 0.3vw;
+    }
+    .introduce {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5rem;
+      margin-bottom: 0.16vw;
+    }
+    img {
+      margin: 20px 0;
+      height: 16.8vw;
+      width: 26vw;
+      background: lightblue;
+    }
+    .video-title {
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .video-brief {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+  <script>
+
+    // 设置页面高度为该页面的内容高度
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 70;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 140;
+      console.log('设置内容页面高度函数执行了')
+    }
+
+  </script>
+</head>
+<body onload="setContentPageHeight()">
+  <div id="content">
+    <div class="title">XXXXXX专题</div>
+    <div class="introduce">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+      bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin
+      sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed
+      rhoncus pronin sapien nunc accuan eget.</div>
+
+    <div class="special-topic-info">
+      <a href="science_video_details.html" onclick="parent.parent.scrollTo(0,0)">
+        <img src=""/>
+      </a>
+
+      <div class="video-title">XXXX科学视频</div>
+      <div class="video-brief">一句话简介，不超十二字</div>
+    </div>
+
+    <div class="special-topic-info">
+      <img src=""/>
+      <div class="video-title">XXXX科学视频</div>
+      <div class="video-brief">一句话简介，不超十二字</div>
+    </div>
+
+    <div class="special-topic-info">
+      <img src=""/>
+      <div class="video-title">XXXX科学视频</div>
+      <div class="video-brief">一句话简介，不超十二字</div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -25,7 +25,7 @@
     .submit-btn {
       width: 140px;
       height: 40px;
-      margin: 20px 0;
+      margin: 20px 0 60px 0;
       background: #33a333;
       color: #ffffff;
       border-radius: 5px;
@@ -61,12 +61,24 @@
       layui.use(['element', 'form'], function () {
         var element = layui.element;
         var form = layui.form;
-      })
-    })
+      });
+
+        setContentPageHeight()
+    });
+
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      console.log(height)
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
   </script>
 </head>
-<body>
-<div class="content">
+<body onload="setContentPageHeight()">
+<div id="content" class="content">
   <div class="title">提交预约信息</div>
   <form class="layui-form" action="" method="post" enctype="multipart/form-data">
 
