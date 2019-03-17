@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>表单</title>
+  <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+  <link rel="stylesheet" href="../../../../static/css/reset.css">
+  <script src="../../../../static/layui/layui.js"></script>
+  <script src="../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <script>
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
+
+  </script>
+  <style>
+    .hide{
+        display:block;
+      }
+
+  .center{
+    margin-left:107px;
+    /*border:1px solid red;*/
+    display: inline-block;
+    width:267px;
+  }
+
+  .center h2{
+    margin-top: 20px;
+  }
+
+  .tips{
+      font-size:10px;
+      color:#ccc;
+  }
+
+  p{
+    margin:10px;
+  }
+    </style>
+</head>
+
+<body onload="setContentPageHeight()">
+  <div id="content">
+    <div class="center">
+      <h2>提交预约信息</h2>
+      <form action="./submit_success.html" target="_parent" method="get">
+        <p>参与人数</p>
+        <p><input type="text" name="number" required="required" oninput="value=value.replace(/[^\d]/g,'')" placeholder="请输入数字即可"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>是否愿意互动</p>
+        <p><input class="yes" type="radio" name="interact" value="yes" title="yes">是
+          <input class="no" type="radio" name="interact" value="no" title="no" checked>否<span class="tips">&nbsp&nbsp必选</span></p>
+        <div class="hide">
+          <p>联系人</p>
+          <p><input type="text" name="contact" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+          <p>联系电话</p>
+          <p><input type="text" name="tel" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+          <p>联系邮箱</p>
+          <p><input type="text" name="e-mail" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+          <p>补充需求(选填)</p>
+          <p><textarea></textarea><span class="tips">&nbsp&nbsp选填</span></p>
+        </div>
+        <p><input type="submit" value="提交"></p>
+      </form>
+    </div>
+  </div>
+  <script>
+  // 响应式表单
+  var hide = document.querySelector('.hide'),
+    yes = document.querySelector('.yes'),
+    no = document.querySelector('.no');
+  yes.onclick = function() {
+    hide.innerHTML = `<p>希望互动的内容</p>
+        <p><input type="text" name="content" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>联系人</p>
+        <p><input type="text" name="contact" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>联系电话</p>
+        <p><input type="text" name="tel" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>联系邮箱</p>
+        <p><input type="text" name="e-mail" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>补充需求(选填)</p>
+        <p><textarea></textarea><span class="tips">&nbsp&nbsp选填</span></p>`
+  }
+  no.onclick = function() {
+    hide.innerHTML = `<p>联系人</p>
+        <p><input type="text" name="contact" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>联系电话</p>
+        <p><input type="text" name="tel" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>联系邮箱</p>
+        <p><input type="text" name="e-mail" required="required"><span class="tips">&nbsp&nbsp必填</span></p>
+        <p>补充需求(选填)</p>
+        <p><textarea></textarea><span class="tips">&nbsp&nbsp选填</span></p>`
+  }
+  </script>
+</body>
+
+</html>

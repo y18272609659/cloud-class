@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>科学直播课</title>
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <link rel="stylesheet" href="css/science_live.css">
+    <style>
+      /*弹层样式*/
+      .username,
+      .password{
+          padding-left:10px;
+          line-height: 25px;
+          font:18px;
+      }
+
+      .layer{
+        margin:auto auto;
+        /*border:1px solid red;*/
+        text-align: center;
+        margin-top:50px;
+      }
+
+      .layui-layer-title{
+        font-weight: bold;
+      }
+
+      .layer p{
+        /*display:inline-block;*/
+        margin:0 auto;
+      }
+
+      .username{
+          margin-top:50px;
+      }
+
+      .password{
+
+      }
+
+      .layui-btn{
+        margin-top:17px;
+      }
+
+      .icon{
+        display: inline-block;
+        z-index: 8888;
+      }
+    </style>
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/js/front/Browser.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+
+    <script>
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+            setContentPageHeight()
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 30;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 100;
+        };
+
+        function toLive(){
+          layui.use('layer',function(){
+              var layer = layui.layer;
+              layer.open({
+                  type: 1,
+                  title: '即将进入本次直播，您查看直播的昵称及密码是：',
+                  content:'<div class="layer"><p class="username">昵称：xxxxxxxxxxx小学</p><p class="password">密码：xxxxxxxxxxxxxxxx</p><button class="layui-btn"><a href="../../appointment/else.html" target="_parent._parent">确定</a></button></div>',
+                  offset: '150px',
+                  area: ['500px', '228px']
+
+                })
+            })
+          }
+
+
+
+    </script>
+</head>
+<body>
+<div id="content">
+  <div class="body">
+
+    <!--直播中-->
+    <div class="bgc1">
+      <div class="live">
+        <h3 class="name">直播中</h3>
+        <div class="major-video major-video-box">
+          <a href="javascript:void(0);" onclick="alert('请您注册或登录！')"><img src="img/1.png" alt=""></a>
+          <div class="video-shade"></div>
+          <div class="video-data">
+            <div class="video-data-c">
+              <div class="button-zone">
+                <span class="kids">SELFxkids</span>
+                <span class="button">直播中</span>
+              </div>
+              <h3 class="title">SELF×kid第三期：自然物语</h3>
+              <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+              <p class="time">日期：2018年11月20日 15:00开始</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--直播预告-->
+    <div class="bgc2">
+      <div class="pre">
+        <h3 class="name">直播预告</h3>
+        <div class="left">
+          <a href="javascript:alert('请您注册或登录！')" class="icon"><img src="img/2.png" alt=""></a>
+          <div class="shade">
+            <div class="video-data">
+              <div class="video-data-c">
+                <div class="button-zone">
+                  <span class="kids">SELFxkids</span>
+                </div>
+                <h6 class="title">SELF×kid第二期：奇妙旅程</h6>
+                <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <a href="javascript:alert('请您注册或登录！')" class="icon"><img src="img/3.png" alt=""></a>
+          <div class="shade">
+            <div class="video-data">
+              <div class="video-data-c">
+                <div class="button-zone">
+                  <span class="kids">SELFxkids</span>
+                </div>
+                <h3 class="title">你不知道的生命奥秘</h3>
+                <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--直播回看-->
+    <div class="bgc3">
+      <div class="review">
+        <h6 class="name">直播回看</h6>
+        <div class="major-video major-video-box">
+          <a href="javascript:alert('请您注册或登录！')" class="icon"><img src="img/1.png" alt=""></a>
+          <div class="video-shade"></div>
+          <div class="video-data">
+            <div class="video-data-c">
+              <div class="button-zone">
+                <span class="kids">SELFxkids</span>
+              </div>
+              <div class="tag-title">SELF×kid第三期：自然物语</div>
+              <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+              <p class="time">日期：2018年11月20日 15:00开始</p>
+            </div>
+          </div>
+        </div>
+        <div class="two-layout">
+          <!--左边-->
+          <div class="left">
+            <a href="javascript:alert('请您注册或登录！')" class="icon"><img src="img/2.png" alt=""></a>
+            <div class="shade">
+              <div class="video-data">
+                <div class="video-data-c">
+                  <div class="button-zone">
+                    <span class="kids">SELFxkids</span>
+                  </div>
+                  <h6 class="title">SELF×kid第二期：奇妙旅程</h6>
+                  <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                  <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--右边-->
+          <div class="right">
+            <a href="javascript:alert('请您注册或登录！')" class="icon"><img src="img/3.png" alt=""></a>
+            <div class="shade">
+              <div class="video-data">
+                <div class="video-data-c">
+                  <div class="button-zone">
+                    <span class="kids">SELFxkids</span>
+                  </div>
+                  <h6 class="title">你不知道的生命奥秘</h6>
+                  <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                  <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="more-box" onclick="alert('请您注册或登录！')">查看更多 <span class="more-sign"></span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <script>
+    var jumpOutside = document.getElementsByClassName('layui-btn');
+    console.log(jumpOutside);
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+  <link rel="stylesheet" href="../../../../static/css/reset.css">
+  <script src="../../../../static/layui/layui.js"></script>
+  <script src="../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <style>
+
+    body {
+      background-color: #ccc;
+    }
+
+    .container {
+      width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      overflow: hidden;
+      padding: 30px;
+    }
+
+    .container .title {
+      margin-top: 40px
+    }
+
+    .btn {
+      width: 93px;
+      height: 24px;
+      background: -webkit-linear-gradient(180deg, rgba(4, 183, 94, 1) 0%, rgba(4, 183, 94, 1) 0%, rgba(0, 204, 204, 1) 100%, rgba(0, 204, 204, 1) 100%);
+      margin-right: 10px;
+      border: none;
+      color: white;
+    }
+
+    .teacher {
+      margin-top: 10px;
+    }
+
+    .teacher .teachers {
+      color: #04B75E;
+    }
+
+    .pic {
+      background-color: yellow;
+      width: 885px;
+      height: 357px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: 28px;
+    }
+
+    .pic .center {
+      font-size: 32px;
+      border: 1px solid red;
+      text-align: center;
+      display: inline-block;
+      /*height:357px;*/
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .intro {
+      margin-top: 10px;
+    }
+
+    .pic .center .click {
+      font-size: 22px;
+    }
+
+    .subtitle {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .pic span{
+      font-size:20px;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <script>
+
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
+
+  </script>
+</head>
+
+<body onload="setContentPageHeight()">
+  <div id="content">
+  <div class="container">
+    <h1 class="title">活动标题活动标题活动标题活动标题活动标题</h1>
+    <div class="line-two"><button class="btn">线下科学课</button><span>120分钟</span></div>
+    <div class="teacher">
+      <span class="major">主讲老师：</span><span class="teachers">王老师 李老师</span>
+    </div>
+    <div class="intro">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascenulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.
+    </div>
+    <div class="pic">
+      <div class="center">
+        <div class="video">视频</div>
+        <div class="click">点击播放</div>
+      </div>
+      <img src=""alt=""></div>
+      <div class="subtitle">子标题子标题子标题子标题子标题子标题</div>
+      <div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</div>
+      <div class="pic">
+        <span>图片</span>
+        <img src=""alt=""></div>
+      <div class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</div>
+      </div>
+      </div>
+</body>
+
+</html>

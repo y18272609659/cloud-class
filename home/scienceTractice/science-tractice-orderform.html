@@ -10,6 +10,9 @@
     body form {
       margin: 0;
     }
+    body {
+      background: white;
+    }
     .content {
       margin-left: 180px;
       font-size: 14px;
@@ -194,13 +197,12 @@
 
     // 获取页面长度，使浏览器适应该页面长度，页面内容过多则出现进度条。
     function setContentPageHeight() {
-      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
       var height = document.getElementById("content").offsetHeight;
-      b_iframe.height = height + 30;
 
-      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
-      a_iframe.height = height + 100;
-      console.log('调整页面高度函数执行了')
+      var a_iframe = window.parent.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 80;
+
+      console.log('调整页面高度的函数被执行了')
     }
 
   </script>

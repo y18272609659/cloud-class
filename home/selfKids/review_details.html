@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>示范基地网站系统管理后台</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+  <link rel="stylesheet" href="css/review_details.css">
+  <script src="../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <script>
+      $(function () {
+          layui.use(['element', 'layer'], function () {
+              var element = layui.element;
+              window.layer = layui.layer;
+          });
+
+          // setContentPageHeight()
+      })
+
+      // function setContentPageHeight() {
+      //     var b_iframe = window.parent.document.getElementById("contextIframe");
+      //     var height = document.getElementById("content").offsetHeight;
+      //     b_iframe.height = height + 30;
+      // };
+
+      function jumpMyCenter() {
+          layui.sessionData('zkyykt_jump_page', {
+              key: 'my_center'
+              , remove: true
+          })
+
+          document.getElementById('jump_my_center').click()
+      }
+
+      function loadFrame(obj) {
+          var url = obj.contentWindow.location.href;
+
+          if (url.indexOf("home/index") === -1) {
+              window.parent.$("#f").hide()
+          }
+      }
+
+      function frontLogin() {
+          layer.open({
+              type: 2,
+              title: '登录',
+              offset: '200px',
+              area: ['603px', '330px'],
+              content: './frontLogin.html'
+          });
+      }
+
+      function loginComplete() {
+          window.location.href = "./home_logged.html"
+      }
+
+      function frontReg() {
+          window.open("http://159.226.3.103/base/home")
+      }
+  </script>
+
+  <script>
+
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
+
+  </script>
+
+  <style type="text/css">
+    body {
+      /*background-color: rgba(228, 228, 228, 1);*/
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    }
+
+    .content {
+
+    }
+
+    #nav {
+      margin: 0px auto;
+      width: 1000px;
+      min-width: 1000px;
+      line-height: 80px;
+    }
+
+    #iframe_div {
+      margin: 0px auto;
+      width: 100%;
+      /*min-width: 1200px;*/
+      min-height: 100vh;
+    }
+
+    #nav div span {
+      color: rgb(51, 51, 51);
+      /*margin-left: 10px;*/
+      font-weight: 700;
+      font-style: normal;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    #contextIframe {
+      /*min-height: 450px;*/
+    }
+
+    h1 {
+      font-size: 20px;
+      padding-left: 50px;
+      font-weight: 700;
+    }
+
+    #nav .logo {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 175px;
+      height: 58px;
+      display: block;
+    }
+
+    #nav .logo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    #nav h1 {
+      width: 175px;
+      height: 58px;
+    }
+
+    #nav .search-zone {
+      text-align: right;
+    }
+
+    #nav .layui-input {
+      color: #e6e6e6;
+      height: 32px;
+      background: #4ab64a;
+      font-size: 12px;
+      border-width: 0;
+    }
+
+    #nav input::-ms-input-placeholder {
+      color: #e6e6e6;
+    }
+
+    #nav input::-webkit-input-placeholder {
+      color: #e6e6e6;
+    }
+
+    #nav button {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 20px;
+      position: relative;
+      background: #73c673 url('../static/images/search.png') no-repeat center center;
+      left: -4px;
+    }
+
+    .layui-nav-white {
+      color: #333;
+      background: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .layui-nav .layui-nav-item a {
+      color: #333;
+      font-size: 14px;
+    }
+
+    .layui-nav .layui-nav-item a:hover {
+      color: #36ae36;
+    }
+
+    .layui-nav .layui-nav-item.layui-this a {
+      color: #36ae36;
+    }
+
+    .body #nav .layui-nav .layui-nav-item:after {
+      position: absolute;
+      left: 33%;
+      top: 49px;
+      height: 4px;
+      background-color: #36ae36;
+      width: 25px;
+      border-radius: 4px;
+      transition: all .2s;
+      -webkit-transition: all .2s;
+    }
+
+    .nav-f {
+      background: #36ae36;
+      height: 80px;
+    }
+
+    #nav .right-nav {
+      text-align: right;
+      height: 80px;
+    }
+
+    #nav .right-nav .button {
+      display: inline-block;
+      margin-left: 10px;
+      width: 60px;
+      height: 30px;
+      background: #ffda2d;
+      color: #333;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 4px;
+      margin-top: 25px;
+    }
+
+    #nav .right-nav .button.white {
+      line-height: 28px;
+      height: 28px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+    }
+
+    .bottom-border {
+      height: 5px;
+      background: linear-gradient(to right, #f7b235, #36ae36);
+    }
+
+    #bottom {
+      height: 120px;
+      background: #4a4a4f;
+    }
+
+    .bottom-core-word {
+      padding-top: 30px;
+      line-height: 2;
+      color: #f0f0f0;
+      font-size: 12px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    /**/
+    .fixed-bottom {
+      width: 100%;
+      position: fixed;
+      height: 80px;
+      background: #fff;
+      bottom: 0;
+      left: 0;
+      box-shadow: 0px -3px 7px #ddd;
+    }
+
+    .fixed-bottom .box {
+      width: 1000px;
+      margin: 0 auto;
+      height: 80px;
+    }
+
+    .fixed-bottom .box:after {
+      display: inline-block;
+      font-size: 0;
+      content: " ";
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .fixed-bottom .box .button {
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      border-radius: 6px;
+      background: linear-gradient(to right, #f7b235, #36ae36);
+      text-align: center;
+      vertical-align: middle;
+      line-height: 40px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <link id="layuicss-layer" rel="stylesheet"
+        href="http://159.226.3.103/lessonCloud/static/layui/css/modules/layer/default/layer.css?v=3.1.1" media="all">
+</head>
+<body onload="setContentPageHeight()">
+  <div id="content">
+<div class="container">
+  <div class="body">
+    <div class="title">所有直播回放</div>
+    <div id="nav">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <ul class="layui-nav layui-nav-white" lay-filter="">
+            <li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe"
+                                          onclick="navJump('jump_a')">全部</a></li>
+            <a href="" target="contextHomeIframe" class="null" id="jump_a"></a>
+
+            <li class="layui-nav-item layui-this"><a href="javascript:void(0)" target="contextHomeIframe"
+                                                     onclick="navJump('jump_b')">SELF·Kids</a></li>
+            <a href="" target="contextHomeIframe" class="null" id="jump_b"></a>
+
+            <li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe"
+                                          onclick="navJump('jump_c')">线下科学课</a></li>
+            <a href="" target="contextHomeIframe" class="null" id="jump_c"></a>
+
+            <li class="layui-nav-item"><a href="javascript:void(0)" target="contextHomeIframe"
+                                          onclick="navJump('jump_d')">科学家进校园</a></li>
+            <a href="" target="contextHomeIframe" class="null" id="jump_d"></a>
+            <li class="layui-nav-item"><a href="#">其他</a></li>
+            <span class="layui-nav-bar" style="left: 49.5px; top: 56.3333px; width: 0px; opacity: 0;"></span>
+            <div class="bar">播放最多 <a href=""><img src="img/more-grey.png" alt=""></a></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="video">
+      <div class="pic">
+        <img src="img/001.png" alt="">
+      </div>
+      <div class="comment">
+        <div class="title">SELFxkid第三期：自然物语</div>
+        <p class="host">主讲人：ZZZZZZZZZZZ</p>
+        <p class="date">2018年11月20日 15:00开始 #xxxxxxx小学#</p>
+        <p class="detail">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展
+          ，开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。1000+视频资源库，为同学们带来生物、化学、物理、艺术、人文、教育、信息技术、数学、天文等领域中好玩有趣的科学奥秘。</p>
+      </div>
+    </div>
+
+    <div class="video">
+      <div class="pic">
+        <img src="img/001.png" alt="">
+      </div>
+      <div class="comment">
+        <div class="title">SELFxkid第三期：自然物语</div>
+        <p class="host">主讲人：ZZZZZZZZZZZ</p>
+        <p class="date">2018年11月20日 15:00开始 #xxxxxxx小学#</p>
+        <p class="detail">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展
+          ，开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。1000+视频资源库，为同学们带来生物、化学、物理、艺术、人文、教育、信息技术、数学、天文等领域中好玩有趣的科学奥秘。</p>
+      </div>
+    </div>
+
+    <div class="video">
+      <div class="pic">
+        <img src="img/001.png" alt="">
+      </div>
+      <div class="comment">
+        <div class="title">SELFxkid第三期：自然物语</div>
+        <p class="host">主讲人：ZZZZZZZZZZZ</p>
+        <p class="date">2018年11月20日 15:00开始 #xxxxxxx小学#</p>
+        <p class="detail">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展
+          ，开拓学生科学视野、培养学生的科研源库，为同学们带来生物、化学、物理、艺术、人文、教育、信息技术、数学、天文等领域中好玩有趣的科学奥秘。</p>
+      </div>
+    </div>
+
+    <div class="video">
+      <div class="pic">
+        <img src="img/001.png" alt="">
+      </div>
+      <div class="comment">
+        <div class="title">SELFxkid第三期：自然物语</div>
+        <p class="host">主讲人：ZZZZZZZZZZZ</p>
+        <p class="date">2018年11月20日 15:00开始 #xxxxxxx小学#</p>
+        <p class="detail">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课程等多样化的形式讲述科学故事，透视前沿科技发展
+          ，开拓学生科学视野、培养学生的科研精神，为科学老师教学提供有力支撑。1000+视频资源库，为同学们带来生物、化学、物理、艺术、人文、教育、信息技术、数学、天文等领域中好玩有趣的科学奥秘。</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

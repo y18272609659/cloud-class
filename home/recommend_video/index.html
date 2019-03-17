@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>推荐视频</title>
+  <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+  <script src="../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" media="screen" href="principal_forum.css" />
+  <style>
+    body{
+      background-color: #ccc;
+    }
+
+    .container{
+      width:1159px;
+      margin:0 auto;
+      /*border:1px solid green;*/
+      background-color: white;
+      padding:10px;
+    }
+
+    .container::after{
+      content:"";
+      display: block;
+      clear:both;
+    }
+
+    .container .box{
+      width:376px;
+      height: 300px;
+      /*border:1px solid red;*/
+      float:left;
+      margin:0 auto;
+      padding:5px;
+    }
+
+    .container .box .pic{
+      border:1px solid black;
+      position: relative;
+    }
+
+    .container .box .pic img{
+      width:373px;
+      height:199px;
+      /*margin-left:104px;*/
+      border-bottom:1px solid black;
+      margin-left: 1px;
+    }
+
+    .container .box .pic .time{
+      margin-left:10px;
+    }
+
+    .container .box .subtitle,
+    .container .box .introd{
+      margin-left:10px;
+    }
+
+    .container .box .pic .label{
+      width: 80px;
+      height: 27px;
+      background: linear-gradient(270deg, rgba(4, 183, 94, 1) 0%, rgba(4, 183, 94, 1) 0%, rgba(0, 204, 204, 1) 100%, rgba(0, 204, 204, 1) 100%);
+      position:absolute;
+      left:10px;
+      top:6px;
+      border-radius: 5px;
+    }
+
+    .container .box .subtitle{
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .container .box .label{
+      text-align: center;
+      line-height: 27px;
+    }
+  </style>
+
+  <script>
+
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    };
+
+  </script>
+</head>
+<body onload="setContentPageHeight()">
+  <div id="content">
+<div class="container">
+<h3>所有推荐视频</h3>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div><div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+<div class="box">
+  <div class="pic"><img src="./c.jpg" alt=""><div class="time">6:05</div><div class="label">物理</div></div>
+  <div class="subtitle">XXXX科学视频</div>
+  <div class="introd">一句话简介，不超十二字</div>
+</div>
+</div>
+</div>
+</body>
+</html>

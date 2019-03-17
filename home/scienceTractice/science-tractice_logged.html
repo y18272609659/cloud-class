@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>示范基地网站系统管理后台</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+  <script src="../../../../../static/layui/layui.js"></script>
+  <script src="../../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <script>
+
+    $(function(){
+      layui.use(['element', 'form'], function(){
+        var element = layui.element;
+        var form = layui.form;
+      });
+
+      setContentPageHeight()
+    });
+
+    function setContentPageHeight() {
+      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+      var height = document.getElementById("content").offsetHeight;
+      b_iframe.height = height + 30;
+
+      var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+      a_iframe.height = height + 100;
+    }
+
+    function navJump(id) {
+      $('#' + id)[0].click()
+    }
+
+  </script>
+  <link rel="stylesheet" media="screen" href="science-tractice.css"/>
+
+</head>
+  <body  onload="setContentPageHeight()">
+  <div id="content">
+    <div class="content">
+      <div class="nav-f">
+        <div id="nav">
+          <div class="layui-row">
+            <div class="layui-col-md12">
+
+              <ul class="layui-nav layui-nav-white" lay-filter="">
+
+                <li class="layui-nav-item layui-this">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_a')">全部</a>
+                </li>
+                <a href="./video_logged.html" target="contextPageIframe" class="null" id="jump_a"></a>
+
+                <li class="layui-nav-item">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_b')">SELF·Kids</a>
+                </li>
+                <a href="./video_logged.html" target="contextPageIframe" class="null" id="jump_b"></a>
+
+                <li class="layui-nav-item">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_c')">科学家进校园</a>
+                </li>
+                <a href="./video_logged.html" target="contextPageIframe" class="null" id="jump_c"></a>
+
+                <li class="layui-nav-item">
+                  <a href="javascript:void(0)" target="contextPageIframe" onclick="navJump('jump_d')">线下科学课</a>
+                </li>
+                <a href="./video_logged.html" target="contextPageIframe" class="null" id="jump_d"></a>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="iframe_div">
+        <iframe id="contextPageIframe" name="contextPageIframe" width="100%" scrolling="no" frameborder="0"
+                src="video_logged.html"></iframe>
+      </div>
+
+    </div>
+  </div>
+  </body>
+</html>

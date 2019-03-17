@@ -2,300 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>科学直播课</title>
     <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <link rel="stylesheet" href="css/science_live.css">
+    <style>
+      /*弹层样式*/
+      .username,
+      .password{
+          padding-left:10px;
+          line-height: 25px;
+          font:18px;
+      }
+
+      .layer{
+        margin:auto auto;
+        /*border:1px solid red;*/
+        text-align: center;
+        margin-top:50px;
+      }
+
+      .layui-layer-title{
+        font-weight: bold;
+      }
+
+      .layer p{
+        /*display:inline-block;*/
+        margin:0 auto;
+      }
+
+      .username{
+          margin-top:50px;
+      }
+
+      .password{
+
+      }
+
+      .layui-btn{
+        margin-top:17px;
+      }
+
+      .icon{
+        display: inline-block;
+        z-index: 8888;
+      }
+    </style>
     <script src="../../../../../static/layui/layui.js"></script>
     <script src="../../../../../static/js/front/Browser.js"></script>
     <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
-    <style>
-        body,h1,h2,h3,h4,h5,h6,p{
-            margin:0;
-        }
-        img{
-            padding: 0;
-            margin: 0;
-            border: 0;
-        }
-        .head{
-            margin: 0 auto 10px;
-            padding:50px 0 40px;
 
-            line-height: 1.5;
-            width: 1000px;
-        }
-        .head .title .name{
-            color: #333;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 1;
-            padding-bottom: 12px;
-        }
-        .head .title .desc{
-            color: #666;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 1.5;
-            padding-bottom: 30px;
-        }
-        .head h2{
-            font-size: 32px;
-            font-weight: 700;
-        }
-        .head p{
-            font-size: 12px;
-        }
-        .head .button-zone{
-            padding-top: 30px;
-            text-align: left;
-        }
-        .head .button-zone .button{
-            display: inline-block;
-            line-height: 40px;
-            text-align: center;
-            font-size: 14px;
-            height: 40px;
-            width: 120px;
-            border-radius: 6px;
-            color: #fff;
-            cursor: pointer;
-            background: #04B75E;
-        }
-        .head .layui-col-md4{
-
-        }
-        .head .layui-col-md4 img{
-            width: 100%;
-            height: 100%;
-            background: blue;
-        }
-        
-        .major-video{
-            height: 564px;
-            /*border:1px solid #333;*/
-            background: #e5e5e5;
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .major-video-box{
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .major-video .video-shade{
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 244px;
-            z-index: 1;
-            background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-            background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-            background: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-        }
-        .major-video .video-data{
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 192px;
-            z-index: 2;
-            /*background: -webkit-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-            /*background: -o-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-            /*background: -moz-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-            /*background: linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-        }
-        .major-video .video-data .video-data-c{
-            padding: 0 20px;
-        }
-        .major-video .video-data .video-data-c .button-zone{
-            padding: 50px 0 20px;
-            height: 30px;
-            line-height: 30px;
-            text-align: left;
-        }
-        .major-video .video-data .video-data-c .button-zone .button{
-            height: 25px;
-            line-height: 25px;
-            padding: 0 12px;
-            text-align: center;
-            background: #ff6c00;
-            display: inline-block;
-            width: auto;
-            color: #fff;
-            font-size: 12px;
-            font-weight: 400;
-            cursor: pointer;
-            border-top-left-radius:0;
-            border-top-right-radius:4px;
-            border-bottom-left-radius:4px;
-            border-bottom-right-radius:0;
-        }
-        .major-video .video-data .video-data-c .title{
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 1;
-            color: #fff;
-            padding-bottom: 15px;
-        }
-        .major-video .video-data .video-data-c .school{
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 1;
-            color: #fff;
-            padding-bottom: 8px;
-        }
-        .major-video .video-data .video-data-c .time{
-            font-size: 14px;
-            line-height: 1;
-            color: #fff;
-            font-weight: 400;
-        }
-
-        .minor-video .button-zone{
-            padding-bottom: 20px;
-        }
-        .minor-video{
-            margin-bottom: 20px;
-        }
-        .minor-video .box{
-            height: 276px;
-            /*border:1px solid #333;*/
-            position: relative;
-            background: #e5e5e5;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .minor-video .video-shade{
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 180px;
-            z-index: 1;
-            background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-            background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-            background: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-        }
-        .minor-video .box .video-data{
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 158px;
-            z-index: 2;
-            /*background: -webkit-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-            /*background: -o-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-            /*background: -moz-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-            /*background: linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
-        }
-        .minor-video .box .video-data .video-data-c{
-            padding: 0px 20px 0;
-        }
-        .minor-video .box .video-data .video-data-c .title{
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1;
-            color: #fff;
-            padding-bottom: 15px;
-        }
-        .minor-video .box .video-data .video-data-c .school{
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 1;
-            color: #fff;
-            padding-bottom: 8px;
-        }
-        .minor-video .box .video-data .video-data-c .time{
-            font-size: 14px;
-            line-height: 1;
-            color: #fff;
-        }
-        .minor-video .box .video-data .video-data-c .time span{
-            padding-left: 10px;
-        }
-        .minor-video .box .video-data .video-data-c .button-zone .button{
-            height: 25px;
-            line-height: 25px;
-            padding: 0 12px;
-            text-align: center;
-            background: #ff6c00;
-            display: inline-block;
-            width: auto;
-            color: #fff;
-            font-size: 12px;
-            font-weight: 400;
-            cursor: pointer;
-            border-top-left-radius:0;
-            border-top-right-radius:4px;
-            border-bottom-left-radius:4px;
-            border-bottom-right-radius:0;
-        }
-        .minor-video .box .video-data .video-data-c .button-zone .button.green{
-            background: #04B75E;
-        }
-        .head .more-box{
-            line-height: 1;
-            font-size: 14px;
-            color: #04B75E;
-            font-weight: 400;
-            cursor: pointer;
-        }
-        .head .more-box .more-sign{
-            width: 8px;
-            height: 12px;
-            display: inline-block;
-            background: url("../../../../../static/images/more_sign.png")no-repeat;
-            vertical-align: -1px;
-        }
-
-        .head-f.gray{
-            background: #f0f0f0;
-        }
-        .center .major-video .video-data{
-            height: 237px;
-        }
-        .center .major-video .video-data .video-data-c .title{
-            padding-bottom: 24px;
-        }
-        .center .major-video .video-data .video-data-c .person{
-            padding-bottom: 14px;
-            line-height: 1;
-            font-size: 20px;
-            color: #fff;
-            font-weight: 400;
-        }
-        .center .minor-video .box .video-data .video-data-c .title{
-            padding-bottom: 14px;
-        }
-        .center .minor-video .box .video-data .video-data-c .person{
-            margin-bottom: 10px;
-            line-height: 1;
-            font-size: 18px;
-            color: #fff;
-            max-height: 36px;
-            font-weight: 400;
-        }
-        .center .minor-video .box .video-data{
-            height: 178px;
-        }
-        .major-video-box img{
-            width: 100%;
-            height: 100%;
-        }
-        .minor-video .box img{
-            width: 100%;
-            height: 100%;
-        }
-
-    </style>
     <script>
 
         $(function(){
             layui.use('element', function(){
                 var element = layui.element;
             });
-
             setContentPageHeight()
         })
 
@@ -308,186 +69,166 @@
             a_iframe.height = height + 100;
         };
 
+        function toLive(){
+          layui.use('layer',function(){
+              var layer = layui.layer;
+              layer.open({
+                  type: 1,
+                  title: '即将进入本次直播，您查看直播的昵称及密码是：',
+                  content:'<div class="layer"><p class="username">昵称：xxxxxxxxxxx小学</p><p class="password">密码：xxxxxxxxxxxxxxxx</p><button class="layui-btn"><a href="../../appointment/else.html" target="_parent._parent">确定</a></button></div>',
+                  offset: '150px',
+                  area: ['500px', '228px']
+
+                })
+            })
+          }
+
+
+          // ajax
+          $(document).ready(function(){
+            var xhr = $.ajax({
+                url:"http://123.56.243.228:8088/lessonCloud/frontVideo/getById?id=17",
+                type:"get",
+                success:function(result){
+                  console.log(result);
+                  var res = JSON.parse(result);
+                  $('#test').click(function(){
+                      console.log($(".test"))
+                  })
+                  console.log(typeof(res.msg));
+                },
+                async:true
+            });
+          }
+        )
     </script>
 </head>
 <body>
+  <button id="test">测试按钮</button>
+  <div class="test">kong</div>
 <div id="content">
-    <div class="head-f">
-        <div class="head">
-            <div class="title">
-                <h6 class="name">SELF &bull; Kids</h6>
-                <p class="desc">基于SELF &bull; kids线下活动，通过直播课堂的方式，呈现舞台式科学演讲活动，每次活动3-4位演讲嘉宾，每个嘉宾20分钟演讲时间，为全国中小学生提供学习互动的机会。</p>
+  <div class="body">
+    <!--直播中-->
+    <div class="bgc1">
+      <div class="live">
+        <h3 class="name">直播中</h3>
+        <div class="major-video major-video-box">
+          <a href="javascript:void(0);" onclick="toLive();"><img src="img/1.png" alt=""></a>
+          <div class="video-shade"></div>
+          <div class="video-data">
+            <div class="video-data-c">
+              <div class="button-zone">
+                <span class="kids">SELFxkids</span>
+                <span class="button">直播中</span>
+              </div>
+              <h3 class="title">SELF×kid第三期：自然物语</h3>
+              <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+              <p class="time">日期：2018年11月20日 15:00开始</p>
             </div>
-            <div class="major-video major-video-box">
-                <img src="../../../../../static/images/static/03/1.png" alt="">
-                <div class="video-shade"></div>
-                <div class="video-data">
+          </div>
+        </div>
+      </div>
+    </div>
 
-                    <div class="video-data-c">
-                        <div class="button-zone">
-                            <span class="button">直播中</span>
-                        </div>
-                        <h3 class="title">SELF×kid第一期：你不知道的生命奥秘</h3>
-                        <p class="time">日期：2018年9月30日 15:00开始</p>
-                    </div>
+    <!--直播预告-->
+    <div class="bgc2">
+      <div class="pre">
+        <h3 class="name">直播预告</h3>
+        <div class="left">
+          <a href="./order.html" class="icon" onclick="parent.parent.scrollTo(0,0);"><img src="img/2.png" alt=""></a>
+          <div class="shade">
+            <div class="video-data">
+              <div class="video-data-c">
+                <div class="button-zone">
+                  <span class="kids">SELFxkids</span>
                 </div>
+                <h6 class="title">SELF×kid第二期：奇妙旅程</h6>
+                <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
+              </div>
             </div>
-            <div class="minor-video">
-                <div class="layui-row layui-col-space20">
-                    <div class="layui-col-md6">
-                        <div class="box">
-                            <img src="../../../../../static/images/static/03/2.png" alt="">
-                            <div class="video-shade"></div>
-                            <div class="video-data">
-                                <div class="video-data-c">
-                                    <div class="button-zone">
-                                        <span class="button green">直播回放</span>
-                                    </div>
-                                    <h3 class="title">SELF×kid第二期：奇妙旅程</h3>
-                                    <p class="time">日期：2018年9月30日 15:00开始</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-md6">
-                        <div class="box">
-                            <img src="../../../../../static/images/static/03/3.png" alt="">
-                            <div class="video-shade"></div>
-                            <div class="video-data">
-                                <div class="video-data-c">
-                                    <div class="button-zone">
-                                        <span class="button green">直播回放</span>
-                                    </div>
-                                    <h3 class="title">SELF×kid第三期：自然物语</h3>
-                                    <p class="time">日期：2018年9月30日 15:00开始</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="more-box">查看更多 <span class="more-sign"></span></div>
+          </div>
         </div>
-    </div>
-    <div class="head-f center gray">
-        <div class="head">
-            <div class="title">
-                <h6 class="name">线下科学课</h6>
-                <p class="desc">基于线下科学课，通过直播课堂的方式，呈现90分钟的主题科学实践课，在科学家的带领下深入探索科学世界的奥秘。</p>
+        <div class="right">
+          <a href="./order.html" class="icon" onclick="parent.parent.scrollTo(0,0);"><img src="img/3.png" alt=""></a>
+          <div class="shade">
+            <div class="video-data">
+              <div class="video-data-c">
+                <div class="button-zone">
+                  <span class="kids">SELFxkids</span>
+                </div>
+                <h3 class="title">你不知道的生命奥秘</h3>
+                <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
+              </div>
             </div>
-            <div class="major-video major-video-box">
-                <img src="../../../../../static/images/static/03/4.png" alt="">
-                <div class="video-shade"></div>
-                <div class="video-data">
+          </div>
+        </div>
+      </div>
+    </div>
 
-                    <div class="video-data-c">
-                        <div class="button-zone">
-                            <span class="button">直播中</span>
-                        </div>
-                        <h3 class="title">网络攻防战</h3>
-                        <h6 class="person">主讲人：耿立宏 中国科学院计算机网络中心科研骨干</h6>
-                        <p class="time">日期：2018年9月30日 15:00开始</p>
-                    </div>
-                </div>
+    <!--直播回看-->
+    <div class="bgc3">
+      <div class="review">
+        <h6 class="name">直播回看</a></h6>
+        <div class="major-video major-video-box">
+          <a href="../scienceVideo/video_details/science_video_details.html" onclick="parent.parent.scrollTo(0,0);"><img src="img/1.png" alt=""></a>
+          <div class="video-shade"></div>
+          <div class="video-data">
+            <div class="video-data-c">
+              <div class="button-zone">
+                <span class="kids">SELFxkids</span>
+              </div>
+              <div class="tag-title">SELF×kid第三期：自然物语</div>
+              <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+              <p class="time">日期：2018年11月20日 15:00开始</p>
             </div>
-            <div class="minor-video">
-                <div class="layui-row layui-col-space20">
-                    <div class="layui-col-md6">
-                        <div class="box">
-                            <img src="../../../../../static/images/static/03/5.png" alt="">
-                            <div class="video-shade"></div>
-                            <div class="video-data">
-                                <div class="video-data-c">
-                                    <div class="button-zone">
-                                        <span class="button green">直播回放</span>
-                                    </div>
-                                    <h3 class="title">科学小导演成长记</h3>
-                                    <h6 class="person">主讲人：吉源 中国科学院计算机网络中心科研骨干</h6>
-                                    <p class="time">日期：2018年9月30日 15:00开始</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-md6">
-                        <div class="box">
-                            <img src="../../../../../static/images/static/03/6.png" alt="">
-                            <div class="video-shade"></div>
-                            <div class="video-data">
-                                <div class="video-data-c">
-                                    <div class="button-zone">
-                                        <span class="button green">直播回放</span>
-                                    </div>
-                                    <h3 class="title">网络组建技术与实践</h3>
-                                    <h6 class="person">主讲人：何洪波 中国科学院计算机网络中心科研骨干</h6>
-                                    <p class="time">日期：2018年9月30日 15:00开始</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="more-box">查看更多 <span class="more-sign"></span></div>
+          </div>
         </div>
-    </div>
-    <div class="head-f center bottom">
-        <div class="head">
-            <div class="title">
-                <h6 class="name">科学家进校园</h6>
-                <p class="desc">基于科学家进校园线下活动，通过直播课堂的方式，将科学家精彩科学分享与教师圆桌论坛，呈现给全国更多的学生和老师，参与直播的学校将有机会与现场的科学家实时互动。</p>
-            </div>
-            <div class="major-video major-video-box">
-                <img src="../../../../../static/images/static/03/7.png" alt="">
-                <div class="video-shade"></div>
-                <div class="video-data">
-                    <div class="video-data-c">
-                        <div class="button-zone">
-                            <span class="button">直播中</span>
-                        </div>
-                        <h3 class="title">科学家爷爷讲数学：微积分魔术</h3>
-                        <h6 class="person">主讲人：林群院士</h6>
-                        <p class="time">日期：2018年9月30日 15:00开始<span>学校：北京西什库小学</span></p>
-                    </div>
+        <div class="two-layout">
+          <!--左边-->
+          <div class="left">
+            <a href="../scienceVideo/video_details/science_video_details.html" onclick="parent.parent.scrollTo(0,0);"><img src="img/2.png" alt=""></a>
+            <div class="shade">
+              <div class="video-data">
+                <div class="video-data-c">
+                  <div class="button-zone">
+                    <span class="kids">SELFxkids</span>
+                  </div>
+                  <h6 class="title">SELF×kid第二期：奇妙旅程</h6>
+                  <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                  <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
                 </div>
+              </div>
             </div>
-            <div class="minor-video">
-                <div class="layui-row layui-col-space20">
-                    <div class="layui-col-md6">
-                        <div class="box">
-                            <img src="../../../../../static/images/static/03/8.png" alt="">
-                            <div class="video-shade"></div>
-                            <div class="video-data">
-                                <div class="video-data-c">
-                                    <div class="button-zone">
-                                        <span class="button green">直播回放</span>
-                                    </div>
-                                    <h3 class="title">走进光世界</h3>
-                                    <h6 class="person">主讲人：王家骐院士</h6>
-                                    <p class="time">日期：2018年9月30日 15:00开始<span>学校：长春外国语学校</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-md6">
-                        <div class="box">
-                            <img src="../../../../../static/images/static/03/9.png" alt="">
-                            <div class="video-shade"></div>
-                            <div class="video-data">
-                                <div class="video-data-c">
-                                    <div class="button-zone">
-                                        <span class="button green">直播回放</span>
-                                    </div>
-                                    <h3 class="title">科技鹰眼 遥感技术</h3>
-                                    <h6 class="person">主讲人：中科院对地观测与数字地球科学中心研究员刘定生</h6>
-                                    <p class="time">日期：2018年9月30日 15:00开始<span>学校：洛阳实验中学</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+
+          <!--右边-->
+          <div class="right">
+            <a href="../scienceVideo/video_details/science_video_details.html" onclick="parent.parent.scrollTo(0,0);"><img src="img/3.png" alt=""></a>
+            <div class="shade">
+              <div class="video-data">
+                <div class="video-data-c">
+                  <div class="button-zone">
+                    <span class="kids">SELFxkids</span>
+                  </div>
+                  <h6 class="title">你不知道的生命奥秘</h6>
+                  <p class="intro">主讲人：何洪波 中国科学院计算机网络中心科研骨干</p>
+                  <p class="time">日期：2018年11月20日 15:00开始 北京西什库小学</p>
                 </div>
+              </div>
             </div>
-            <div class="more-box">查看更多 <span class="more-sign"></span></div>
+          </div>
         </div>
+        <div class="more-box">查看更多 <span class="more-sign"></span></div>
+      </div>
+
     </div>
-</div>
+  </div>
+
+  <!-- <script>
+    var jumpOutside = document.getElementsByClassName('layui-btn');
+    console.log(jumpOutside);
+  </script> -->
 </body>
 </html>

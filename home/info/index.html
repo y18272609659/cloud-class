@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../../../static/css/reset.css">
     <script src="../../../../../static/layui/layui.js"></script>
     <script src="../../../../../static/js/front/Browser.js"></script>
     <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
@@ -373,7 +374,6 @@
             var a_iframe = window.parent.parent.document.getElementById("contextIframe");
             a_iframe.height = height + 61.35;
         };
-
     </script>
 </head>
 <body>
@@ -400,45 +400,45 @@
                     </div>
                 </div>
                 <div class="layui-col-md2 right-nav">
-                    <a href="javascript:void(0)"><i class="con"></i>控制中心</a>
+                    <a href="../../myCenter/controlCenter/controlCenter.html" target="_parent._parent"><i class="con"></i>控制中心</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="center">
         <div class="core layui-clear">
-            <div class="title-more float-right">更多 <span class="more-sign"></span></div>
+            <div class="title-more float-right"><a href="../../appointment/submit_more.html" target="_parent">更多 </a><span class="more-sign"></span></div>
             <div class="title">本校近期活动</div>
             <div class="class-box layui-clear">
                 <p class="float-right">审核中</p>
-                <h6 class="name"><span>直播课</span> · 张某某院士关于机器人的直播课</h6>
+                <h6 class="name"><a href="../../appointment/appointment_details.html"><span>直播课</span> · 张某某院士关于机器人的直播课</a></h6>
                 <p class="time">2018-10-05 14:50 预约</p>
             </div>
             <div class="class-box layui-clear">
                 <p class="float-right">已通过</p>
-                <h6 class="name"><span class="yellow">实践课</span> · 科学家进校园</h6>
+                <h6 class="name"><a href="../../appointment/appointment_details.html"><span class="yellow">实践课</span> · 科学家进校园</a></h6>
                 <p class="time">2018-10-05 14:50 预约</p>
             </div>
             <div class="class-box layui-clear">
                 <p class="float-right live">已通过</p>
-                <h6 class="name"><span>直播课</span> · 张某某院士关于机器人的直播课</h6>
+                <h6 class="name"><a href="../../appointment/appointment_details.html"><span>直播课</span> · 张某某院士关于机器人的直播课</a></h6>
                 <p class="time">2018-10-05 14:50 预约</p>
             </div>
             <div class="class-box layui-clear">
                 <p class="float-right">已通过</p>
-                <h6 class="name"><span class="yellow">实践课</span> · 科学家进校园</h6>
+                <h6 class="name"><a href="../../appointment/appointment_details.html"><span class="yellow">实践课</span> · 科学家进校园</a></h6>
                 <p class="time">2018-10-05 14:50 预约</p>
             </div>
             <div class="class-box layui-clear">
                 <p class="float-right">已通过</p>
-                <h6 class="name"><span class="yellow">实践课</span> · 科学家进校园</h6>
+                <h6 class="name"><a href="../../appointment/appointment_details.html"><span class="yellow">实践课</span> · 科学家进校园</a></h6>
                 <p class="time">2018-10-05 14:50 预约</p>
             </div>
         </div>
     </div>
     <div class="act-f">
         <div class="activity">
-            <div class="title-more float-right">更多 <span class="more-sign"></span></div>
+            <div class="title-more float-right"><a href="../selfKids/index.html" onclick="parent.parent.scrollTo(0,0)">更多 <span class="more-sign"></span></a></div>
             <div class="top-title">精选直播课</div>
             <div class="layui-row layui-col-space20">
                 <div class="layui-col-md4 ">
@@ -479,8 +479,117 @@
     </div>
     <div class="act-f white">
         <div class="activity">
-            <div class="title-more float-right">更多 <span class="more-sign"></span></div>
+            <div class="title-more float-right"><a href="../recommend_video/index.html" onclick="parent.parent.scrollTo(0,0)">更多 <span class="more-sign"></span></a></div>
             <div class="top-title">推荐视频</div>
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/004.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">神奇的小蛋</h6>
+                            <p class="desc">只要三分钟，手绘大神带你了解蛋白质！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/005.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">植物的生存智慧</h6>
+                            <p class="desc">在丰富多彩的大自然中,任何动植物都有自己的生存法则。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/006.png" alt="">
+                            <div class="class-desc">
+                                <span>SELF · Kids</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">曹则贤：什么是物理？</h6>
+                            <p class="desc">物理学更深层次的含义。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/007.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">揭秘空间天气</h6>
+                            <p class="desc">一起来探秘，发生在地球以外的空间灾害性事件。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/008.png" alt="">
+                            <div class="class-desc">
+                                <span>艺术</span>
+
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">时间精灵</h6>
+                            <p class="desc">我国的“北京时间”由谁来守护？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 ">
+                    <div class="activity-box">
+                        <div class="activity-pic-box">
+                            <img src="../../../../../static/images/static/01/009.png" alt="">
+                            <div class="class-desc">
+                                <span>SELF · Kids</span>
+                                <span class="yellow">老师推荐</span>
+                            </div>
+                            <div class="time-desc">5:30</div>
+                        </div>
+                        <div class="activity-word-box">
+                            <h6 class="name">黑洞</h6>
+                            <p class="desc">天文学家是怎么观测到黑洞的？</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height:10px"></div>
+        </div>
+    </div>
+
+    <!-- 历史视频 -->
+    <div class="act-f">
+        <div class="activity">
+            <div class="title-more float-right"><a href="../recommend_video/index.html" onclick="parent.parent.scrollTo(0,0)">更多 <span class="more-sign"></span></a></div>
+            <div class="top-title">历史视频</div>
             <div class="layui-row layui-col-space20">
                 <div class="layui-col-md4 ">
                     <div class="activity-box">
@@ -595,10 +704,10 @@
                 <div>
                 <div class="layui-row layui-col-space20">
                     <div class="layui-col-md6 jump">
-                        <div class="box left">求真科学营</div>
+                        <div class="box left" onclick="parent.parent.location.href='../../appointment/else.html'">求真科学营</div>
                     </div>
                     <div class="layui-col-md6 jump">
-                        <div class="box right">校长论坛</div>
+                        <div class="box right"><a href="../principalBBS/principal_forum.html" onclick="parent.parent.scrollTo(0,0)" style="color:white;">校长论坛</a></div>
                     </div>
                 </div>
                 </div>

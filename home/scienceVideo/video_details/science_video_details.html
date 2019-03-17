@@ -55,18 +55,17 @@
 
     // 设置页面高度为该页面的内容高度
     function setContentPageHeight() {
-      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
       var height = document.getElementById("content").offsetHeight;
-      b_iframe.height = height + 70;
 
       var a_iframe = window.parent.parent.document.getElementById("contextIframe");
-      a_iframe.height = height + 140;
+      a_iframe.height = height + 80;
+
       console.log('设置内容页面高度函数执行了')
     }
 
   </script>
 </head>
-  <body onload="setContentPageHeight()">
+  <body onload="setContentPageHeight()" style="background: white">
     <div id="content">
       <div class="content">
         <div class="content-video" onclick="">

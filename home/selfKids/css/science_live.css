@@ -1,0 +1,564 @@
+/*公共样式*/
+    body, h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    }
+
+    img {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    #content {
+
+      /*position:relative;*/
+      /*border:1px solid red;*/
+    }
+
+    /*#content:after{*/
+    /*content:"";*/
+    /*display:block;*/
+    /*clear:both;*/
+    /*}*/
+
+    .body {
+      margin: 0 auto 10px;
+      width: 100%;
+      /*设置渐变边框*/
+      /*background-clip: padding-box, border-box;
+      -webkit-background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      -webkit-background-origin: padding-box, border-box;
+      background-image: linear-gradient(90deg, #f0f0f0, #f0f0f0), linear-gradient(90deg, #deb135, #51af36);
+      border: 3px solid transparent;
+      border-bootom: 2px solid transparent;
+      border-left: none;
+      border-right: none;*/
+
+      color: #fff;
+    }
+
+    .body .bgc1,
+    .body .bgc2,
+    .body .bgc3 {
+      padding-top: 50px;
+    }
+
+    .body .bgc1 .live .name,
+    .body .bgc2 .pre .name,
+    .body .bgc3 .review .name {
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+
+    /*直播中*/
+    .body .bgc1 {
+      width: 100%;
+    }
+
+    .live {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .body h2 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .body p {
+      font-size: 12px;
+    }
+
+    .body .button-zone {
+      padding-top: 30px;
+      text-align: left;
+    }
+
+    .body .button-zone .button {
+      display: inline-block;
+      line-height: 40px;
+      text-align: center;
+      font-size: 14px;
+      height: 40px;
+      width: 120px;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      background-color: #ff2520;
+    }
+
+    .body .button-zone .kids {
+      display: inline-block;
+      font-size: 14px;
+      color: #fff;
+      height: 25px;
+      width: 70px;
+      background: green;
+      cursor: pointer;
+      line-height: 25px;
+      text-align: center;
+      padding: 0 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 0;
+      /*overflow: hidden;*/
+    }
+
+    /*直播预告*/
+    .bgc2 {
+      padding-top: 50px;
+      width: 100%;
+      background-color: #ccc;
+      margin-top: 40px;
+    }
+
+    .pre {
+      height: 400px;
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pre:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+
+    .pre .name {
+      margin-bottom: 15px;
+      font-size: 18px;
+      /*color: #333;*/
+      font-weight: bold;
+      /*color:#000;*/
+    }
+
+    .pre .left img {
+      width: 490px;
+      height: 276px;
+    }
+
+    .pre .left {
+      float: left;
+      height: 200px;
+      margin-right: 20px;
+    }
+
+    .pre .left .shade {
+      color: #fff;
+      width: 450px;
+      height: 150px;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      /*background-color: red;*/
+      position: relative;
+      z-index: 5;
+      top: -150px;
+      left: 20px;
+    }
+
+    .pre .right {
+      float: left;
+      height: 250px;
+    }
+
+    .pre .right .shade {
+      position: relative;
+      z-index: 5;
+      /*background-color: #ff0000;*/
+      width: 450px;
+      height: 150px;
+      margin-bottom: 30px;
+      top: -150px;
+      left: 20px;
+    }
+
+
+    /*直播回看*/
+    .review {
+      width: 1000px;
+      height: 960px;
+      margin: 0 auto;
+      /*border:1px dotted red;*/
+    }
+
+    .review .name {
+      text-align: left;
+      padding-bottom: 30px;
+      /*margin-top: 50px;*/
+      color: #333;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .review .major-video {
+      position: relative;
+    }
+
+    .review .major-video img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /*.review .major-video .video-shade {*/
+      /*position: absolute;*/
+      /*!*width:400px;*!*/
+      /*!*height:500px;*!*/
+      /*!*background-color: #ff0000;*!*/
+      /*!*border:1px solid red;*!*/
+      /*left: 40px;*/
+      /*top: 400px;*/
+    /*}*/
+    .review .major-video .video-data{
+      margin-bottom:50px;
+    }
+
+    .review .major-video .video-data .tag-title {
+      font-size: 36px;
+      font-weight: 700;
+      padding-bottom: 24px;
+    }
+
+    .review .major-video .video-data .intro {
+      font-size: 16px;
+      color: #fff;
+      font-weight: lighter;
+      margin-bottom: 5px;
+    }
+
+    .review .major-video .video-data .time {
+      font-size: 14px;
+      line-height: 1;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .review .title {
+      margin-bottom: 15px;
+      font-size: 18px;
+      /*color: #333;*/
+      font-weight: bold;
+    }
+
+    .review .two-layout {
+      margin-top: 20px;
+    }
+
+    .review .two-layout:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .review .left img {
+      width: 490px;
+      height: 276px;
+    }
+
+    .review .left {
+      float: left;
+      height: 200px;
+      margin-right: 20px;
+    }
+
+    .review .left .shade {
+      color: #fff;
+      width: 450px;
+      height: 150px;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      /*background-color: red;*/
+      position: relative;
+      z-index: 5;
+      top: -150px;
+      left: 20px;
+    }
+
+    .review .right {
+      float: left;
+      height: 250px;
+    }
+
+    .review .right .shade {
+      position: relative;
+      z-index: 5;
+      /*background-color: #ff0000;*/
+      width: 450px;
+      height: 150px;
+      margin-bottom: 30px;
+      top: -150px;
+      left: 20px;
+    }
+
+    .shade .video-data .video-data-c .title {
+      color: #fff;
+      margin-top:14px;
+    }
+
+
+    /*其他代码*/
+    .head .layui-col-md4 img {
+      width: 100%;
+      height: 100%;
+      background: blue;
+    }
+
+    .major-video {
+      height: 564px;
+      /*border:1px solid #333;*/
+      background: #e5e5e5;
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .major-video-box {
+      border-radius: 4px;
+      /*overflow: hidden;*/
+      margin: 0 auto;
+    }
+
+    .major-video .video-shade {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 244px;
+      /*z-index: 1;*/
+      /*background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));*/
+      /*background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));*/
+      /*background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));*/
+      /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));*/
+    }
+
+    .major-video .video-data {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 192px;
+      z-index: 2;
+      margin-bottom: 10px;
+      /*background: -webkit-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+      /*background: -o-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+      /*background: -moz-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+      /*background: linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+    }
+
+    .major-video .video-data .video-data-c {
+      padding: 0 20px;
+    }
+
+    .major-video .video-data .video-data-c .button-zone {
+      padding: 50px 0 20px;
+      height: 30px;
+      line-height: 30px;
+      text-align: left;
+    }
+
+    .major-video .video-data .video-data-c .button-zone .button {
+      height: 25px;
+      line-height: 25px;
+      padding: 0 12px;
+      text-align: center;
+      background: #ff6c00;
+      display: inline-block;
+      width: auto;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      border-top-left-radius: 0;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 0;
+    }
+
+    .major-video .video-data .video-data-c .title {
+      font-size: 36px;
+      font-weight: 700;
+      /*line-height: 1;*/
+      color: #fff;
+      padding-bottom: 10px;
+    }
+
+    .major-video .video-data .video-data-c .intro {
+      font-size: 16px;
+      color: #fff;
+      font-weight: lighter;
+      margin-bottom: 5px;
+    }
+
+    .major-video .video-data .video-data-c .school {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      padding-bottom: 8px;
+    }
+
+    .major-video .video-data .video-data-c .time {
+      font-size: 14px;
+      line-height: 1;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .minor-video .button-zone {
+      padding-bottom: 20px;
+    }
+
+    .minor-video .video-shade {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 180px;
+      z-index: 1;
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+      background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+      background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    }
+
+    .minor-video .box .video-data {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 158px;
+      z-index: 2;
+      /*background: -webkit-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+      /*background: -o-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+      /*background: -moz-linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+      /*background: linear-gradient(rgb(204,204,204,0.01), rgb(0,0,0,0.5));*/
+    }
+
+    .minor-video .box .video-data .video-data-c {
+      padding: 0px 20px 0;
+    }
+
+    .minor-video .box .video-data .video-data-c .title {
+      font-size: 24px;
+      font-weight: 700;
+      /*line-height: 1;*/
+      color: #fff;
+      /*padding-bottom: 15px;*/
+    }
+
+    .minor-video .box .video-data .video-data-c .school {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      padding-bottom: 8px;
+    }
+
+    .minor-video .box .video-data .video-data-c .time {
+      font-size: 14px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .minor-video .box .video-data .video-data-c .time span {
+      padding-left: 10px;
+    }
+
+    .minor-video .box .video-data .video-data-c .button-zone .button {
+      height: 25px;
+      line-height: 25px;
+      padding: 0 12px;
+      text-align: center;
+      background: #ff6c00;
+      display: inline-block;
+      width: auto;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      border-top-left-radius: 0;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 0;
+    }
+
+    .minor-video .box .video-data .video-data-c .button-zone .button.green {
+      background: #04B75E;
+    }
+
+    .more-box {
+      line-height: 1;
+      font-size: 14px;
+      color: #04B75E;
+      font-weight: 400;
+      cursor: pointer;
+      margin-top:50px;
+      font-weight:bold;
+    }
+
+    .more-box span.more-sign{
+      width: 8px;
+      height: 12px;
+      display: inline-block;
+      background: url("img/more_sign.png") no-repeat;
+      vertical-align: -1px;
+    }
+
+    .head-f.gray {
+      background: #f0f0f0;
+    }
+
+    .center .major-video .video-data {
+      height: 237px;
+    }
+
+    .center .major-video .video-data .video-data-c .title {
+      padding-bottom: 24px;
+    }
+
+    .center .major-video .video-data .video-data-c .person {
+      padding-bottom: 14px;
+      line-height: 1;
+      font-size: 20px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .center .minor-video .box .video-data .video-data-c .title {
+      padding-bottom: 14px;
+    }
+
+    .center .minor-video .box .video-data .video-data-c .person {
+      margin-bottom: 10px;
+      line-height: 1;
+      font-size: 18px;
+      color: #fff;
+      max-height: 36px;
+      font-weight: 400;
+    }
+
+    .center .minor-video .box .video-data {
+      height: 178px;
+    }
+
+    .major-video-box img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .minor-video .box img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .review {
+      /*margin-top: 500px;*/
+    }
+
+    .bgc3 {
+      height: 1020px;
+    }

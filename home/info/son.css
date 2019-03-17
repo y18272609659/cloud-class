@@ -1,0 +1,125 @@
+.float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin:0;
+        }
+        #content{
+            width: 1000px;
+            margin:0 auto;
+            padding: 20px 0 0;
+        }
+
+        .top{
+            width: 1000px;
+            border-radius: 4px;
+            background: url('../../../../../static/images/static/tourist/top_img.png')no-repeat;
+            padding-bottom: 30px;
+            height:242px;
+        }
+        .top .button-zone{
+            /*text-align: right;*/
+            display: inline-block;
+            margin-top:17%;
+            margin-left:29%;
+            width:419px;
+            height:38px;
+            /*border:1px dotted red;*/
+       }
+        .top .button-zone .button{
+            display: inline-block;
+            width: 200px;
+            height: 36px;
+            background: #ffda2d;
+            color: #333;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0px -10px 20px -5px #d9d9d9,-10px 0px 20px -5px #d9d9d9,10px 0px 20px -5px #d9d9d9,0px 10px 20px -5px #d9d9d9;
+        }
+        .top .button-zone .button.green{
+            margin-left: 10px;
+            /*margin-right: 25px;*/
+            color: #fff;
+            background: #04B75E;
+        }
+
+        .carousel{
+            width: 1000px;
+            height: 380px;
+            border-radius: 4px;
+            box-shadow: 0px -10px 20px -5px #d9d9d9,-10px 0px 20px -5px #d9d9d9,10px 0px 20px -5px #d9d9d9,0px 10px 20px -5px #d9d9d9;
+            margin-bottom: 64px;
+            overflow:hidden;
+        }
+        .carousel img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .module{
+            padding-bottom: 64px;
+        }
+        .module .word{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #666;
+            padding-bottom: 15px;
+        }
+        .module .float-zone .box{
+            width: 495px;
+            cursor: pointer;
+        }
+        .module .float-zone img{
+            width: 100%;
+        }
+        .head{
+            padding-top: 104px;
+            background: url('../../../../../static/images/static/tourist/class-1.png')no-repeat;
+        }
+        .center{
+            padding-top: 113px;
+            background: url('../../../../../static/images/static/tourist/class-2.png')no-repeat right top;
+            text-align: right;
+        }
+        .center .box{
+            width: 100%;
+        }
+        .center .box img{
+            width: 100%;
+        }
+        .bottom{
+            padding-top: 104px;
+            background: url('../../../../../static/images/static/tourist/class-3.png')no-repeat ;
+        }
+        .end{
+            padding-top: 123px;
+            background: url('../../../../../static/images/static/tourist/class-4.png')no-repeat right top;
+        }
+        .end .box{
+            border-radius: 4px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .end .box.left{
+            background: url('../../../../../static/images/front-home-bottom-1.png')no-repeat;
+        }
+        .end .box.right{
+            background: url('../../../../../static/images/front-home-bottom-2.png')no-repeat;
+        }
+
+        .layui-col-md6 .box a{
+            color:#fff;
+        }

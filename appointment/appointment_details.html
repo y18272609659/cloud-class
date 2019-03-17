@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../../static/css/reset.css">
+  <style>
+    body {
+      background-color: rgb(228, 228, 228);
+    }
+
+    .container {
+      /*background: rgba(255,255,255,1);*/
+      /*background-image: url(./white.jpg);*/
+      /*background-origin: padding-box;*/
+      /*background-position: 0 0;*/
+    }
+
+    .status {
+      /*border: 1px solid red;*/
+      width: 1000px;
+      margin: 0 auto;
+      padding: 15px;
+      background: rgba(255, 255, 255, 1);
+      /*background-image: url(./white.jpg);*/
+      background-origin: padding-box;
+      background-position: 0 0;
+    }
+
+    .information {
+      /*border: 1px solid green;*/
+      width: 1000px;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 20px;
+    }
+
+    .subtitle img {
+      margin-right: 10px;
+      height: 18px;
+    }
+
+    .status .shenhe {
+      font-size: 33px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .status .wait {
+      margin-top: 20px;
+    }
+
+    .status .cancel {
+      margin-top: 10px;
+      border: 1px solid rgba(4, 183, 94, 1);
+      width: 191px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 1);
+      color: rgba(4, 183, 94, 1);
+    }
+
+    .information .details table {
+      display: block;
+      margin-top: 15px;
+    }
+
+    .information .details table tr td {
+      padding-right: 25px;
+    }
+
+    .information .details {
+      position: relative;
+    }
+
+    .information .details .more {
+      position: absolute;
+      left: 355px;
+      top: 1px;
+    }
+
+    .information .details .more a {
+      color: rgba(4, 183, 94, 1);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 预约状态 -->
+    <div class="status">
+      <div class="subtitle"><img src="./return.png" alt="返回" title="返回">预约详情</div>
+        <div class="shenhe">审核中...</div>
+        <div class="wait">已提交申请，正在等待管理员接受申请。</div>
+        <button class="cancel">取消预约</button>
+      </div>
+      <!-- 提交信息 -->
+      <div class="information">
+        <div class="subtitle">提交信息</div>
+        <div class="details">
+          <div class="more"><a href="./practice_details.html">查看</a></div>
+          <table>
+            <tr>
+              <td>课程</td>
+              <td>Java从入门到放弃</td>
+            </tr>
+            <tr>
+              <td>上课时间</td>
+              <td>xxxx-xx-xx xx:xx到xxxx-xx-xx xx:xx</td>
+            </tr>
+            <tr>
+              <td>上课地址</td>
+              <td>xxxxxxxxxxxxxxxxxxxxxxx</td>
+            </tr>
+            <tr>
+              <td>联系人</td>
+              <td>xxx</td>
+            </tr>
+            <tr>
+              <td>联系电话</td>
+              <td>18801268763</td>
+            </tr>
+            <tr>
+              <td>联系邮箱</td>
+              <td>1746299291@qq.com</td>
+            </tr>
+            <tr>
+              <td>补充需求</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>提交时间</td>
+              <td>xxxxx-xxxx-xxxx xxx:xxx</td>
+            </tr>
+            <tr>
+              <td>提交学校</td>
+              <td>xxxxx小学</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

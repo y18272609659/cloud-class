@@ -141,6 +141,15 @@
       color: white;
       text-decoration: none;
     }
+    /*查看更多*/
+    .more-link {
+      font-size: 14px;
+      color: #FF9900;
+      text-decoration: none;
+    }
+    .more-link:hover {
+      color: #FF9900;
+    }
   </style>
 
   <script>
@@ -206,9 +215,10 @@
         <span class="time">#120分钟#</span>
         <div class="content-detail">
           <span class="content-detail-span">基于青少年的认知发展水平和心理特征，推出了系列科学教育视频，以新鲜有趣的视频动画，主题深刻的演讲、短小精干的微课堂等多样化的形式讲述科学故事，透视前......</span>
+          <a class="more-link" target="contextIframe" href="science-detail.html">查看更多</a>
         </div>
         <button class="order-btn">
-          <a class="order-link" target="_parent" onclick="parent.scrollTo(0,0)" href="./science-tractice-orderform.html">预约</a>
+          <a class="order-link" target="_parent" onclick="parent.scrollTo(0,0)" href="javascript:alert('请您注册或登录！')">预约</a>
         </button>
       </div>
     </div>

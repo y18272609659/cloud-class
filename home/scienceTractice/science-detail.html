@@ -12,6 +12,9 @@
       margin: 0;
       padding: 0;
     }
+    body {
+      background: white;
+    }
     p {
       margin: 20px 0;
       line-height: 1.5rem;
@@ -45,8 +48,20 @@
   </style>
 
 </head>
-<body>
-  <div class="content">
+<script>
+  // 设置页面高度
+  function setContentPageHeight() {
+    // var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+    var height = document.getElementById("content").offsetHeight;
+    // b_iframe.height = height + 30;
+
+    var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+    a_iframe.height = height + 100;
+    console.log('调整页面高度函数执行了')
+  }
+</script>
+<body onload="setContentPageHeight()">
+  <div id="content" class="content">
     <h1 class="title">标题部分标题部分标题部分</h1>
     <div class="label">
       <span class="type-label">#线下科学课#</span>&nbsp&nbsp

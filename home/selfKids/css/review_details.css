@@ -1,0 +1,101 @@
+/*公共样式*/
+.body {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 1000px;
+    /*border:1px dotted red;*/
+}
+
+.body>.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #000;
+    margin-left: 20px;
+}
+
+ul.layui-nav {
+    padding: 0;
+}
+
+#nav {
+    /*border:1px solid red;*/
+}
+
+/*导航栏*/
+#nav ul .bar {
+    display: inline-block;
+    float: right;
+    width: 100px;
+    height: 81px;
+    /*position:absolute;*/
+    left: 50px;
+    top: 50px;
+    /*border:1px solid red;*/
+    text-align: center;
+    line-height: 81px;
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#nav ul .bar img {
+    margin-left: 10px;
+}
+
+#nav ul{
+    border-bottom:1px solid #ccc;
+}
+
+/*下面的视频列表*/
+.video{
+    /*border-top:1px solid #ccc;*/
+    padding-top:40px;
+}
+
+.video:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.video .pic{
+    width:444px;
+    height:250px;
+    float:left;
+}
+
+.video .pic img{
+    width:444px;
+    height:250px;
+    border-radius:4px;
+}
+
+.video .comment{
+    padding-left:20px;
+    float:left;
+    width:530px;
+    /*diaplay:inline-block;*/
+}
+
+
+
+.video .comment .title{
+    padding-top:20px;
+    font-size:24px;
+    color:#333;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.video .comment .host{
+    font-size:18px;
+    color:#333;
+    margin-bottom:12px;
+}
+
+.video .comment .date{
+    font-size: 14px;
+    color:#666;
+    margin-bottom:30px;
+}

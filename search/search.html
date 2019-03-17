@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../../static/layui/css/layui.css">
+  <script src="../../../../static/layui/layui.js"></script>
+  <script src="../../../../static/js/front/Browser.js"></script>
+  <script src="../../../../static/jquery/jquery-1.12.4.min.js"></script>
+  <style>
+    body {
+      /*background-color: rgba(228, 228, 228, 1);*/
+    }
+    body,h1,h2,h3,h4,h5,h6,p{
+      margin:0;
+    }
+
+    .content {
+
+    }
+
+    #nav {
+      margin: 0px auto;
+      width: 1000px;
+      min-width: 1000px;
+      line-height: 80px;
+    }
+
+    #iframe_div {
+      margin: 0px auto;
+      width: 100%;
+      /*min-width: 1200px;*/
+      min-height: 100vh;
+    }
+
+    #nav div span {
+      color: rgb(51, 51, 51);
+      /*margin-left: 10px;*/
+      font-weight: 700;
+      font-style: normal;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    #contextIframe {
+      /*min-height: 450px;*/
+    }
+
+    h1{
+      font-size: 20px;
+      padding-left: 50px;
+      font-weight: 700;
+    }
+    #nav .logo{
+      position: absolute;
+      top:-3px;
+      left:0;
+      width: 175px;
+      height: 58px;
+      display: block;
+    }
+    #nav .logo img{
+      width: 100%;
+      height: 100%;
+    }
+    #nav h1{
+      width: 175px;
+      height: 58px;
+    }
+    #nav .search-zone{
+      text-align: right;
+    }
+    #nav .layui-input{
+      color: #e6e6e6;
+      height: 32px;
+      background: #4ab64a;
+      font-size: 12px;
+      border-width: 0;
+    }
+    #nav input::-ms-input-placeholder{
+      color: #e6e6e6;
+    }
+    #nav input::-webkit-input-placeholder{
+      color: #e6e6e6;
+    }
+    #nav button{
+      height: 32px;
+      line-height: 32px;
+      padding: 0 20px;
+      position: relative;
+      background: #73c673 url('../../../../static/images/search.png')no-repeat center center;
+      left: -4px;
+    }
+
+    .layui-nav-white{
+      color:#333;
+      background: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .layui-nav .layui-nav-item a{
+      color: #333;
+      font-size: 18px;
+    }
+    .layui-nav .layui-nav-item a:hover{
+      color:#666;
+    }
+    .layui-nav .layui-nav-item.layui-this a{
+      color:#04B75E;
+    }
+    .nav-f{
+      background: #36ae36;
+      height:80px;
+    }
+
+    .right-nav{
+      text-align: right;
+      height: 80px;
+    }
+    .right-nav a,.right-nav a:hover {
+      /*padding: 0 8px;*/
+      color:#fff!important;
+      font-size:15px;
+      position: relative;
+    }
+    .right-nav a .con,.right-nav a .msg,.right-nav a .person{
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      padding: 0 10px 0 0;
+      /*position: absolute;*/
+      /*left: -30px;*/
+      /*top:0;*/
+      background: url('../../../../static/images/cont.png')no-repeat 0 center;
+      vertical-align: -5px;
+    }
+    .right-nav a .msg{
+      background: url('../../../../static/images/msg.png')no-repeat 0 center;
+    }
+    .right-nav a .person{
+      background: url('../../../../static/images/person.png')no-repeat 0 center;
+    }
+    #nav .right-nav span{
+      font-size: 13px;
+      font-weight: 400;
+      color: #5ebe5e;
+      position: relative;
+      top:-1px;
+    }
+
+    .bottom-border{
+      height: 5px;
+      background: linear-gradient(to right, #f7b235 , #36ae36);
+    }
+    #bottom{
+      height: 120px;
+      background: #4a4a4f;
+    }
+    .bottom-core-word{
+      padding-top: 30px;
+      line-height: 2;
+      color:#f0f0f0;
+      font-size:12px;
+      font-weight:400;
+      text-align: center;
+    }
+
+    /**/
+    .fixed-bottom{
+      width:100%;
+      position: fixed;
+      height: 80px;
+      background: #fff;
+      bottom: 0;
+      left: 0;
+      box-shadow: 0px -3px 7px #ddd;
+    }
+    .fixed-bottom .box{
+      width: 1000px;
+      margin:0 auto;
+      height: 80px;
+    }
+    .fixed-bottom .box:after{
+      display: inline-block;
+      font-size: 0;
+      content: " ";
+      height: 100%;
+      vertical-align: middle;
+    }
+    .fixed-bottom .box .button{
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      border-radius: 6px;
+      background: linear-gradient(to right, #f7b235 , #36ae36);
+      text-align: center;
+      vertical-align: middle;
+      line-height: 40px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /*选项卡的样式*/
+    body {
+      background-color: #ccc;
+    }
+
+    .container {
+      background-color: white;
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .layui-tab {
+      width: 1000px;
+    }
+
+    .container .layui-tab .layui-tab-content{
+      heigth:1000px;
+    }
+
+    .container .layui-tab .layui-this {
+      color: #04B75E;
+    }
+
+    .layui-tab-brief>.layui-tab-more li.layui-this:after,
+    .layui-tab-brief>.layui-tab-title .layui-this:after {
+      border-bottom: 4px solid #04B75E;
+    }
+
+    .container .box{
+      width:306px;
+      height: 300px;
+      /*border:1px solid red;*/
+      float:left;
+      margin:0 auto;
+      padding:5px;
+    }
+
+    .container .box .pic{
+      border:1px solid black;
+      position: relative;
+    }
+
+    .container .box .pic img{
+      width:304px;
+      height:199px;
+      /*margin-left:104px;*/
+      border-bottom:1px solid black;
+      margin-left: 1px;
+    }
+
+    .container .box .pic .time{
+      margin-left:10px;
+    }
+
+    .container .box .subtitle,
+    .container .box .introd{
+      margin-left:10px;
+    }
+
+    .container .box .pic .label{
+      width: 80px;
+      height: 27px;
+      background: linear-gradient(270deg, rgba(4, 183, 94, 1) 0%, rgba(4, 183, 94, 1) 0%, rgba(0, 204, 204, 1) 100%, rgba(0, 204, 204, 1) 100%);
+      position:absolute;
+      left:10px;
+      top:6px;
+      border-radius: 5px;
+    }
+
+    .container .box .subtitle{
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .container .box .label{
+      text-align: center;
+      line-height: 27px;
+    }
+    .layui-tab-content {
+      padding: 0;
+    }
+    /*专题*/
+    .subject {
+      margin: 0 auto;
+      height: 220px;
+      width: 100%;
+    }
+    .subject-img {
+      float: left;
+      width: 50%;
+      height: 220px;
+      background: lightblue;
+    }
+    .subject-detail {
+      margin: 20px 20px 0 20px;
+      display: inline-block;
+      height: 200px;
+      width: 45%;
+    }
+    .subject-title {
+      max-width: 400px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    .subject-content {
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 1.2rem;
+      color: #4a4a4f;
+    }
+    .empty {
+      width: 100%;
+      height: 10px;
+      background: #cccccc;
+    }
+    /*直播课*/
+    .live-lesson {
+      margin: 0 auto;
+      height: 220px;
+      width: 100%;
+    }
+    .live-img {
+      float: left;
+      width: 50%;
+      height: 220px;
+      background: lightblue;
+    }
+    .live-detail {
+      margin: 20px 20px 0 20px;
+      display: inline-block;
+      height: 200px;
+      width: 45%;
+    }
+    .live-title {
+      max-width: 400px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    .live-type {
+      margin: 10px 0 10px;
+      height: 25px;
+      width: 80px;
+      background: linear-gradient(to right, #00ccca, #04b864);
+      text-align: center;
+      line-height: 25px;
+      font-size: 12px;
+      color: white;
+    }
+    .live-speaker {
+      font-weight: bold;
+    }
+    .live-content {
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 1.2rem;
+      color: #4a4a4f;
+    }
+    .live-detail span, p {
+      display: block;
+    }
+    .empty {
+      width: 100%;
+      height: 10px;
+      background: #cccccc;
+    }
+    /*科学实践课*/
+    .practice {
+      margin: 35px 0 35px 35px;
+      height: 230px;
+    }
+    .practice-img {
+      float: left;
+      width: 400px;
+      height: 230px;
+      background: lightblue;
+    }
+    .practice-detail span {
+      display: inline-block;
+    }
+    .practice-detail {
+      margin: 15px 20px;
+      display: inline-block;
+      height: 200px;
+      width: 54%;
+    }
+    .practice-title {
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: bolder;
+      color: #333333;
+    }
+    .practice-type {
+      margin: 10px 0 10px;
+      height: 25px;
+      width: 80px;
+      background: linear-gradient(to right, #00ccca, #04b864);
+      text-align: center;
+      line-height: 25px;
+      font-size: 12px;
+      color: white;
+    }
+    .practice-time {
+      margin-left: 15px;
+    }
+    .practice-detail .practice-speaker {
+      display: block;
+    }
+    .pratice-speaker-title {
+      color: #666666;
+      margin-right: 15px;
+    }
+    .practice-speaker-teacher {
+      color: #04B864;
+    }
+    .practice-content {
+      margin: 10px 0;
+    }
+    .practice-content-link {
+      color: #FF9900;
+    }
+    .practice-content-link:hover {
+      color: #FF9900;
+      cursor: pointer;
+    }
+    .order-btn {
+      height: 40px;
+      width: 120px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, #00ccca, #04b864);
+      border: none;
+      border-radius: 4px;
+    }
+    .order-link {
+      color: white;
+    }
+    .order-link:hover {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+<!-- 网页头部 -->
+<!-- <div id="nav">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                <div class="logo"><a href="../../../../../home.html"><img src="../../../../static/images/logo.png" alt="logo"></a></div>
+            </div>
+            <div class="layui-col-md3 search-zone">
+                <div class="layui-form">
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" required="" lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input" onfocus="this.placeholder = ''" onblur="if(this.placeholder == '')this.placeholder='请输入关键字'">
+                    </div>
+                    <button class="layui-btn" lay-submit="" lay-filter="search"></button>
+                </div>
+            </div>
+            <div class="layui-col-md5 right-nav" style="visibility: visible;" lay-separator="|">
+                <div class="ajust">
+                    <a href="javascript:void(0)"><i class="con"></i>控制中心</a><span lay-separator="">|</span>
+                    <a href="javascript:void(0)"><i class="msg"></i>通知</a><span lay-separator="">|</span>
+                    <a href="javascript:void(0)"><i class="person"></i>北京朝阳一小</a><span lay-separator="" style="visibility: hidden;">|</span>
+                    <a href="javascript:void(0)" class="last">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="content">
+  <div class="nav-f">
+    <div id="nav">
+      <div class="layui-row">
+        <div class="layui-col-md4">
+          <h1 class="logo-block"></h1>
+          <span class="logo">
+                        <a href="../home_logged.html"><img src="../../../../static/images/logo.png" alt=""></a>
+                    </span>
+        </div>
+        <div class="layui-col-md3 search-zone">
+          <div class="layui-form">
+            <div class="layui-input-inline">
+              <input type="text" name="title" required lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">
+            </div>
+            <a href="./search.html" target="_contextIframe"><button class="layui-btn" lay-submit lay-filter="search"></button></a>
+            <!--<div class="layui-input-inline">-->
+            <!--<input type="text" name="title" required  lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">-->
+            <!--</div>-->
+            <!--<button class="layui-btn" lay-submit lay-filter="search">搜索</button>-->
+          </div>
+        </div>
+        <!--<div class="layui-col-md5 right-nav" style="text-align: right;font-weight: 700">                    -->
+        <!--<a href="javascript:void(0)" onclick="jumpMyCenter()">控制中心</a><a id="jump_my_center" href="home_center.html" target="_blank" style="display: none"></a>-->
+        <!--<a href="home_my_live.html" target="_blank">123456789@163.com</a>-->
+        <!--<a href="home_message.html" target="_blank" >通知</a>-->
+        <!--<a href="javascript:void(0)" style="padding-right: 10px">退出</a>                    -->
+        <!--</div>-->
+        <div class="layui-col-md5 right-nav layui-breadcrumb" style="" lay-separator="|">
+          <a href="../myCenter/controlCenter/controlCenter.html"><i class="con"></i>控制中心</a>
+          <a href="../appointment/else.html"><i class="msg"></i>通知</a>
+          <a href="javascript:void(0)"><i class="person"></i>北京朝阳一小</a>
+          <a href="javascript:void(0)" class="last">退出</a>
+        </div>
+
+      </div>
+
+    </div>
+    <!--<div class="layui-row">-->
+    <!--<div class="layui-col-md12">-->
+    <!--<ul class="layui-nav layui-nav-white" lay-filter="">-->
+    <!--<li class="layui-nav-item layui-this"><a href="">首页</a></li>-->
+    <!--<li class="layui-nav-item"><a href="">基地学校</a></li>-->
+    <!--<li class="layui-nav-item"><a href="">科学视频</a></li>-->
+    <!--<li class="layui-nav-item"><a href="">SELF · Kids</a></li>-->
+    <!--<li class="layui-nav-item"><a href="">科学实践课</a></li>-->
+    <!--<li class="layui-nav-item"><a href="">科学家进校园</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+  </div>
+</div>
+
+<div id="iframe_div">
+  <iframe id="contextIframe" name="contextIframe" width="100%" scrolling="no" frameborder="0" src="./search_detail.html" onload="loadFrame(this)"
+  >
+  </iframe>
+</div>
+
+<script>
+  layui.use('element', function() {
+    var $ = layui.jquery,
+        element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+    //触发事件
+    var active = {
+      tabAdd: function() {
+        //新增一个Tab项
+        element.tabAdd('demo', {
+          title: '新选项' + (Math.random() * 1000 | 0) //用于演示
+          ,
+          content: '内容' + (Math.random() * 1000 | 0),
+          id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+        })
+      },
+      tabDelete: function(othis) {
+        //删除指定Tab项
+        element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+        othis.addClass('layui-btn-disabled');
+      },
+      tabChange: function() {
+        //切换到指定Tab项
+        element.tabChange('demo', '22'); //切换到：用户管理
+      }
+    };
+
+    $('.site-demo-active').on('click', function() {
+      var othis = $(this),
+          type = othis.data('type');
+      active[type] ? active[type].call(this, othis) : '';
+    });
+
+    //Hash地址的定位
+    var layid = location.hash.replace(/^#test=/, '');
+    element.tabChange('test', layid);
+
+    element.on('tab(test)', function(elem) {
+      location.hash = 'test=' + $(this).attr('lay-id');
+    });
+
+  });
+</script>
+
+<!-- 您已安全退出登录 -->
+<script>
+  var quit = document.querySelector('.last');
+  quit.addEventListener('click',function(){
+    alert('您已安全退出登录!');
+    window.location.href='../home.html';
+  });
+
+  function loadFrame(obj) {
+    var url = obj.contentWindow.location.href;
+
+    if (url.indexOf("home/index") === -1) {
+      window.parent.$("#f").hide()
+    }
+  }
+</script>
+</body>
+
+</html>
+

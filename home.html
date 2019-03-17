@@ -1,9 +1,10 @@
 
 <html>
 <head>
-    <title>示范基地网站系统管理后台</title>
+    <title>欢迎您来到启识云课堂</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../../static/layui/css/layui.css">
+    <link rel="shortcut icon" href="../../../static/images/icon.png" type="image/x-icon">
     <script src="../../../static/layui/layui.js"></script>
     <script src="../../../static/js/front/Browser.js"></script>
     <script src="../../../static/jquery/jquery-1.12.4.min.js"></script>
@@ -253,7 +254,7 @@
                 <div class="layui-col-md4">
                     <h1 class="logo-block"></h1>
                     <span class="logo">
-                        <img src="../../../static/images/logo.png" alt="">
+                        <a href="./home.html"><img src="../../../static/images/logo.png" alt=""></a>
                     </span>
                 </div>
                 <div class="layui-col-md3 search-zone">
@@ -261,7 +262,7 @@
                         <div class="layui-input-inline">
                             <input type="text" name="title" required lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">
                         </div>
-                        <button class="layui-btn" lay-submit lay-filter="search"></button>
+                        <button class="layui-btn" lay-submit lay-filter="search" onclick="alert('请您先注册或登录！')"></button>
                         <!--<div class="layui-input-inline">-->
                         <!--<input type="text" name="title" required  lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input">-->
                         <!--</div>-->
@@ -282,7 +283,7 @@
                 <!--</div>-->
                 <div class="layui-col-md5 right-nav">
                     <span class="button" onclick="frontLogin()" id="login_button">登录</span>
-                    <span class="button white">注册</span>
+                    <span class="button white" onclick="window.location.href='appointment/else.html'">注册</span>
                 </div>
 
             </div>

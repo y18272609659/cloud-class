@@ -9,6 +9,9 @@
   <script src="../../../../../../static/js/front/Browser.js"></script>
   <script src="../../../../../../static/jquery/jquery-1.12.4.min.js"></script>
   <style>
+    body {
+      background: white;
+    }
     #content {
       margin: 1vw 9vw 3vw 9vw;
     }
@@ -49,10 +52,7 @@
 
     // 设置页面高度为该页面的内容高度
     function setContentPageHeight() {
-      var b_iframe = window.parent.document.getElementById("contextHomeIframe");
       var height = document.getElementById("content").offsetHeight;
-      b_iframe.height = height + 70;
-
       var a_iframe = window.parent.parent.document.getElementById("contextIframe");
       a_iframe.height = height + 140;
       console.log('设置内容页面高度函数执行了')
@@ -70,7 +70,7 @@
       rhoncus pronin sapien nunc accuan eget.</div>
 
     <div class="special-topic-info">
-      <a href="science_video_details.html" onclick="parent.parent.scrollTo(0,0)">
+      <a href="science_video_details.html" target="contextIframe" onclick="parent.parent.scrollTo(0,0)">
         <img src=""/>
       </a>
 

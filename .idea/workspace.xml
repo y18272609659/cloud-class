@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f1cba5a-6e00-4c2d-b5bc-bbfcf4f9eebc" name="Default Changelist" comment="" />
+    <list default="true" id="1f1cba5a-6e00-4c2d-b5bc-bbfcf4f9eebc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,17 +17,18 @@
     <session id="-1388852935">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,6 +59,7 @@
           <entry key="html" value="7083" />
           <entry key="js" value="3" />
           <entry key="json" value="43" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -64,6 +68,7 @@
           <entry key="HTML" value="7083" />
           <entry key="JSON" value="43" />
           <entry key="JavaScript" value="3" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -74,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../../../../lessonCloud/云课堂接口文档.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="150" column="4" selection-start-line="150" selection-start-column="3" selection-end-line="150" selection-end-column="4" />
+            <state relative-caret-position="103">
+              <caret line="146" column="3" lean-forward="true" selection-start-line="146" selection-start-column="3" selection-end-line="146" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -156,6 +161,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,7 +197,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,11 +240,13 @@
       <workItem from="1550732479567" duration="13027000" />
       <workItem from="1550806253254" duration="19634000" />
       <workItem from="1551162638803" duration="2782000" />
+      <workItem from="1551778906454" duration="606000" />
+      <workItem from="1551867879431" duration="1200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90780000" />
+    <option name="totallyTimeSpent" value="92586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -271,17 +278,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/home/principalBBS/principal_forum.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home/principalBBS/principal_forum.js" />
     <entry file="file://$PROJECT_DIR$/home/info/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7395" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/principalBBS/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home/principalBBS/index.html" />
     <entry file="file://$PROJECT_DIR$/../../../../../lessonCloud/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -442,11 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="151" column="84" selection-start-line="151" selection-start-column="67" selection-end-line="151" selection-end-column="84" />
-          <folding>
-            <element signature="e#3306#3384#0" />
-            <element signature="e#3429#3929#0" />
-            <element signature="e#3934#3976#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -454,10 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -474,8 +468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../../lessonCloud/云课堂接口文档.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="150" column="4" selection-start-line="150" selection-start-column="3" selection-end-line="150" selection-end-column="4" />
+        <state relative-caret-position="103">
+          <caret line="146" column="3" lean-forward="true" selection-start-line="146" selection-start-column="3" selection-end-line="146" selection-end-column="3" />
         </state>
       </provider>
     </entry>

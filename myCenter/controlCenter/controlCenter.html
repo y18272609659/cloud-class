@@ -1,174 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>控制中心</title>
-  <link rel="stylesheet" type="text/css" href="css/control_center.css">
-  <link rel="stylesheet" href="../../../../../static/css/reset.css">
+    <meta charset="UTF-8">
+    <title>控制中心</title>
+    <!-- layui引入 -->
+    <link rel="stylesheet" href="../../../../../static/layui/css/layui.css">
+    <script src="../../../../../static/layui/layui.js"></script>
+    <script src="../../../../../static/jquery/jquery-1.12.4.min.js"></script>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../../../../static/css/reset.css">
+    <!-- 私有样式 -->
+    <!-- 网站头部 -->
+    <link rel="stylesheet" href="css/header.css">
+    <!-- 控制中心 -->
+    <link rel="stylesheet" type="text/css" href="css/control_center.css">
+    <!-- <script src="../../../../../static/js/front/Browser.js"></script> -->
+    <!-- <script>
+
+        $(function(){
+            layui.use('element', function(){
+                var element = layui.element;
+            });
+            setContentPageHeight();
+        })
+
+        function setContentPageHeight() {
+            var b_iframe = window.parent.document.getElementById("contextHomeIframe");
+            var height = document.getElementById("content").offsetHeight;
+            b_iframe.height = height + 0;
+
+            var a_iframe = window.parent.parent.document.getElementById("contextIframe");
+            a_iframe.height = height + 61.35;
+        };
+    </script> -->
 </head>
+
 <body>
-<div class="container">
-  <!-- 左侧 -->
-  <div class="left">
-    <div class="list">
-      <ul>
-        <li class="active"><a href="javascript:void(0);">概况</a></li>
-        <li><a href="javascript:void(0);">本校近期活动</a></li>
-        <li><a href="javascript:void(0);">已收藏视频</a></li>
-        <li><a href="javascript:void(0);">已推荐视频</a></li>
-        <li><a href="javascript:void(0);">学生账号管理</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 右侧 -->
-  <div class="right">
-
-    <!-- 概况 -->
-    <div class="card survey">
-      <div class="title">概况</div>
-      <ul class="num">
-        <li>152</li>
-        <li>观看视频数</li>
-        <li>查看详情</li>
-      </ul>
-      <ul class="watch">
-        <li>152</li>
-        <li>观看视频数</li>
-        <li>查看详情</li>
-      </ul>
-      <ul class="detail">
-        <li>152</li>
-        <li>观看视频数</li>
-        <li>查看详情</li>
-      </ul>
-    </div>
-
-    <!-- 本校近期活动 -->
-    <div class="card activity">
-      <h2>本校近期活动</h2>
-      <table style="margin-left: 3px" border="0px" cellspacing="0">
-        <tr>
-          <td>预约活动</td>
-          <td>活动类型</td>
-          <td>状态</td>
-          <td>时间</td>
-          <td>操作</td>
-        </tr>
-        <tr>
-          <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
-          <td>xxxxxxxxxxxxxx</td>
-          <td>xxxxxxxxxx</td>
-          <td>xxxxxxxxxxxxx</td>
-          <td><a href="javascript:void(0);" class="delete">删除</a></td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- 已收藏视频 -->
-    <div class="card like">
-      <div class="title">已收藏视频</div>
-      <div class="video1">
-        <div class="pic">
-          <img alt="科学" src="img/1.jpg">
-          <div class="label">科学</div>
-        </div>
-        <div class="explain">
-          <dl>
-            <dt>自然物语</dt>
-            <dd>一句话简介一句话简介一句话简介一句话简介</dd>
-          </dl>
-          <div class="delete">删除</div>
-        </div>
-      </div>
-      <div class="video2">
-        <div class="pic">
-          <img alt="科学" src="img/1.jpg">
-          <div class="label">科学</div>
-        </div>
-        <div class="explain">
-          <dl>
-            <dt>自然物语</dt>
-            <dd>一句话简介一句话简介一句话简介一句话简介</dd>
-          </dl>
-          <div class="delete">删除</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 已推荐视频 -->
-    <div class="card recommend">
-      <div class="title">
-        <img src="img/return.png" alt="返回" title="返回"><span>看视频时长</span>
-      </div>
-      <div class="box"></div>
-      <hr>
-      <table border="0px" cellspacing="0">
-        <tr class="first">
-          <td>名称</td>
-          <td>观看时长/分钟</td>
-          <td>观看视频数量</td>
-        </tr>
-        <tr>
-          <td>张三</td>
-          <td>521</td>
-          <td>112</td>
-        </tr>
-        <tr>
-          <td>李四</td>
-          <td>548</td>
-          <td>54</td>
-        </tr>
-        <tr>
-          <td>王五</td>
-          <td>51</td>
-          <td>54</td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- 学生账号管理 -->
-    <div class="card administration">
-      <div class="title">学生账户管理</div>
-      <div class="body">
-        <div class="add">添加</div>
-        <div class="bulk">批量导入</div>
-        <span><a href="javascript:void(0);">下载批量导入模版</a></span>
-        <div class="search_box">
-          <form onsubmit="" method="get" name="search-form" class="forms">
-            <div class="input-groups">
-              <input class="sinput" name="search" placeholder="搜索学生名称及账号" onfocus="this.placeholder = ''"
-                     onblur="if(this.placeholder == '')this.placeholder='搜索学生名称及账号'">
-              <div class="icon"><img src="img/mirror.png" alt="搜索">
-                            </div>
+    <!-- 网页头部 -->
+    <div id="nav">
+        <div class="layui-container">
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    <div class="logo"><a href="../../home_logged.html"><img src="img/logo.png" alt="logo"></a></div>
+                </div>
+                <div class="layui-col-md3 search-zone">
+                    <div class="layui-form">
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" required="" lay-verify="keyword" placeholder="请输入关键字" autocomplete="off" class="layui-input" onfocus="this.placeholder = ''" onblur="if(this.placeholder == '')this.placeholder='请输入关键字'">
+                        </div>
+                        <a href="../../search/search.html" target="_contextIframe"><button class="layui-btn" lay-submit="" lay-filter="search"></button></a>
+                    </div>
+                </div>
+                <div class="layui-col-md5 right-nav" style="visibility: visible;" lay-separator="|">
+                    <div class="ajust">
+                        <a href="javascript:void(0)"><i class="con"></i>控制中心</a><span lay-separator="">|</span>
+                        <a href="../../appointment/else.html"><i class="msg"></i>通知</a><span lay-separator="">|</span>
+                        <a href="javascript:void(0)"><i class="person"></i>北京朝阳一小</a><span lay-separator="" style="visibility: hidden;">|</span>
+                        <a href="javascript:void(0)" class="last">退出</a>
+                    </div>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
-      <table cellspacing="0">
-        <tr>
-          <td>学生名称</td>
-          <td>入学年份</td>
-          <td>账号</td>
-          <td>事件</td>
-          <td>操作</td>
-        </tr>
-        <tr>
-          <td>XXX</td>
-          <td>XXXXXX</td>
-          <td>XXXXXXXXXXXXX</td>
-          <td>XXXXXXXXXXXXXXXXXXXXX</td>
-          <td>
-            <div class="delete">删除</div>
-            <div class="edit"><span>编辑</span></div>
-          </td>
-        </tr>
-      </table>
     </div>
+    <!-- 主要内容区 -->
+    <div id="content">
+        <!-- 左侧 -->
+        <div class="left">
+            <div class="list">
+                <ul>
+                    <li class="active"><a href="javascript:void(0);">概况</a></li>
+                    <li><a href="javascript:void(0);">本校近期活动</a></li>
+                    <li><a href="javascript:void(0);">已收藏视频</a></li>
+                    <li><a href="javascript:void(0);">已推荐视频</a></li>
+                    <li><a href="javascript:void(0);">学生账号管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="right">
+            <!-- 概况 -->
+            <div class="card survey">
+                <div class="title">概况</div>
+                <ul class="one">
+                    <li class="num">152</li>
+                    <li class="watch">观看视频数</li>
+                    <li class="detail" onclick="showDetails();">查看详情</li>
+                </ul>
+                <ul class="two">
+                    <li class="num">152</li>
+                    <li class="watch">观看视频数</li>
+                    <li class="detail" onclick="showDetails();">查看详情</li>
+                </ul>
+                <ul class="three">
+                    <li class="num">152</li>
+                    <li class="watch">观看视频数</li>
+                    <li class="detail" onclick="showDetails();">查看详情</li>
+                </ul>
+            </div>
+            <!-- 概况下面的点击详情页面 -->
+            <div class="moreDetail">
+                <div class="title">
+                    <img src="img/return.png" alt="返回" title="返回" onclick="returnBack();"><span>看视频时长</span>
+                </div>
+                <div class="box"></div>
+                <hr>
+                <table border="0px" cellspacing="0">
+                    <tr class="first">
+                        <td>名称</td>
+                        <td>观看时长/分钟</td>
+                        <td>观看视频数量</td>
+                    </tr>
+                    <tr>
+                        <td>张三</td>
+                        <td>521</td>
+                        <td>112</td>
+                    </tr>
+                    <tr>
+                        <td>李四</td>
+                        <td>548</td>
+                        <td>54</td>
+                    </tr>
+                    <tr>
+                        <td>王五</td>
+                        <td>51</td>
+                        <td>54</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 本校近期活动 -->
+            <div class="card activity">
+                <div class="title">本校近期活动</div>
+                <table style="margin-left: 3px" border="0px" cellspacing="0">
+                    <tr>
+                        <td>预约活动</td>
+                        <td>活动类型</td>
+                        <td>状态</td>
+                        <td>时间</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr class="order">
+                        <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                        <td>xxxxxxxxxxxxxx</td>
+                        <td>xxxxxxxxxx</td>
+                        <td>xxxxxxxxxxxxx</td>
+                        <td><a href="javascript:void(0);" class="delete" onclick="deleteItem()">删除</a></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 已收藏视频 -->
+            <div class="card like">
+                <div class="title">已收藏视频</div>
+                <div class="video1">
+                    <div class="pic">
+                        <img alt="科学" src="img/1.jpg">
+                        <div class="label">科学</div>
+                    </div>
+                    <div class="explain">
+                        <dl>
+                            <dt>自然物语</dt>
+                            <dd>一句话简介一句话简介一句话简介一句话简介</dd>
+                        </dl>
+                        <div class="delete">删除</div>
+                    </div>
+                </div>
+                <div class="video2">
+                    <div class="pic">
+                        <img alt="科学" src="img/1.jpg">
+                        <div class="label">科学</div>
+                    </div>
+                    <div class="explain">
+                        <dl>
+                            <dt>自然物语</dt>
+                            <dd>一句话简介一句话简介一句话简介一句话简介</dd>
+                        </dl>
+                        <div class="delete" onclick="deleteItem()">删除</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 已推荐视频 -->
+            <div class="card">
+                <div class="title">已推荐视频</div>
+                <div class="container">
+                    <div class="box">
+                        <a href="#"><img src="img/1.jpg" alt=""></a>
+                        <h3>XXXX科学视频</h3>
+                        <p>一句话简介</p>
+                    </div>
+                    <div class="box">
+                        <a href="#"><img src="img/1.jpg" alt=""></a>
+                        <h3>XXXX科学视频</h3>
+                        <p>一句话简介</p>
+                    </div>
+                    <div class="box">
+                        <a href="#"><img src="img/1.jpg" alt=""></a>
+                        <h3>XXXX科学视频</h3>
+                        <p>一句话简介</p>
+                    </div>
+                    <div class="box">
+                        <a href="#"><img src="img/1.jpg" alt=""></a>
+                        <h3>XXXX科学视频</h3>
+                        <p>一句话简介</p>
+                    </div>
+                    <div class="box">
+                        <a href="#"><img src="img/1.jpg" alt=""></a>
+                        <h3>XXXX科学视频</h3>
+                        <p>一句话简介</p>
+                    </div>
+                    <div class="box">
+                        <a href="#"><img src="img/1.jpg" alt=""></a>
+                        <h3>XXXX科学视频</h3>
+                        <p>一句话简介</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 学生账号管理 -->
+            <div class="card administration">
+                <div class="title">学生账户管理</div>
+                <div class="body">
+                    <div class="add" onclick="addSchool();">添加</div>
+                    <div class="bulk">批量导入</div>
+                    <span><a href="javascript:void(0);">下载批量导入模版</a></span>
+                    <div class="search_box">
+                        <form onsubmit="" method="get" name="search-form" class="forms">
+                            <div class="input-groups">
+                                <input class="sinput" name="search" placeholder="搜索学生名称及账号" onfocus="this.placeholder = ''" onblur="if(this.placeholder == '')this.placeholder='搜索学生名称及账号'">
+                                <div class="icon"><img src="img/mirror.png" alt="搜索">
+                            </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <table cellspacing="0">
+                    <tr>
+                        <td>学生名称</td>
+                        <td>入学年份</td>
+                        <td>账号</td>
+                        <td>事件</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td>XXX</td>
+                        <td>XXXXXX</td>
+                        <td>XXXXXXXXXXXXX</td>
+                        <td>XXXXXXXXXXXXXXXXXXXXX</td>
+                        <td>
+                            <div class="delete">删除</div>
+                            <div class="edit"><span>编辑</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    // 全局函数
+    function showDetails() {
+        var detail = document.getElementsByClassName('detail'),
+            survey = document.getElementsByClassName('survey');
+        console.log(survey);
+        console.log($);
+        $('.survey').hide();
+        $('.moreDetail').show();
+        // survey.style.display = "none";
+    }
 
-  </div>
-</div>
-<script type="text/javascript">
+    function returnBack() {
+        recommend.style.display = "none";
+        $('.survey').show();
+    }
+
+    function deleteItem(elem) {
+        // var elem = document.getElementsByClassName("elem");
+        $('.order').remove();
+    }
+
+    // 全局变量
+    recommend = document.getElementsByClassName('moreDetail')[0];
+    // 导航栏
     var list = document.getElementsByClassName('list')[0];
     var ul = list.getElementsByTagName('ul')[0];
     var li = ul.getElementsByTagName('li');
@@ -176,21 +285,54 @@
     var card = document.getElementsByClassName('card');
     for (var i = 0; i < li.length; i++) {
         li[i].index = i;
-        li[i].onclick = function () {
+        li[i].onclick = function() {
             /* 先把所有的class全部去掉，把所有的卡片全隐藏*/
             for (var i = 0; i < li.length; i++) {
                 li[i].className = '';
                 card[i].style.display = "none";
+                recommend.style.display = "none";
             }
             /* 给特定的标签加上active，把特定的卡片显示出来*/
             this.className = 'active';
             card[this.index].style.display = "block";
         };
+        // 初始的时候默认选中第一项
         for (var m = 1; m < li.length; m++) {
             li[m].className = '';
             card[m].style.display = "none";
+            recommend.style.display = "none";
         }
     }
+
+    // 详情显示
+    </script>
+    <!-- 弹出菜单 -->
+    <script>
+    function addSchool() {
+        layui.use(['jquery', 'layer', 'form'], function() {
+            var layer = layui.layer;
+            var form = layui.form;
+            layer.open({
+                title: '添加学校',
+                type: 1,
+                content: '<div class="add"><form action="" method="get" class="layui-form"><div class="submitForm">\
+            <p class="label"><span>名称<br><input class="layui-input" type="text" name="name" value="name" /></span></p><p class="label"><span>入学年份<br> <select name="year"><option value="2018">2018年</option><option value="2017">2017年</option><option value="2016">2016年</option><option value="2015">2015年</option></select></span></p><p class="label"><span>账号(建议使用学号)<br><input class="layui-input" type="text" name="usernum" value="usernum" /></span></p><p class="label"><span>密码(默认为账号后六位，可以修改)<br><input class="layui-input" type="text" name="password" value="password" /></span></p><br><input class="sub" type="submit" value="确定"></div></form></div>',
+                area: ['650px', '319px'],
+                skin: 'demo-class'
+            });
+            form.render();
+        });
+    }
+    </script>
+
+    <!-- 您已安全退出登录 -->
+<script>
+    var quit = document.querySelector('.last');
+    quit.addEventListener('click',function(){
+        alert('您已安全退出登录!');
+        window.location.href='../../home.html';
+    })
 </script>
 </body>
+
 </html>
